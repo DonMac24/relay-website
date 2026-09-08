@@ -7,11 +7,7 @@ const columns = [
   },
   {
     title: 'Company',
-    links: ['About', 'Careers', 'Contact'],
-  },
-  {
-    title: 'Resources',
-    links: ['Continuity guide', 'Docs', 'Changelog', 'Status'],
+    links: ['About'],
   },
 ]
 
@@ -53,8 +49,6 @@ export function SiteFooter() {
           </p>
           <div className="flex items-center gap-6 text-sm text-muted-foreground">
             <a href="#top" className="transition-colors hover:text-foreground">
-              Privacy
-            </a>
             <a href="#top" className="transition-colors hover:text-foreground">
               Terms
             </a>

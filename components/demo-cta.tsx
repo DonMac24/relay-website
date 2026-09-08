@@ -4,9 +4,9 @@ import { useState } from 'react'
 import { ArrowRight, Check } from 'lucide-react'
 
 const benefits = [
-  'A walkthrough tailored to your team and stack',
-  'Your continuity risk score in the first call',
-  'No rip-and-replace — live in under a week',
+  'Walk through a handoff from discovery to the Continuity Hub',
+  'See assignments, access checks, readiness, and Ask Relay AI',
+  'Discuss how Relay could support a real transition or pilot',
 ]
 
 export function DemoCta() {
@@ -19,24 +19,42 @@ export function DemoCta() {
           <p className="font-mono text-xs tracking-[0.2em] text-mint-strong uppercase">
             Request a demo
           </p>
+
           <h2 className="mt-4 text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
-            See your continuity risk in 30 minutes.
+            See Relay&apos;s continuity workflow in action.
           </h2>
+
           <p className="mt-4 max-w-md text-base leading-relaxed text-background/70">
-            Bring your toughest &ldquo;what if they left tomorrow&rdquo; scenario.
-            We&apos;ll show you how Relay captures and transfers that knowledge.
+            Bring a current or hypothetical employee transition. We&apos;ll
+            show you how Relay helps a manager discover relevant work, review
+            supporting evidence, assign responsibilities, check readiness, and
+            publish a usable continuity record.
           </p>
 
           <ul className="mt-8 space-y-3">
-            {benefits.map((b) => (
-              <li key={b} className="flex items-start gap-3 text-sm">
+            {benefits.map((benefit) => (
+              <li key={benefit} className="flex items-start gap-3 text-sm">
                 <span className="mt-0.5 grid size-5 shrink-0 place-items-center rounded-full bg-mint-strong">
                   <Check className="size-3 text-primary-foreground" />
                 </span>
-                <span className="leading-relaxed text-background/90">{b}</span>
+
+                <span className="leading-relaxed text-background/90">
+                  {benefit}
+                </span>
               </li>
             ))}
           </ul>
+
+          <div className="mt-8 border-t border-white/10 pt-6">
+            <p className="font-mono text-[0.68rem] tracking-[0.14em] text-mint-strong uppercase">
+              Built for real transition scenarios
+            </p>
+
+            <p className="mt-2 max-w-md text-sm leading-relaxed text-background/60">
+              Planned departures, extended leave, immediate departures, and
+              internal role changes.
+            </p>
+          </div>
         </div>
 
         <div className="rounded-2xl border border-white/10 bg-background p-6 text-foreground sm:p-8">
@@ -45,31 +63,49 @@ export function DemoCta() {
               <span className="grid size-12 place-items-center rounded-full bg-accent">
                 <Check className="size-6 text-mint-foreground" />
               </span>
+
               <h3 className="mt-5 text-xl font-medium">Request received</h3>
+
               <p className="mt-2 max-w-xs text-sm text-muted-foreground">
-                Thanks — someone from our team will reach out within one business
-                day to schedule your walkthrough.
+                Thanks — we&apos;ll reach out within one business day to arrange
+                your Relay walkthrough.
               </p>
             </div>
           ) : (
             <form
-              onSubmit={(e) => {
-                e.preventDefault()
+              onSubmit={(event) => {
+                event.preventDefault()
                 setSubmitted(true)
               }}
               className="space-y-4"
             >
               <div className="grid gap-4 sm:grid-cols-2">
-                <Field label="First name" name="firstName" placeholder="Maya" />
-                <Field label="Last name" name="lastName" placeholder="Chen" />
+                <Field
+                  label="First name"
+                  name="firstName"
+                  placeholder="Maya"
+                />
+
+                <Field
+                  label="Last name"
+                  name="lastName"
+                  placeholder="Chen"
+                />
               </div>
+
               <Field
                 label="Work email"
                 name="email"
                 type="email"
                 placeholder="maya@company.com"
               />
-              <Field label="Company" name="company" placeholder="Acme Inc." />
+
+              <Field
+                label="Company"
+                name="company"
+                placeholder="Acme Inc."
+              />
+
               <div>
                 <label
                   htmlFor="team"
@@ -77,18 +113,25 @@ export function DemoCta() {
                 >
                   Team
                 </label>
+
                 <select
                   id="team"
                   name="team"
+                  required
                   className="h-11 w-full rounded-lg border border-border bg-background px-3 text-sm outline-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/40"
                   defaultValue=""
                 >
                   <option value="" disabled>
                     Select a team
                   </option>
-                  <option>People / HR</option>
-                  <option>Operations</option>
-                  <option>Other</option>
+
+                  <option value="people-hr">People / HR</option>
+                  <option value="operations">Operations</option>
+                  <option value="knowledge-management">
+                    Knowledge Management
+                  </option>
+                  <option value="it">IT</option>
+                  <option value="other">Other</option>
                 </select>
               </div>
 
@@ -99,8 +142,10 @@ export function DemoCta() {
                 Request a demo
                 <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
               </button>
+
               <p className="text-center text-xs text-muted-foreground">
-                We&apos;ll only use your details to schedule your demo.
+                We&apos;ll only use your details to respond to your demo
+                request.
               </p>
             </form>
           )}
@@ -126,6 +171,7 @@ function Field({
       <label htmlFor={name} className="mb-1.5 block text-sm font-medium">
         {label}
       </label>
+
       <input
         id={name}
         name={name}
