@@ -16,21 +16,21 @@ const workflow = [
   { label: 'Review', icon: FileText },
   { label: 'Assignment', icon: UserRound },
   { label: 'Readiness', icon: ShieldCheck },
-  { label: 'Complete', icon: Archive },
+  { label: 'Publish', icon: Archive },
 ]
 
 const metrics = [
   {
     label: 'My handoffs',
     value: '4',
-    action: 'Go to My Work',
+    action: 'Open workspace',
     icon: BriefcaseBusiness,
     tone: 'default',
   },
   {
     label: 'Action items',
     value: '2',
-    action: 'Review actions',
+    action: 'Resolve issues',
     icon: ListChecks,
     tone: 'attention',
   },
@@ -65,8 +65,8 @@ const handoffs = [
   },
   {
     employee: 'Alex Morgan',
-    detail: 'Role transition · Published',
-    status: 'Complete',
+    detail: 'Role transition · Continuity Hub',
+    status: 'Published',
     tone: 'complete',
   },
 ]
@@ -88,9 +88,9 @@ export function Hero() {
           </h1>
 
           <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Relay gives managers one workflow to discover work across connected
-            systems, review evidence, assign continuity responsibilities, check
-            readiness, and publish a usable record to the Continuity Hub.
+            Relay helps managers prepare structured handoffs, gives employees a
+            Continuity Hub for the work they receive, and gives administrators
+            the controls to govern roles, access, retention, and reporting.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -113,7 +113,7 @@ export function Hero() {
           <div className="mt-10 border-t border-border pt-6 text-sm text-muted-foreground">
             <span className="flex items-center gap-2">
               <TrendingUp className="size-4 text-mint-strong" />
-              Built for HR &amp; Operations teams
+              Built for HR, Operations, and the employees carrying work forward
             </span>
           </div>
         </div>
@@ -158,7 +158,7 @@ function WorkflowCard() {
           </p>
 
           <p className="mt-1 text-sm font-medium">
-            One workflow from discovery to completion
+            One workflow from discovery to publication
           </p>
         </div>
 
@@ -228,7 +228,9 @@ function MetricsGrid() {
 
               <span
                 className={`text-xl font-semibold tracking-tight ${
-                  metric.tone === 'attention' ? 'text-red-700' : 'text-foreground'
+                  metric.tone === 'attention'
+                    ? 'text-red-700'
+                    : 'text-foreground'
                 }`}
               >
                 {metric.value}
