@@ -7,7 +7,6 @@ const columns = [
       { label: 'How it works', href: '#how-it-works' },
       { label: 'Ask Relay', href: '#ask-relay' },
       { label: 'Integrations', href: '#integrations' },
-      { label: 'Security', href: '#integrations' },
     ],
   },
   {
@@ -20,21 +19,27 @@ export function SiteFooter() {
   return (
     <footer className="bg-background">
       <div className="mx-auto w-full max-w-6xl px-5 py-14 sm:px-8">
-        <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
+        <div className="grid gap-10 md:grid-cols-[1.5fr_0.75fr_0.75fr] md:items-start">
           <div>
-            <a href="#top" aria-label="Relay ECI home">
+            <a
+              href="#top"
+              aria-label="Relay ECI home"
+              className="inline-flex"
+            >
               <RelayLogo />
             </a>
 
-            <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
-              Employee Continuity Intelligence. Keep critical work moving
-              through departures, extended leave, and role transitions.
+            <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
+              Keep critical work moving through departures, extended leave, and
+              role transitions.
             </p>
           </div>
 
           {columns.map((column) => (
             <div key={column.title}>
-              <p className="text-sm font-medium">{column.title}</p>
+              <p className="text-sm font-medium text-foreground">
+                {column.title}
+              </p>
 
               <ul className="mt-4 space-y-2.5">
                 {column.links.map((link) => (
