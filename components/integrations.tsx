@@ -1,33 +1,26 @@
-import type { LucideIcon } from 'lucide-react'
 import {
-  Bot,
   Cable,
-  CalendarDays,
   Database,
-  Files,
-  HardDrive,
   Network,
-  PanelsTopLeft,
   ShieldCheck,
 } from 'lucide-react'
 
 type Integration = {
   name: string
   category: string
-  src?: string
-  icon?: LucideIcon
+  src: string
 }
 
 const integrations: Integration[] = [
   {
     name: 'SharePoint',
     category: 'Documents and knowledge',
-    icon: Files,
+    src: '/logos/sharepoint.svg',
   },
   {
     name: 'Outlook',
     category: 'Meetings and calendars',
-    icon: CalendarDays,
+    src: '/logos/outlook.svg',
   },
   {
     name: 'Jira',
@@ -42,7 +35,7 @@ const integrations: Integration[] = [
   {
     name: 'Google Drive',
     category: 'Files and documents',
-    icon: HardDrive,
+    src: '/logos/google-drive.svg',
   },
   {
     name: 'Asana',
@@ -52,7 +45,7 @@ const integrations: Integration[] = [
   {
     name: 'Monday.com',
     category: 'Work management',
-    icon: PanelsTopLeft,
+    src: '/logos/monday.svg',
   },
 ]
 
@@ -85,8 +78,8 @@ export function Integrations() {
           <AskRelayIntegration />
         </div>
 
-        <div className="mt-6">
-          <div className="mb-4">
+        <div className="mt-8">
+          <div className="mb-5">
             <p className="font-mono text-[0.68rem] tracking-[0.16em] text-mint-foreground uppercase">
               Connected work systems
             </p>
@@ -96,7 +89,7 @@ export function Integrations() {
             </h3>
           </div>
 
-          <div className="grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {integrations.map((tool) => (
               <IntegrationCard key={tool.name} tool={tool} />
             ))}
@@ -151,7 +144,7 @@ function IdentityArchitecture() {
           className="size-8 shrink-0 object-contain"
         />
 
-        <div>
+        <div className="min-w-0">
           <p className="text-sm font-medium">Microsoft Entra ID</p>
 
           <p className="mt-0.5 text-xs text-muted-foreground">
@@ -159,7 +152,7 @@ function IdentityArchitecture() {
           </p>
         </div>
 
-        <span className="ml-auto rounded-full bg-accent px-2 py-1 font-mono text-[0.58rem] text-mint-foreground uppercase">
+        <span className="ml-auto shrink-0 rounded-full bg-accent px-2 py-1 font-mono text-[0.58rem] text-mint-foreground uppercase">
           Primary
         </span>
       </div>
@@ -186,8 +179,14 @@ function AskRelayIntegration() {
   return (
     <article className="rounded-2xl border border-border bg-card p-6">
       <div className="flex items-start gap-4">
-        <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-foreground">
-          <Bot className="size-5 text-mint-strong" />
+        <span className="grid size-11 shrink-0 place-items-center rounded-xl border border-border bg-background">
+          <img
+            src="/logos/openai.svg"
+            alt="OpenAI logo"
+            width={24}
+            height={24}
+            className="size-6 object-contain"
+          />
         </span>
 
         <div>
@@ -208,11 +207,15 @@ function AskRelayIntegration() {
       </p>
 
       <div className="mt-5 flex items-center gap-3 rounded-xl border border-border bg-background p-4">
-        <span className="grid size-8 shrink-0 place-items-center rounded-lg bg-foreground">
-          <Bot className="size-4 text-background" />
-        </span>
+        <img
+          src="/logos/openai.svg"
+          alt="OpenAI logo"
+          width={32}
+          height={32}
+          className="size-8 shrink-0 object-contain"
+        />
 
-        <div>
+        <div className="min-w-0">
           <p className="text-sm font-medium">OpenAI</p>
 
           <p className="mt-0.5 text-xs text-muted-foreground">
@@ -220,7 +223,7 @@ function AskRelayIntegration() {
           </p>
         </div>
 
-        <span className="ml-auto rounded-full bg-accent px-2 py-1 font-mono text-[0.58rem] text-mint-foreground uppercase">
+        <span className="ml-auto shrink-0 rounded-full bg-accent px-2 py-1 font-mono text-[0.58rem] text-mint-foreground uppercase">
           Governed
         </span>
       </div>
@@ -244,23 +247,15 @@ function AskRelayIntegration() {
 }
 
 function IntegrationCard({ tool }: { tool: Integration }) {
-  const Icon = tool.icon
-
   return (
-    <div className="flex min-h-24 items-center gap-3 bg-card px-5 py-5 transition-colors hover:bg-accent/50">
-      {tool.src ? (
-        <img
-          src={tool.src}
-          alt={`${tool.name} logo`}
-          width={30}
-          height={30}
-          className="size-8 shrink-0 object-contain"
-        />
-      ) : Icon ? (
-        <span className="grid size-8 shrink-0 place-items-center rounded-lg bg-accent">
-          <Icon className="size-4 text-mint-foreground" />
-        </span>
-      ) : null}
+    <div className="flex min-h-24 items-center gap-3 rounded-xl border border-border bg-card px-5 py-5 transition-colors hover:bg-accent/50">
+      <img
+        src={tool.src}
+        alt={`${tool.name} logo`}
+        width={32}
+        height={32}
+        className="size-8 shrink-0 object-contain"
+      />
 
       <div className="min-w-0">
         <p className="truncate text-sm font-medium">{tool.name}</p>
