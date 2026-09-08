@@ -59,7 +59,7 @@ export function SiteFooter() {
 
         <div className="mt-12 flex flex-col items-start justify-between gap-4 border-t border-border pt-6 sm:flex-row sm:items-center">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Relay Intelligence, Inc. All rights
+            © {new Date().getFullYear()} Relay ECI, Inc. All rights
             reserved.
           </p>
 
