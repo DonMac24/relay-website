@@ -1,71 +1,56 @@
 import { RelayLogo } from '@/components/relay-logo'
 
-const columns = [
-  {
-    title: 'Product',
-    links: [
-      { label: 'How it works', href: '#how-it-works' },
-      { label: 'Ask Relay', href: '#ask-relay' },
-      { label: 'Integrations', href: '#integrations' },
-    ],
-  },
-  {
-    title: 'Company',
-    links: [{ label: 'About', href: '#top' }],
-  },
+const links = [
+  { label: 'How it works', href: '#how-it-works' },
+  { label: 'Ask Relay', href: '#ask-relay' },
+  { label: 'Integrations', href: '#integrations' },
+  { label: 'About', href: '#top' },
 ]
 
 export function SiteFooter() {
   return (
     <footer className="bg-background">
-      <div className="mx-auto w-full max-w-6xl px-5 py-14 sm:px-8">
-        <div className="grid gap-10 md:grid-cols-[1.5fr_0.75fr_0.75fr] md:items-start">
-          <div>
+      <div className="mx-auto w-full max-w-6xl px-5 py-8 sm:px-8">
+        <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-5">
             <a
               href="#top"
               aria-label="Relay ECI home"
-              className="inline-flex"
+              className="inline-flex shrink-0"
             >
               <RelayLogo />
             </a>
 
-            <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
+            <p className="max-w-md text-sm leading-relaxed text-muted-foreground">
               Keep critical work moving through departures, extended leave, and
               role transitions.
             </p>
           </div>
 
-          {columns.map((column) => (
-            <div key={column.title}>
-              <p className="text-sm font-medium text-foreground">
-                {column.title}
-              </p>
-
-              <ul className="mt-4 space-y-2.5">
-                {column.links.map((link) => (
-                  <li key={link.label}>
-                    <a
-                      href={link.href}
-                      className="text-sm text-muted-foreground transition-colors hover:text-foreground"
-                    >
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          <nav
+            aria-label="Footer navigation"
+            className="flex flex-wrap items-center gap-x-6 gap-y-2"
+          >
+            {links.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+              >
+                {link.label}
+              </a>
+            ))}
+          </nav>
         </div>
 
-        <div className="mt-12 flex flex-col items-start justify-between gap-4 border-t border-border pt-6 sm:flex-row sm:items-center">
-          <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Relay ECI, Inc. All rights
-            reserved.
+        <div className="mt-7 flex flex-col items-start justify-between gap-3 border-t border-border pt-5 sm:flex-row sm:items-center">
+          <p className="text-xs text-muted-foreground">
+            © {new Date().getFullYear()} Relay ECI, Inc. All rights reserved.
           </p>
 
           <a
             href="#top"
-            className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+            className="text-xs text-muted-foreground transition-colors hover:text-foreground"
           >
             Back to top
           </a>
