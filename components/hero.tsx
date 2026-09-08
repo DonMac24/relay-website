@@ -42,7 +42,7 @@ export function Hero() {
             </span>
             <span className="flex items-center gap-2">
               <TrendingUp className="size-4 text-mint-strong" />
-              Built for HR, Ops &amp; Knowledge teams
+              Built for HR &amp; Operations teams
             </span>
           </div>
         </div>

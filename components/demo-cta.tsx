@@ -88,7 +88,6 @@ export function DemoCta() {
                   </option>
                   <option>People / HR</option>
                   <option>Operations</option>
-                  <option>Knowledge Management</option>
                   <option>Other</option>
                 </select>
               </div>
