@@ -11,7 +11,7 @@ export function RelayLogo({
   return (
     <span className={cn('inline-flex items-center', className)}>
       <Image
-        src="/relay-logo-white.jpg"
+        src="/relay-logo.png.jpg"
         alt="Relay ECI"
         width={420}
         height={120}
