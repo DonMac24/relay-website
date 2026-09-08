@@ -1,7 +1,9 @@
 import {
   BriefcaseBusiness,
+  CalendarDays,
   Check,
   ExternalLink,
+  FileText,
   Sparkles,
   UserRound,
 } from 'lucide-react'
@@ -69,13 +71,17 @@ function AskRelayExamples() {
         question="How much work is still unassigned for Taylor Brooks?"
         answer={
           <>
-            <span className="font-medium text-white">Taylor Brooks</span> has six
-            confirmed work items. Four are assigned and two still need
-            recipients.
+            <span className="font-medium">Taylor Brooks</span> has six confirmed
+            work items. Four are assigned and two still need recipients.
           </>
         }
-        record="Taylor Brooks continuity record"
-        recordType="Manager handoff"
+        sources={[
+          {
+            icon: FileText,
+            title: 'Taylor Brooks continuity record',
+            detail: 'Relay · Open handoff',
+          },
+        ]}
       />
 
       <RelayExample
@@ -87,17 +93,32 @@ function AskRelayExamples() {
         answer={
           <>
             You have three assigned responsibilities. The next item is the{' '}
-            <span className="font-medium text-white">
-              weekly payroll approval
-            </span>
-            , due Friday.
+            <span className="font-medium">weekly payroll approval</span>, due
+            Friday. The supporting checklist and payroll calendar are linked
+            below.
           </>
         }
-        record="Elena Rodriguez continuity record"
-        recordType="Assigned work"
+        sources={[
+          {
+            icon: FileText,
+            title: 'Weekly Payroll Approval Checklist',
+            detail: 'SharePoint · Open document',
+          },
+          {
+            icon: CalendarDays,
+            title: 'Payroll Close Calendar',
+            detail: 'Outlook · Open calendar',
+          },
+        ]}
       />
     </div>
   )
+}
+
+type SourceItem = {
+  icon: typeof FileText
+  title: string
+  detail: string
 }
 
 function RelayExample({
@@ -107,8 +128,7 @@ function RelayExample({
   description,
   question,
   answer,
-  record,
-  recordType,
+  sources,
 }: {
   icon: typeof BriefcaseBusiness
   role: string
@@ -116,80 +136,88 @@ function RelayExample({
   description: string
   question: string
   answer: React.ReactNode
-  record: string
-  recordType: string
+  sources: SourceItem[]
 }) {
   return (
-    <article className="overflow-hidden rounded-2xl border border-[#34445d] bg-[#111b2b] text-white shadow-[0_20px_50px_-30px_rgba(15,23,42,0.8)]">
+    <article className="overflow-hidden rounded-2xl border border-border bg-card shadow-[0_20px_50px_-32px_rgba(0,0,0,0.3)]">
       <div className="p-5">
         <div className="flex items-start justify-between gap-4">
           <div>
             <div className="flex items-center gap-2">
-              <Icon className="size-3.5 text-[#9b87f5]" />
+              <Icon className="size-3.5 text-mint-strong" />
 
-              <p className="font-mono text-[0.64rem] font-semibold tracking-[0.16em] text-[#b7a6ff] uppercase">
+              <p className="font-mono text-[0.64rem] font-semibold tracking-[0.16em] text-mint-foreground uppercase">
                 {role}
               </p>
             </div>
 
-            <h3 className="mt-2 text-base font-medium text-white">{title}</h3>
+            <h3 className="mt-2 text-base font-medium">{title}</h3>
 
-            <p className="mt-1 text-xs leading-relaxed text-slate-400">
+            <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
               {description}
             </p>
           </div>
 
-          <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-[#202c42] text-sm font-semibold text-[#9b87f5]">
+          <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-accent text-sm font-semibold text-mint-foreground">
             AI
           </span>
         </div>
 
-        <div className="mt-4 flex items-center gap-3 rounded-xl border border-[#3b4b64] bg-[#182337] p-2">
-          <p className="min-w-0 flex-1 truncate px-2 text-xs text-slate-300">
+        <div className="mt-4 flex items-center gap-3 rounded-xl border border-border bg-muted/50 p-2">
+          <p className="min-w-0 flex-1 truncate px-2 text-xs text-muted-foreground">
             {question}
           </p>
 
-          <span className="shrink-0 rounded-lg bg-[#4c3ca5] px-4 py-2 text-[0.68rem] font-medium text-white">
+          <span className="shrink-0 rounded-lg bg-mint-strong px-4 py-2 text-[0.68rem] font-medium text-primary-foreground">
             Ask Relay
           </span>
         </div>
 
-        <div className="mt-3 rounded-xl border border-[#34445d] bg-[#172235] p-4">
+        <div className="mt-3 rounded-xl border border-border bg-background p-4">
           <div className="flex items-center gap-2">
-            <Sparkles className="size-3.5 text-[#9b87f5]" />
+            <Sparkles className="size-3.5 text-mint-strong" />
 
-            <span className="text-xs font-medium text-[#b7a6ff]">
+            <span className="text-xs font-medium text-mint-foreground">
               Ask Relay
             </span>
           </div>
 
-          <p className="mt-2 text-xs leading-relaxed text-slate-200">
+          <p className="mt-2 text-xs leading-relaxed text-foreground">
             {answer}
           </p>
 
-          <button
-            type="button"
-            className="mt-3 flex w-full items-center gap-3 rounded-lg border border-[#34445d] bg-[#202c42] px-3 py-2.5 text-left"
-          >
-            <span className="grid size-7 shrink-0 place-items-center rounded-md bg-[#293653]">
-              <ExternalLink className="size-3.5 text-[#b7a6ff]" />
-            </span>
+          <div className="mt-3 space-y-2">
+            {sources.map((source) => {
+              const SourceIcon = source.icon
 
-            <span className="min-w-0">
-              <span className="block truncate text-[0.7rem] font-medium text-white">
-                {record}
-              </span>
+              return (
+                <button
+                  key={source.title}
+                  type="button"
+                  className="flex w-full items-center gap-3 rounded-lg border border-border bg-muted/40 px-3 py-2.5 text-left transition-colors hover:bg-accent/60"
+                >
+                  <span className="grid size-7 shrink-0 place-items-center rounded-md bg-accent">
+                    <SourceIcon className="size-3.5 text-mint-foreground" />
+                  </span>
 
-              <span className="mt-0.5 block text-[0.6rem] text-slate-400">
-                {recordType} · Open record
-              </span>
-            </span>
+                  <span className="min-w-0">
+                    <span className="block truncate text-[0.7rem] font-medium text-foreground">
+                      {source.title}
+                    </span>
 
-            <span className="ml-auto text-xs text-[#b7a6ff]">↗</span>
-          </button>
+                    <span className="mt-0.5 block text-[0.6rem] text-muted-foreground">
+                      {source.detail}
+                    </span>
+                  </span>
+
+                  <ExternalLink className="ml-auto size-3.5 shrink-0 text-mint-foreground" />
+                </button>
+              )
+            })}
+          </div>
         </div>
 
-        <p className="mt-3 text-center text-[0.58rem] leading-relaxed text-slate-500">
+        <p className="mt-3 text-center text-[0.58rem] leading-relaxed text-muted-foreground">
           Ask Relay can make mistakes. Verify important details using the linked
           original sources.
         </p>
