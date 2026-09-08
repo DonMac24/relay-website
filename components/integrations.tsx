@@ -1,15 +1,7 @@
 const integrations = [
-  { name: 'Slack', src: '/logos/slack.svg' },
-  { name: 'Notion', src: '/logos/notion.svg' },
   { name: 'Confluence', src: '/logos/confluence.svg' },
   { name: 'Jira', src: '/logos/jira.svg' },
-  { name: 'Salesforce', src: '/logos/salesforce.svg' },
-  { name: 'Zendesk', src: '/logos/zendesk.svg' },
-  { name: 'HubSpot', src: '/logos/hubspot.svg' },
   { name: 'Asana', src: '/logos/asana.svg' },
-  { name: 'GitHub', src: '/logos/github.svg' },
-  { name: 'Dropbox', src: '/logos/dropbox.svg' },
-  { name: 'Zoom', src: '/logos/zoom.svg' },
   { name: 'Microsoft 365', src: '/logos/microsoft.svg' },
 ]
 
