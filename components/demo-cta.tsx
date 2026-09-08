@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { FormEvent, useState } from 'react'
 import { ArrowRight, Check } from 'lucide-react'
 
 const benefits = [
@@ -9,8 +9,56 @@ const benefits = [
   'Discuss how Relay could support a real transition or pilot',
 ]
 
+type FormStatus = 'idle' | 'submitting' | 'success' | 'error'
+
 export function DemoCta() {
-  const [submitted, setSubmitted] = useState(false)
+  const [status, setStatus] = useState<FormStatus>('idle')
+  const [errorMessage, setErrorMessage] = useState('')
+
+  async function submitDemoRequest(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault()
+
+    const form = event.currentTarget
+    const formData = new FormData(form)
+
+    setStatus('submitting')
+    setErrorMessage('')
+
+    try {
+      const response = await fetch('/api/demo-request', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          firstName: formData.get('firstName'),
+          lastName: formData.get('lastName'),
+          email: formData.get('email'),
+          company: formData.get('company'),
+          team: formData.get('team'),
+          website: formData.get('website'),
+        }),
+      })
+
+      const result = await response.json()
+
+      if (!response.ok) {
+        throw new Error(
+          result.error || 'Your request could not be submitted.'
+        )
+      }
+
+      form.reset()
+      setStatus('success')
+    } catch (error) {
+      setErrorMessage(
+        error instanceof Error
+          ? error.message
+          : 'Your request could not be submitted.'
+      )
+      setStatus('error')
+    }
+  }
 
   return (
     <section id="demo" className="bg-foreground text-background">
@@ -46,7 +94,7 @@ export function DemoCta() {
         </div>
 
         <div className="rounded-2xl border border-white/10 bg-background p-5 text-foreground sm:p-6">
-          {submitted ? (
+          {status === 'success' ? (
             <div className="flex min-h-[260px] flex-col items-center justify-center text-center">
               <span className="grid size-11 place-items-center rounded-full bg-accent">
                 <Check className="size-5 text-mint-foreground" />
@@ -60,13 +108,7 @@ export function DemoCta() {
               </p>
             </div>
           ) : (
-            <form
-              onSubmit={(event) => {
-                event.preventDefault()
-                setSubmitted(true)
-              }}
-              className="space-y-3.5"
-            >
+            <form onSubmit={submitDemoRequest} className="space-y-3.5">
               <div className="grid gap-3.5 sm:grid-cols-2">
                 <Field
                   label="First name"
@@ -113,22 +155,48 @@ export function DemoCta() {
                     Select a team
                   </option>
 
-                  <option value="people-hr">People / HR</option>
-                  <option value="operations">Operations</option>
-                  <option value="knowledge-management">
+                  <option value="People / HR">People / HR</option>
+                  <option value="Operations">Operations</option>
+                  <option value="Knowledge Management">
                     Knowledge Management
                   </option>
-                  <option value="it">IT</option>
-                  <option value="other">Other</option>
+                  <option value="IT">IT</option>
+                  <option value="Other">Other</option>
                 </select>
               </div>
 
+              <div
+                className="absolute -left-[10000px] top-auto size-px overflow-hidden"
+                aria-hidden="true"
+              >
+                <label htmlFor="website">Website</label>
+                <input
+                  id="website"
+                  name="website"
+                  type="text"
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
+              </div>
+
+              {status === 'error' && (
+                <p role="alert" className="text-sm text-red-600">
+                  {errorMessage}
+                </p>
+              )}
+
               <button
                 type="submit"
-                className="group inline-flex h-10 w-full items-center justify-center gap-2 rounded-lg bg-foreground text-sm font-medium text-background transition-colors hover:bg-foreground/90"
+                disabled={status === 'submitting'}
+                className="group inline-flex h-10 w-full items-center justify-center gap-2 rounded-lg bg-foreground text-sm font-medium text-background transition-colors hover:bg-foreground/90 disabled:cursor-not-allowed disabled:opacity-60"
               >
-                Request a demo
-                <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
+                {status === 'submitting'
+                  ? 'Sending request…'
+                  : 'Request a demo'}
+
+                {status !== 'submitting' && (
+                  <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
+                )}
               </button>
 
               <p className="text-center text-xs text-muted-foreground">
