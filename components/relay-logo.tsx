@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { cn } from '@/lib/utils'
 
 export function RelayLogo({
@@ -8,22 +9,18 @@ export function RelayLogo({
   showWordmark?: boolean
 }) {
   return (
-    <span className={cn('inline-flex items-center gap-2', className)}>
-      <span className="grid size-7 place-items-center rounded-lg bg-mint-strong">
-        <span className="text-[1.05rem] font-bold leading-none text-primary-foreground">
-          R
-        </span>
-      </span>
-      {showWordmark && (
-        <span className="flex items-baseline gap-1.5">
-          <span className="text-[1.1rem] font-semibold tracking-tight text-foreground">
-            elay
-          </span>
-          <span className="font-mono text-[0.7rem] font-semibold tracking-[0.12em] text-mint-strong">
-            ECI
-          </span>
-        </span>
-      )}
+    <span className={cn('inline-flex items-center', className)}>
+      <Image
+        src="/relay-logo-white.jpg"
+        alt="Relay ECI"
+        width={420}
+        height={120}
+        priority
+        className={cn(
+          'w-auto object-contain',
+          showWordmark ? 'h-10' : 'h-9'
+        )}
+      />
     </span>
   )
 }
