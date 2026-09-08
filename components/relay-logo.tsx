@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import { cn } from '@/lib/utils'
 
 export function RelayLogo({
@@ -10,14 +9,11 @@ export function RelayLogo({
 }) {
   return (
     <span className={cn('inline-flex items-center', className)}>
-      <Image
-        src="/relay-logo.png.jpg"
+      <img
+        src="/relay-logo-white.jpg.jpg"
         alt="Relay ECI"
-        width={420}
-        height={120}
-        priority
         className={cn(
-          'w-auto object-contain',
+          'block w-auto object-contain',
           showWordmark ? 'h-10' : 'h-9'
         )}
       />
