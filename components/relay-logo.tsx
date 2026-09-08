@@ -10,7 +10,7 @@ export function RelayLogo({
   return (
     <span className={cn('inline-flex items-center', className)}>
       <img
-        src="/relay-logo-white.jpg.jpg"
+        src="/logos/relay-logo-white.jpeg.jpeg"
         alt="Relay ECI"
         className={cn(
           'block w-auto object-contain',
