@@ -1,9 +1,9 @@
-import { Check, Sparkles } from 'lucide-react'
+import { Check, ExternalLink, Sparkles } from 'lucide-react'
 
 const capabilities = [
-  'Answers grounded in your own processes, not generic guesses',
-  'Every answer cites the source, owner, and last update',
-  'Surfaces single points of failure before they become incidents',
+  'Answers from handoffs and continuity records you are authorized to view',
+  'Uses confirmed work, assignments, deadlines, risks, and approved evidence',
+  'Links answers back to supporting Relay records and original sources',
 ]
 
 export function AskRelay() {
@@ -15,25 +15,36 @@ export function AskRelay() {
             <Sparkles className="size-3.5" />
             Ask Relay AI
           </span>
+
           <h2 className="mt-6 text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
-            Ask how work actually gets done.
+            Ask questions across your continuity records.
           </h2>
+
           <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-            Ask Relay is a conversational layer over your operational knowledge
-            graph. Anyone — a new hire, a covering manager, an on-call engineer —
-            can get a precise, sourced answer in seconds.
+            Ask Relay is a governed, read-only assistant for your Relay
+            workspace. It helps authorized users understand handoffs,
+            assignments, deadlines, readiness gaps, recipient progress, and
+            approved supporting evidence.
           </p>
 
           <ul className="mt-8 space-y-3">
-            {capabilities.map((c) => (
-              <li key={c} className="flex items-start gap-3 text-sm">
+            {capabilities.map((capability) => (
+              <li key={capability} className="flex items-start gap-3 text-sm">
                 <span className="mt-0.5 grid size-5 shrink-0 place-items-center rounded-full bg-accent">
                   <Check className="size-3 text-mint-foreground" />
                 </span>
-                <span className="leading-relaxed text-foreground">{c}</span>
+
+                <span className="leading-relaxed text-foreground">
+                  {capability}
+                </span>
               </li>
             ))}
           </ul>
+
+          <p className="mt-6 text-xs leading-relaxed text-muted-foreground">
+            Ask Relay respects workspace permissions and does not change,
+            assign, approve, or delete records.
+          </p>
         </div>
 
         <AskRelayChat />
@@ -45,43 +56,87 @@ export function AskRelay() {
 function AskRelayChat() {
   return (
     <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-[0_24px_60px_-30px_rgba(0,0,0,0.35)]">
-      <div className="flex items-center gap-2 border-b border-border px-4 py-3">
-        <span className="grid size-6 place-items-center rounded-md bg-foreground">
+      <div className="flex items-center gap-3 border-b border-border px-4 py-3">
+        <span className="grid size-7 place-items-center rounded-md bg-foreground">
           <Sparkles className="size-3.5 text-mint-strong" />
         </span>
-        <span className="text-sm font-medium">Ask Relay</span>
+
+        <div>
+          <p className="text-sm font-medium">Ask Relay</p>
+          <p className="text-[0.65rem] text-muted-foreground">
+            Continuity intelligence
+          </p>
+        </div>
+
+        <span className="ml-auto rounded-full bg-accent px-2 py-1 font-mono text-[0.58rem] tracking-wide text-mint-foreground uppercase">
+          Governed · read-only
+        </span>
       </div>
 
       <div className="space-y-4 p-5">
         <div className="flex justify-end">
-          <p className="max-w-[85%] rounded-2xl rounded-br-sm bg-foreground px-4 py-2.5 text-sm text-background">
-            Who owns the vendor renewal process, and what happens if they&apos;re
-            out?
+          <p className="max-w-[88%] rounded-2xl rounded-br-sm bg-foreground px-4 py-2.5 text-sm leading-relaxed text-background">
+            How much work is still unassigned for Taylor Brooks?
           </p>
         </div>
 
         <div className="flex justify-start">
-          <div className="max-w-[92%] rounded-2xl rounded-bl-sm border border-border bg-background px-4 py-3">
+          <div className="max-w-[94%] rounded-2xl rounded-bl-sm border border-border bg-background px-4 py-3">
+            <div className="mb-2 flex items-center gap-2">
+              <Sparkles className="size-3.5 text-mint-strong" />
+              <span className="text-xs font-medium text-mint-foreground">
+                Ask Relay
+              </span>
+            </div>
+
             <p className="text-sm leading-relaxed text-foreground">
-              <span className="font-medium">Dara Okafor</span> owns vendor
-              renewals. If she&apos;s unavailable, the documented backup is{' '}
-              <span className="font-medium">Priya Nair</span>. The renewal runs
-              on a 45-day notice window through the Procurement workspace.
+              <span className="font-medium">Taylor Brooks</span> has six
+              confirmed work items. Four have been assigned and two are still
+              unassigned.
             </p>
-            <div className="mt-3 flex flex-wrap gap-2">
-              <Source label="Vendor Renewal SOP" />
-              <Source label="Procurement · Notion" />
-              <Source label="Updated 6d ago" />
+
+            <div className="mt-4 border-t border-border pt-3">
+              <p className="font-mono text-[0.6rem] tracking-[0.12em] text-muted-foreground uppercase">
+                Supporting record
+              </p>
+
+              <button
+                type="button"
+                className="mt-2 flex w-full items-center gap-3 rounded-lg border border-border bg-muted/40 px-3 py-2.5 text-left"
+              >
+                <span className="grid size-8 shrink-0 place-items-center rounded-md bg-accent">
+                  <ExternalLink className="size-3.5 text-mint-foreground" />
+                </span>
+
+                <span className="min-w-0">
+                  <span className="block truncate text-xs font-medium text-foreground">
+                    Taylor Brooks continuity record
+                  </span>
+
+                  <span className="mt-0.5 block text-[0.65rem] text-muted-foreground">
+                    Relay handoff · Open record
+                  </span>
+                </span>
+
+                <span className="ml-auto text-xs text-mint-foreground">↗</span>
+              </button>
             </div>
           </div>
         </div>
 
         <div className="flex items-center gap-2 rounded-xl border border-border bg-muted/50 px-3 py-2.5">
-          <span className="text-sm text-muted-foreground">
-            Ask about any process, owner, or dependency…
+          <span className="truncate text-sm text-muted-foreground">
+            Ask about handoffs, assignments, deadlines, or risks…
           </span>
-          <span className="ml-auto grid size-7 place-items-center rounded-lg bg-mint-strong">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+
+          <span className="ml-auto grid size-7 shrink-0 place-items-center rounded-lg bg-mint-strong">
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden="true"
+            >
               <path
                 d="M5 12h14M13 6l6 6-6 6"
                 stroke="var(--primary-foreground)"
@@ -92,15 +147,12 @@ function AskRelayChat() {
             </svg>
           </span>
         </div>
+
+        <p className="text-center text-[0.62rem] leading-relaxed text-muted-foreground">
+          Ask Relay can make mistakes. Verify important decisions using the
+          linked Relay records and original sources.
+        </p>
       </div>
     </div>
-  )
-}
-
-function Source({ label }: { label: string }) {
-  return (
-    <span className="rounded-md bg-accent px-2 py-1 font-mono text-[0.68rem] tracking-wide text-mint-foreground">
-      {label}
-    </span>
   )
 }
