@@ -7,7 +7,7 @@ const columns = [
   },
   {
     title: 'Company',
-    links: ['About', 'Founder', 'Careers', 'Contact'],
+    links: ['About', 'Careers', 'Contact'],
   },
   {
     title: 'Resources',
