@@ -10,18 +10,18 @@ import {
 const problems = [
   {
     icon: LogOut,
-    title: 'Departures create a handoff scramble',
-    body: 'Managers must quickly reconstruct active projects, recurring responsibilities, supporting documents, and unfinished work before an employee leaves.',
+    title: 'Departures create a scramble',
+    body: 'Teams rush to identify active work, key documents, and unfinished responsibilities.',
   },
   {
     icon: CalendarClock,
     title: 'Absence exposes coverage gaps',
-    body: 'When work is spread across documents, calendars, task systems, and individual context, the person covering a role may not know what needs attention.',
+    body: 'The person covering a role may not know what needs attention or where to find it.',
   },
   {
     icon: Shuffle,
-    title: 'Role changes blur responsibility',
-    body: 'Reorganizations and internal moves change who is responsible for ongoing work. Without a structured assignment process, important responsibilities can be missed.',
+    title: 'Role changes blur ownership',
+    body: 'When responsibilities move, important work can be delayed, duplicated, or missed.',
   },
 ]
 
@@ -30,19 +30,19 @@ const continuityQuestions = [
     icon: Search,
     number: '01',
     title: 'What needs to continue?',
-    body: 'Identify relevant work and supporting evidence across connected systems.',
+    body: 'Identify the work and evidence that matter.',
   },
   {
     icon: UserRoundCheck,
     number: '02',
-    title: 'Who is responsible next?',
-    body: 'Assign confirmed work to the appropriate continuity recipient.',
+    title: 'Who takes responsibility?',
+    body: 'Assign each responsibility to the right person.',
   },
   {
     icon: KeyRound,
     number: '03',
-    title: 'Can they use the source material?',
-    body: 'Review source access and surface gaps before the handoff is published.',
+    title: 'Can they access it?',
+    body: 'Find source-access gaps before publishing.',
   },
 ]
 
@@ -60,10 +60,9 @@ export function Problem() {
           </h2>
 
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground">
-            Important responsibilities are spread across systems, documents,
-            calendars, and individual context. When a role changes, teams need a
-            structured way to decide what continues, who receives it, and
-            whether they can use the supporting source material.
+            When people leave, take extended leave, or change roles, teams need
+            to know what continues, who owns it next, and whether they have
+            access to the supporting material.
           </p>
         </div>
 
@@ -97,7 +96,7 @@ export function Problem() {
             </p>
 
             <h3 className="mt-2 text-xl font-medium">
-              Three questions every handoff must answer
+              Every handoff must answer three questions
             </h3>
           </div>
 
