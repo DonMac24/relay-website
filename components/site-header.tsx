@@ -6,7 +6,6 @@ const navLinks = [
   { label: 'How it works', href: '#how-it-works' },
   { label: 'Ask Relay', href: '#ask-relay' },
   { label: 'Integrations', href: '#integrations' },
-  { label: 'Founder', href: '#founder' },
 ]
 
 export function SiteHeader() {

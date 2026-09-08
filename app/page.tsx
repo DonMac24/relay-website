@@ -5,7 +5,6 @@ import { HowItWorks } from '@/components/how-it-works'
 import { AskRelay } from '@/components/ask-relay'
 import { Integrations } from '@/components/integrations'
 import { Screenshots } from '@/components/screenshots'
-import { Founder } from '@/components/founder'
 import { DemoCta } from '@/components/demo-cta'
 import { SiteFooter } from '@/components/site-footer'
 
@@ -20,7 +19,6 @@ export default function Page() {
         <AskRelay />
         <Screenshots />
         <Integrations />
-        <Founder />
         <DemoCta />
       </main>
       <SiteFooter />
