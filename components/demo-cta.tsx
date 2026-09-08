@@ -14,7 +14,7 @@ export function DemoCta() {
 
   return (
     <section id="demo" className="bg-foreground text-background">
-      <div className="mx-auto grid w-full max-w-6xl gap-12 px-5 py-16 sm:px-8 md:py-24 lg:grid-cols-2 lg:items-center">
+      <div className="mx-auto grid w-full max-w-6xl gap-10 px-5 py-14 sm:px-8 md:py-20 lg:grid-cols-2 lg:items-center">
         <div>
           <p className="font-mono text-xs tracking-[0.2em] text-mint-strong uppercase">
             Request a demo
@@ -25,13 +25,12 @@ export function DemoCta() {
           </h2>
 
           <p className="mt-4 max-w-md text-base leading-relaxed text-background/70">
-            Bring a current or hypothetical employee transition. We&apos;ll
-            show you how Relay helps a manager discover relevant work, review
-            supporting evidence, assign responsibilities, check readiness, and
-            publish a usable continuity record.
+            Bring a planned departure, extended leave, immediate departure, or
+            role change. We&apos;ll show you how Relay moves the work from
+            discovery to a usable Continuity Hub.
           </p>
 
-          <ul className="mt-8 space-y-3">
+          <ul className="mt-6 space-y-2.5">
             {benefits.map((benefit) => (
               <li key={benefit} className="flex items-start gap-3 text-sm">
                 <span className="mt-0.5 grid size-5 shrink-0 place-items-center rounded-full bg-mint-strong">
@@ -44,27 +43,16 @@ export function DemoCta() {
               </li>
             ))}
           </ul>
-
-          <div className="mt-8 border-t border-white/10 pt-6">
-            <p className="font-mono text-[0.68rem] tracking-[0.14em] text-mint-strong uppercase">
-              Built for real transition scenarios
-            </p>
-
-            <p className="mt-2 max-w-md text-sm leading-relaxed text-background/60">
-              Planned departures, extended leave, immediate departures, and
-              internal role changes.
-            </p>
-          </div>
         </div>
 
-        <div className="rounded-2xl border border-white/10 bg-background p-6 text-foreground sm:p-8">
+        <div className="rounded-2xl border border-white/10 bg-background p-5 text-foreground sm:p-6">
           {submitted ? (
-            <div className="flex min-h-[320px] flex-col items-center justify-center text-center">
-              <span className="grid size-12 place-items-center rounded-full bg-accent">
-                <Check className="size-6 text-mint-foreground" />
+            <div className="flex min-h-[260px] flex-col items-center justify-center text-center">
+              <span className="grid size-11 place-items-center rounded-full bg-accent">
+                <Check className="size-5 text-mint-foreground" />
               </span>
 
-              <h3 className="mt-5 text-xl font-medium">Request received</h3>
+              <h3 className="mt-4 text-xl font-medium">Request received</h3>
 
               <p className="mt-2 max-w-xs text-sm text-muted-foreground">
                 Thanks — we&apos;ll reach out within one business day to arrange
@@ -77,9 +65,9 @@ export function DemoCta() {
                 event.preventDefault()
                 setSubmitted(true)
               }}
-              className="space-y-4"
+              className="space-y-3.5"
             >
-              <div className="grid gap-4 sm:grid-cols-2">
+              <div className="grid gap-3.5 sm:grid-cols-2">
                 <Field
                   label="First name"
                   name="firstName"
@@ -118,7 +106,7 @@ export function DemoCta() {
                   id="team"
                   name="team"
                   required
-                  className="h-11 w-full rounded-lg border border-border bg-background px-3 text-sm outline-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/40"
+                  className="h-10 w-full rounded-lg border border-border bg-background px-3 text-sm outline-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/40"
                   defaultValue=""
                 >
                   <option value="" disabled>
@@ -137,15 +125,14 @@ export function DemoCta() {
 
               <button
                 type="submit"
-                className="group inline-flex h-11 w-full items-center justify-center gap-2 rounded-lg bg-foreground text-sm font-medium text-background transition-colors hover:bg-foreground/90"
+                className="group inline-flex h-10 w-full items-center justify-center gap-2 rounded-lg bg-foreground text-sm font-medium text-background transition-colors hover:bg-foreground/90"
               >
                 Request a demo
                 <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
               </button>
 
               <p className="text-center text-xs text-muted-foreground">
-                We&apos;ll only use your details to respond to your demo
-                request.
+                We&apos;ll only use your details to respond to your request.
               </p>
             </form>
           )}
@@ -178,7 +165,7 @@ function Field({
         type={type}
         required
         placeholder={placeholder}
-        className="h-11 w-full rounded-lg border border-border bg-background px-3 text-sm outline-none placeholder:text-muted-foreground/60 focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/40"
+        className="h-10 w-full rounded-lg border border-border bg-background px-3 text-sm outline-none placeholder:text-muted-foreground/60 focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/40"
       />
     </div>
   )
