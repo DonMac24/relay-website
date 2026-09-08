@@ -3,11 +3,16 @@ import { RelayLogo } from '@/components/relay-logo'
 const columns = [
   {
     title: 'Product',
-    links: ['How it works', 'Ask Relay', 'Integrations', 'Security'],
+    links: [
+      { label: 'How it works', href: '#how-it-works' },
+      { label: 'Ask Relay', href: '#ask-relay' },
+      { label: 'Integrations', href: '#integrations' },
+      { label: 'Security', href: '#integrations' },
+    ],
   },
   {
     title: 'Company',
-    links: ['About'],
+    links: [{ label: 'About', href: '#top' }],
   },
 ]
 
@@ -15,25 +20,30 @@ export function SiteFooter() {
   return (
     <footer className="bg-background">
       <div className="mx-auto w-full max-w-6xl px-5 py-14 sm:px-8">
-        <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
+        <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
           <div>
-            <RelayLogo />
+            <a href="#top" aria-label="Relay ECI home">
+              <RelayLogo />
+            </a>
+
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
-              Employee Continuity Intelligence. Keep the knowledge when the
-              people move on.
+              Employee Continuity Intelligence. Keep critical work moving
+              through departures, extended leave, and role transitions.
             </p>
           </div>
-          {columns.map((col) => (
-            <div key={col.title}>
-              <p className="text-sm font-medium">{col.title}</p>
+
+          {columns.map((column) => (
+            <div key={column.title}>
+              <p className="text-sm font-medium">{column.title}</p>
+
               <ul className="mt-4 space-y-2.5">
-                {col.links.map((link) => (
-                  <li key={link}>
+                {column.links.map((link) => (
+                  <li key={link.label}>
                     <a
-                      href="#top"
+                      href={link.href}
                       className="text-sm text-muted-foreground transition-colors hover:text-foreground"
                     >
-                      {link}
+                      {link.label}
                     </a>
                   </li>
                 ))}
@@ -47,14 +57,13 @@ export function SiteFooter() {
             © {new Date().getFullYear()} Relay Intelligence, Inc. All rights
             reserved.
           </p>
-          <div className="flex items-center gap-6 text-sm text-muted-foreground">
-            <a href="#top" className="transition-colors hover:text-foreground">
-            <a href="#top" className="transition-colors hover:text-foreground">
-              Terms
-            </a>
-            <a href="#top" className="transition-colors hover:text-foreground">
-            </a>
-          </div>
+
+          <a
+            href="#top"
+            className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+          >
+            Back to top
+          </a>
         </div>
       </div>
     </footer>
