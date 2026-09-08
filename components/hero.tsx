@@ -38,7 +38,6 @@ export function Hero() {
           <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-border pt-6 text-sm text-muted-foreground">
             <span className="flex items-center gap-2">
               <ShieldCheck className="size-4 text-mint-strong" />
-              SOC 2 Type II
             </span>
             <span className="flex items-center gap-2">
               <TrendingUp className="size-4 text-mint-strong" />
