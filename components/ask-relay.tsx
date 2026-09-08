@@ -139,7 +139,7 @@ function RelayExample({
   sources: SourceItem[]
 }) {
   return (
-    <article className="overflow-hidden rounded-2xl border border-border bg-card shadow-[0_20px_50px_-32px_rgba(0,0,0,0.3)]">
+    <article className="overflow-hidden rounded-2xl border-2 border-foreground/80 bg-card shadow-[0_20px_50px_-32px_rgba(0,0,0,0.3)]">
       <div className="p-5">
         <div className="flex items-start justify-between gap-4">
           <div>
