@@ -60,84 +60,42 @@ export function AskRelay() {
 
 function AskRelayExamples() {
   return (
-    <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-[0_24px_60px_-30px_rgba(0,0,0,0.35)]">
-      <div className="flex items-center gap-3 border-b border-border px-4 py-3">
-        <span className="grid size-7 place-items-center rounded-md bg-accent">
-          <Sparkles className="size-3.5 text-mint-foreground" />
-        </span>
+    <div className="space-y-4">
+      <RelayExample
+        icon={BriefcaseBusiness}
+        role="Manager workspace"
+        title="Ask about this handoff"
+        description="Answers are limited to this handoff and its approved sources."
+        question="How much work is still unassigned for Taylor Brooks?"
+        answer={
+          <>
+            <span className="font-medium text-white">Taylor Brooks</span> has six
+            confirmed work items. Four are assigned and two still need
+            recipients.
+          </>
+        }
+        record="Taylor Brooks continuity record"
+        recordType="Manager handoff"
+      />
 
-        <div>
-          <p className="text-sm font-medium">Ask Relay</p>
-          <p className="text-[0.65rem] text-muted-foreground">
-            Continuity intelligence
-          </p>
-        </div>
-
-        <span className="ml-auto rounded-full bg-accent px-2 py-1 font-mono text-[0.58rem] tracking-wide text-mint-foreground uppercase">
-          Governed · read-only
-        </span>
-      </div>
-
-      <div className="space-y-4 p-5">
-        <RelayExample
-          icon={BriefcaseBusiness}
-          role="Manager workspace"
-          question="How much work is still unassigned for Taylor Brooks?"
-          answer={
-            <>
-              <span className="font-medium">Taylor Brooks</span> has six
-              confirmed work items. Four are assigned and two still need
-              recipients.
-            </>
-          }
-          record="Taylor Brooks continuity record"
-          recordType="Manager handoff"
-        />
-
-        <RelayExample
-          icon={UserRound}
-          role="Employee Continuity Hub"
-          question="What should I focus on while covering Elena’s role?"
-          answer={
-            <>
-              You have three assigned responsibilities. The next item is the
-              <span className="font-medium"> weekly payroll approval</span>,
-              due Friday.
-            </>
-          }
-          record="Elena Rodriguez continuity record"
-          recordType="Assigned work"
-        />
-
-        <div className="flex items-center gap-2 rounded-xl border border-border bg-muted/50 px-3 py-2.5">
-          <span className="truncate text-sm text-muted-foreground">
-            Ask about your handoffs or assigned work…
-          </span>
-
-          <span className="ml-auto grid size-7 shrink-0 place-items-center rounded-lg bg-mint-strong">
-            <svg
-              width="14"
-              height="14"
-              viewBox="0 0 24 24"
-              fill="none"
-              aria-hidden="true"
-            >
-              <path
-                d="M5 12h14M13 6l6 6-6 6"
-                stroke="var(--primary-foreground)"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </span>
-        </div>
-
-        <p className="text-center text-[0.62rem] leading-relaxed text-muted-foreground">
-          Verify important decisions using the linked Relay records and
-          original sources.
-        </p>
-      </div>
+      <RelayExample
+        icon={UserRound}
+        role="Employee Continuity Hub"
+        title="Ask about my assigned work"
+        description="Answers are limited to records and sources you can access."
+        question="What should I focus on while covering Elena’s role?"
+        answer={
+          <>
+            You have three assigned responsibilities. The next item is the{' '}
+            <span className="font-medium text-white">
+              weekly payroll approval
+            </span>
+            , due Friday.
+          </>
+        }
+        record="Elena Rodriguez continuity record"
+        recordType="Assigned work"
+      />
     </div>
   )
 }
@@ -145,6 +103,8 @@ function AskRelayExamples() {
 function RelayExample({
   icon: Icon,
   role,
+  title,
+  description,
   question,
   answer,
   record,
@@ -152,60 +112,87 @@ function RelayExample({
 }: {
   icon: typeof BriefcaseBusiness
   role: string
+  title: string
+  description: string
   question: string
   answer: React.ReactNode
   record: string
   recordType: string
 }) {
   return (
-    <article className="overflow-hidden rounded-xl border border-border bg-background">
-      <div className="flex items-center gap-2 border-b border-border bg-muted/30 px-4 py-2.5">
-        <span className="grid size-6 place-items-center rounded-md bg-accent">
-          <Icon className="size-3.5 text-mint-foreground" />
-        </span>
+    <article className="overflow-hidden rounded-2xl border border-[#34445d] bg-[#111b2b] text-white shadow-[0_20px_50px_-30px_rgba(15,23,42,0.8)]">
+      <div className="p-5">
+        <div className="flex items-start justify-between gap-4">
+          <div>
+            <div className="flex items-center gap-2">
+              <Icon className="size-3.5 text-[#9b87f5]" />
 
-        <span className="text-xs font-medium">{role}</span>
-      </div>
+              <p className="font-mono text-[0.64rem] font-semibold tracking-[0.16em] text-[#b7a6ff] uppercase">
+                {role}
+              </p>
+            </div>
 
-      <div className="space-y-3 p-4">
-        <div className="flex justify-end">
-          <p className="max-w-[90%] rounded-xl rounded-br-sm bg-foreground px-3 py-2 text-xs leading-relaxed text-background">
-            {question}
-          </p>
+            <h3 className="mt-2 text-base font-medium text-white">{title}</h3>
+
+            <p className="mt-1 text-xs leading-relaxed text-slate-400">
+              {description}
+            </p>
+          </div>
+
+          <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-[#202c42] text-sm font-semibold text-[#9b87f5]">
+            AI
+          </span>
         </div>
 
-        <div className="rounded-xl rounded-bl-sm border border-border px-3 py-2.5">
-          <div className="flex items-center gap-2">
-            <Sparkles className="size-3 text-mint-strong" />
+        <div className="mt-4 flex items-center gap-3 rounded-xl border border-[#3b4b64] bg-[#182337] p-2">
+          <p className="min-w-0 flex-1 truncate px-2 text-xs text-slate-300">
+            {question}
+          </p>
 
-            <span className="text-[0.65rem] font-medium text-mint-foreground">
+          <span className="shrink-0 rounded-lg bg-[#4c3ca5] px-4 py-2 text-[0.68rem] font-medium text-white">
+            Ask Relay
+          </span>
+        </div>
+
+        <div className="mt-3 rounded-xl border border-[#34445d] bg-[#172235] p-4">
+          <div className="flex items-center gap-2">
+            <Sparkles className="size-3.5 text-[#9b87f5]" />
+
+            <span className="text-xs font-medium text-[#b7a6ff]">
               Ask Relay
             </span>
           </div>
 
-          <p className="mt-2 text-xs leading-relaxed text-foreground">
+          <p className="mt-2 text-xs leading-relaxed text-slate-200">
             {answer}
           </p>
 
           <button
             type="button"
-            className="mt-3 flex w-full items-center gap-2 rounded-lg bg-muted/50 px-3 py-2 text-left"
+            className="mt-3 flex w-full items-center gap-3 rounded-lg border border-[#34445d] bg-[#202c42] px-3 py-2.5 text-left"
           >
-            <ExternalLink className="size-3.5 shrink-0 text-mint-foreground" />
+            <span className="grid size-7 shrink-0 place-items-center rounded-md bg-[#293653]">
+              <ExternalLink className="size-3.5 text-[#b7a6ff]" />
+            </span>
 
             <span className="min-w-0">
-              <span className="block truncate text-[0.68rem] font-medium">
+              <span className="block truncate text-[0.7rem] font-medium text-white">
                 {record}
               </span>
 
-              <span className="block text-[0.6rem] text-muted-foreground">
+              <span className="mt-0.5 block text-[0.6rem] text-slate-400">
                 {recordType} · Open record
               </span>
             </span>
 
-            <span className="ml-auto text-xs text-mint-foreground">↗</span>
+            <span className="ml-auto text-xs text-[#b7a6ff]">↗</span>
           </button>
         </div>
+
+        <p className="mt-3 text-center text-[0.58rem] leading-relaxed text-slate-500">
+          Ask Relay can make mistakes. Verify important details using the linked
+          original sources.
+        </p>
       </div>
     </article>
   )
