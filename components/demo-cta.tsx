@@ -31,7 +31,7 @@ export function DemoCta() {
             {benefits.map((b) => (
               <li key={b} className="flex items-start gap-3 text-sm">
                 <span className="mt-0.5 grid size-5 shrink-0 place-items-center rounded-full bg-mint-strong">
-                  <Check className="size-3 text-foreground" />
+                  <Check className="size-3 text-primary-foreground" />
                 </span>
                 <span className="leading-relaxed text-background/90">{b}</span>
               </li>

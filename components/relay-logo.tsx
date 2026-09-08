@@ -8,35 +8,20 @@ export function RelayLogo({
   showWordmark?: boolean
 }) {
   return (
-    <span className={cn('inline-flex items-center gap-2.5', className)}>
-      <span className="grid size-7 place-items-center rounded-md bg-foreground">
-        <svg
-          width="16"
-          height="16"
-          viewBox="0 0 24 24"
-          fill="none"
-          aria-hidden="true"
-          className="text-mint-strong"
-        >
-          <circle cx="6.5" cy="16.5" r="2.4" fill="currentColor" />
-          <path
-            d="M7 14.5C9.2 9.4 13.8 8 17.2 8"
-            stroke="currentColor"
-            strokeWidth="1.9"
-            strokeLinecap="round"
-          />
-          <path
-            d="M14.4 6.6L17.6 8L16.4 11.1"
-            stroke="currentColor"
-            strokeWidth="1.9"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
+    <span className={cn('inline-flex items-center gap-2', className)}>
+      <span className="grid size-7 place-items-center rounded-lg bg-mint-strong">
+        <span className="text-[1.05rem] font-bold leading-none text-primary-foreground">
+          R
+        </span>
       </span>
       {showWordmark && (
-        <span className="text-[1.05rem] font-semibold tracking-tight text-foreground">
-          Relay
+        <span className="flex items-baseline gap-1.5">
+          <span className="text-[1.1rem] font-semibold tracking-tight text-foreground">
+            elay
+          </span>
+          <span className="font-mono text-[0.7rem] font-semibold tracking-[0.12em] text-mint-strong">
+            ECI
+          </span>
         </span>
       )}
     </span>

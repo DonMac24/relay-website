@@ -143,7 +143,7 @@ function HandoverDoc() {
                 item.done ? 'bg-mint-strong' : 'border border-border bg-muted'
               }`}
             >
-              {item.done && <Check className="size-3 text-primary" />}
+              {item.done && <Check className="size-3 text-primary-foreground" />}
             </span>
             <span className="text-sm text-foreground">{item.text}</span>
           </li>

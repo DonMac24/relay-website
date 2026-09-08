@@ -60,19 +60,19 @@
   --muted: oklch(0.975 0.004 160);
   --muted-foreground: oklch(0.48 0.006 160);
 
-  --accent: oklch(0.945 0.045 168);
-  --accent-foreground: oklch(0.28 0.045 168);
+  --accent: oklch(0.955 0.025 274);
+  --accent-foreground: oklch(0.42 0.19 274);
 
   --destructive: oklch(0.577 0.245 27.325);
 
-  --border: oklch(0.912 0.006 160);
-  --input: oklch(0.912 0.006 160);
-  --ring: oklch(0.75 0.1 168);
+  --border: oklch(0.912 0.006 274);
+  --input: oklch(0.912 0.006 274);
+  --ring: oklch(0.55 0.2 274);
 
-  /* Soft-mint brand accents */
-  --mint: oklch(0.945 0.045 168);
-  --mint-strong: oklch(0.74 0.12 168);
-  --mint-foreground: oklch(0.28 0.045 168);
+  /* Indigo brand accents (Relay ECI) */
+  --mint: oklch(0.955 0.025 274);
+  --mint-strong: oklch(0.52 0.22 274);
+  --mint-foreground: oklch(0.42 0.19 274);
 }
 
 @layer base {
@@ -84,6 +84,6 @@
   }
   ::selection {
     background: var(--mint-strong);
-    color: var(--primary);
+    color: var(--primary-foreground);
   }
 }
