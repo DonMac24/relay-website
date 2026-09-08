@@ -33,12 +33,6 @@ export function SiteHeader() {
             href="#demo"
             className="hidden text-sm text-muted-foreground transition-colors hover:text-foreground sm:inline"
           >
-            Sign in
-          </a>
-          <a
-            href="#demo"
-            className="inline-flex h-9 items-center justify-center rounded-lg bg-foreground px-4 text-sm font-medium text-background transition-colors hover:bg-foreground/90"
-          >
             Request a demo
           </a>
         </div>
