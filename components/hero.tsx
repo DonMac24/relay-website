@@ -77,7 +77,7 @@ export function Hero() {
       id="top"
       className="relative overflow-hidden border-b border-border"
     >
-      <div className="mx-auto grid w-full max-w-6xl gap-14 px-5 pt-16 pb-16 sm:px-8 md:pt-24 md:pb-24 lg:grid-cols-[1.05fr_1fr] lg:items-center">
+      <div className="mx-auto grid w-full max-w-6xl gap-14 px-5 pt-12 pb-16 sm:px-8 md:pt-16 md:pb-20 lg:grid-cols-[1.05fr_1fr] lg:items-start">
         <div>
           <span className="inline-flex items-center gap-2 rounded-full border border-border bg-accent px-3 py-1 font-mono text-[0.7rem] tracking-[0.18em] text-mint-foreground uppercase">
             Employee Continuity Intelligence
