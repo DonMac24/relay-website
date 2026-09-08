@@ -14,10 +14,24 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Relay — Employee Continuity Intelligence',
+  metadataBase: new URL('https://www.relayeci.com'),
+  title: 'Relay ECI | Employee Continuity Intelligence',
   description:
-    'Relay captures, structures, and transfers the operational knowledge locked in your team so departures, leave, and reorgs never stall the business.',
-  generator: 'v0.app',
+    'Relay helps organizations discover, assign, transfer, and govern critical work through employee departures, extended leave, and role transitions.',
+  openGraph: {
+    title: 'Relay ECI | Employee Continuity Intelligence',
+    description:
+      'Discover, assign, transfer, and govern critical work through employee departures, extended leave, and role transitions.',
+    url: 'https://www.relayeci.com',
+    siteName: 'Relay ECI',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Relay ECI | Employee Continuity Intelligence',
+    description:
+      'Discover, assign, transfer, and govern critical work through employee departures, extended leave, and role transitions.',
+  },
 }
 
 export const viewport: Viewport = {
@@ -31,7 +45,10 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} bg-background`}>
+    <html
+      lang="en"
+      className={`${geistSans.variable} ${geistMono.variable} bg-background`}
+    >
       <body className="font-sans antialiased">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
