@@ -59,7 +59,6 @@ export function SiteFooter() {
               Terms
             </a>
             <a href="#top" className="transition-colors hover:text-foreground">
-              SOC 2
             </a>
           </div>
         </div>
