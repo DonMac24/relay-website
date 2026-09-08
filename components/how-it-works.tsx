@@ -75,8 +75,8 @@ export function HowItWorks() {
                 className="flex flex-col rounded-2xl border border-border bg-card p-6"
               >
                 <div className="flex items-center justify-between">
-                  <span className="grid size-10 place-items-center rounded-lg bg-foreground">
-                    <Icon className="size-5 text-mint-strong" />
+                  <span className="grid size-10 place-items-center rounded-lg bg-accent">
+                    <Icon className="size-5 text-mint-foreground" />
                   </span>
 
                   <span className="font-mono text-sm text-muted-foreground">
@@ -134,6 +134,7 @@ function WorkflowStage({
       <span className="grid size-6 place-items-center rounded-full bg-accent font-mono text-[0.65rem] text-mint-foreground">
         {number}
       </span>
+
       {label}
     </span>
   )
