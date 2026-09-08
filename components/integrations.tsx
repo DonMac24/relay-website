@@ -2,7 +2,10 @@ import type { LucideIcon } from 'lucide-react'
 import {
   Bot,
   Cable,
+  CalendarDays,
   Database,
+  Files,
+  HardDrive,
   Network,
   PanelsTopLeft,
   ShieldCheck,
@@ -17,19 +20,14 @@ type Integration = {
 
 const integrations: Integration[] = [
   {
-    name: 'Microsoft Entra ID',
-    category: 'Identity and access',
-    src: '/logos/microsoft.svg',
-  },
-  {
-    name: 'Microsoft 365',
-    category: 'SharePoint documents',
-    src: '/logos/microsoft.svg',
+    name: 'SharePoint',
+    category: 'Documents and knowledge',
+    icon: Files,
   },
   {
     name: 'Outlook',
     category: 'Meetings and calendars',
-    src: '/logos/outlook.svg',
+    icon: CalendarDays,
   },
   {
     name: 'Jira',
@@ -44,7 +42,7 @@ const integrations: Integration[] = [
   {
     name: 'Google Drive',
     category: 'Files and documents',
-    src: '/logos/google-drive.svg',
+    icon: HardDrive,
   },
   {
     name: 'Asana',
@@ -155,6 +153,7 @@ function IdentityArchitecture() {
 
         <div>
           <p className="text-sm font-medium">Microsoft Entra ID</p>
+
           <p className="mt-0.5 text-xs text-muted-foreground">
             Directory, identity, roles, and access context
           </p>
@@ -215,6 +214,7 @@ function AskRelayIntegration() {
 
         <div>
           <p className="text-sm font-medium">OpenAI</p>
+
           <p className="mt-0.5 text-xs text-muted-foreground">
             Grounded answers for Ask Relay
           </p>
@@ -229,7 +229,9 @@ function AskRelayIntegration() {
         <Cable className="mt-0.5 size-4 shrink-0 text-mint-strong" />
 
         <div>
-          <p className="text-sm font-medium">Controlled by Relay permissions</p>
+          <p className="text-sm font-medium">
+            Controlled by Relay permissions
+          </p>
 
           <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
             Ask Relay is read-only and limited to the continuity records and
@@ -262,6 +264,7 @@ function IntegrationCard({ tool }: { tool: Integration }) {
 
       <div className="min-w-0">
         <p className="truncate text-sm font-medium">{tool.name}</p>
+
         <p className="mt-0.5 text-xs leading-relaxed text-muted-foreground">
           {tool.category}
         </p>
