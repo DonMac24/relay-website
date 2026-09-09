@@ -1,6 +1,6 @@
 import {
   BookOpenCheck,
-  Search,
+  ClipboardCheck,
   ShieldCheck,
   UserRoundCheck,
 } from 'lucide-react'
@@ -8,9 +8,9 @@ import {
 const steps = [
   {
     step: '01',
-    icon: Search,
-    title: 'Discover and review',
-    body: 'A manager starts a handoff and discovers relevant work from connected systems. Relay brings the available items together so the manager can decide what should be retained.',
+    icon: ClipboardCheck,
+    title: 'Prepare the handoff',
+    body: 'Relay brings relevant work from connected systems into one review. The manager confirms what matters and can include input from the transitioning employee.',
     points: [
       'Connected-source discovery',
       'Manager-reviewed evidence',
@@ -20,23 +20,23 @@ const steps = [
   {
     step: '02',
     icon: UserRoundCheck,
-    title: 'Assign the work',
-    body: 'Confirmed projects and responsibilities are assigned to continuity recipients. Relay keeps the work, recipient, supporting source, and access status together.',
+    title: 'Transfer responsibility',
+    body: 'The manager assigns confirmed work to the right recipients, sets expectations, and identifies source-access gaps before the transition is completed.',
     points: [
       'Work-level assignments',
       'Primary and additional recipients',
-      'Source access visibility',
+      'Access and readiness checks',
     ],
   },
   {
     step: '03',
     icon: BookOpenCheck,
-    title: 'Publish to the Hub',
-    body: 'Relay checks the handoff for remaining gaps before a manager publishes it as a read-only continuity record that authorized recipients can use.',
+    title: 'Carry the work forward',
+    body: 'Employees receive assigned responsibilities, approved source links, and action items in the Continuity Hub—with Ask Relay available for grounded answers.',
     points: [
-      'Readiness checks',
-      'Continuity Hub record',
-      'Recipient action items',
+      'Employee Continuity Hub',
+      'Original source links',
+      'Action items and Ask Relay AI',
     ],
   },
 ]
@@ -54,14 +54,13 @@ export function HowItWorks() {
           </p>
 
           <h2 className="mt-4 text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
-            From scattered work to a usable continuity record.
+            One continuity workflow—from transition to ownership.
           </h2>
 
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground">
-            Relay gives managers a structured workflow for discovering relevant
-            work, reviewing the supporting evidence, assigning responsibility,
-            checking readiness, and publishing the handoff to the Continuity
-            Hub.
+            Relay turns an employee transition into a managed process. Managers
+            prepare and assign the work, while employees receive the context,
+            sources, and actions they need to carry it forward.
           </p>
         </div>
 
@@ -105,45 +104,7 @@ export function HowItWorks() {
             )
           })}
         </div>
-
-        <div className="mt-6 flex flex-wrap items-center justify-center gap-x-3 gap-y-2 rounded-2xl border border-border bg-card px-6 py-4 text-sm">
-          <WorkflowStage number="1" label="Discover" />
-          <WorkflowArrow />
-          <WorkflowStage number="2" label="Review" />
-          <WorkflowArrow />
-          <WorkflowStage number="3" label="Assignment" />
-          <WorkflowArrow />
-          <WorkflowStage number="4" label="Readiness" />
-          <WorkflowArrow />
-          <WorkflowStage number="5" label="Continuity Hub" />
-        </div>
       </div>
     </section>
-  )
-}
-
-function WorkflowStage({
-  number,
-  label,
-}: {
-  number: string
-  label: string
-}) {
-  return (
-    <span className="inline-flex items-center gap-2 font-medium text-foreground">
-      <span className="grid size-6 place-items-center rounded-full bg-accent font-mono text-[0.65rem] text-mint-foreground">
-        {number}
-      </span>
-
-      {label}
-    </span>
-  )
-}
-
-function WorkflowArrow() {
-  return (
-    <span className="text-muted-foreground" aria-hidden="true">
-      →
-    </span>
   )
 }
