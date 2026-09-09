@@ -54,7 +54,7 @@ export function SiteFooter() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Relay ECI on LinkedIn"
-              className="grid size-8 place-items-center rounded-lg border border-border text-muted-foreground transition-colors hover:border-[#0a66c2] hover:bg-[#0a66c2] hover:text-white"
+              className="grid size-8 place-items-center rounded-lg border border-[#0a66c2] bg-[#0a66c2] text-white transition-colors hover:border-[#004182] hover:bg-[#004182]"
             >
               <LinkedInIcon />
             </a>
