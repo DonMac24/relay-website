@@ -84,7 +84,7 @@ export function Hero() {
           </span>
 
           <h1 className="mt-6 text-4xl font-semibold tracking-tight text-balance sm:text-5xl lg:text-[3.4rem] lg:leading-[1.03]">
-            Keep critical work moving through every employee transition.
+            Keep critical work moving through every employee transition
           </h1>
 
           <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
