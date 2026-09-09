@@ -49,7 +49,7 @@ export function Problem() {
           </p>
 
           <h2 className="mt-4 text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
-            Companies onboard and offboard people. Not their work.
+            Companies onboard and offboard people. Not their work
           </h2>
 
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground">
@@ -102,7 +102,7 @@ export function Problem() {
               </p>
 
               <h3 className="mt-2 text-xl font-medium">
-                Work needs a transition process too.
+                Work needs a transition process too
               </h3>
             </div>
 
