@@ -1,3 +1,4 @@
+import { Linkedin } from 'lucide-react'
 import { RelayLogo } from '@/components/relay-logo'
 
 const links = [
@@ -48,12 +49,24 @@ export function SiteFooter() {
             © {new Date().getFullYear()} Relay ECI, Inc. All rights reserved.
           </p>
 
-          <a
-            href="#top"
-            className="text-xs text-muted-foreground transition-colors hover:text-foreground"
-          >
-            Back to top
-          </a>
+          <div className="flex items-center gap-4">
+            <a
+              href="https://www.linkedin.com/company/relay-eci/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Relay ECI on LinkedIn"
+              className="grid size-8 place-items-center rounded-lg border border-border text-muted-foreground transition-colors hover:border-foreground/30 hover:bg-muted hover:text-foreground"
+            >
+              <Linkedin className="size-4" />
+            </a>
+
+            <a
+              href="#top"
+              className="text-xs text-muted-foreground transition-colors hover:text-foreground"
+            >
+              Back to top
+            </a>
+          </div>
         </div>
       </div>
     </footer>
