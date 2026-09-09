@@ -113,7 +113,7 @@ export function Hero() {
           <div className="mt-10 border-t border-border pt-6 text-sm text-muted-foreground">
             <span className="flex items-center gap-2">
               <TrendingUp className="size-4 text-mint-strong" />
-              Built for HR, Operations, and the employees carrying work forward
+              Built for HR, Operations, and the employees carrying work forward.
             </span>
           </div>
         </div>
