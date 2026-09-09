@@ -69,7 +69,7 @@ export function DemoCta() {
           </p>
 
           <h2 className="mt-4 text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
-            See Relay&apos;s continuity workflow in action.
+            See Relay&apos;s continuity workflow in action
           </h2>
 
           <p className="mt-4 max-w-md text-base leading-relaxed text-background/70">
