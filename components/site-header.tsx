@@ -4,7 +4,7 @@ import { RelayLogo } from '@/components/relay-logo'
 const navLinks = [
   { label: 'Problem', href: '#problem' },
   { label: 'How it works', href: '#how-it-works' },
-  { label: 'Ask Relay', href: '#ask-relay' },
+  { label: 'Ask Relay AI', href: '#ask-relay' },
   { label: 'Integrations', href: '#integrations' },
 ]
 
