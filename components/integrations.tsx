@@ -58,7 +58,7 @@ export function Integrations() {
           </p>
 
           <h2 className="mt-4 text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
-            Built for your identity. Connected to your work.
+            Built for your identity. Connected to your work
           </h2>
 
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground">
