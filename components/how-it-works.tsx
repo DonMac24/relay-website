@@ -54,7 +54,7 @@ export function HowItWorks() {
           </p>
 
           <h2 className="mt-4 text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
-            One continuity workflow—from transition to ownership.
+            One continuity workflow—from transition to ownership
           </h2>
 
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground">
