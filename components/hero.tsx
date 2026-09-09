@@ -77,13 +77,13 @@ export function Hero() {
       id="top"
       className="relative overflow-hidden border-b border-border"
     >
-      <div className="mx-auto grid w-full max-w-6xl gap-14 px-5 pb-16 pt-12 sm:px-8 md:pb-24 md:pt-16 lg:grid-cols-[1.05fr_1fr] lg:items-center">
-        <div>
+      <div className="mx-auto grid w-full max-w-6xl gap-14 px-5 pb-16 pt-10 sm:px-8 md:pb-20 md:pt-14 lg:grid-cols-[1.05fr_1fr] lg:items-start">
+        <div className="lg:pt-12">
           <span className="inline-flex items-center gap-2 rounded-full border border-border bg-accent px-3 py-1 font-mono text-[0.7rem] uppercase tracking-[0.18em] text-mint-foreground">
             Employee Continuity Intelligence
           </span>
 
-          <h1 className="mt-6 text-4xl font-semibold tracking-tight text-balance sm:text-5xl lg:text-[3.4rem] lg:leading-[1.03]">
+          <h1 className="mt-6 text-4xl font-semibold tracking-tight text-balance sm:text-5xl lg:text-[3.15rem] lg:leading-[1.04]">
             Keep critical work moving through every employee transition
           </h1>
 
