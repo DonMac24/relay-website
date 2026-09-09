@@ -14,7 +14,7 @@ import {
 const workflow = [
   { label: 'Discover', icon: Search },
   { label: 'Review', icon: FileText },
-  { label: 'Assignment', icon: UserRound },
+  { label: 'Assign', icon: UserRound },
   { label: 'Readiness', icon: ShieldCheck },
   { label: 'Publish', icon: Archive },
 ]
@@ -77,20 +77,20 @@ export function Hero() {
       id="top"
       className="relative overflow-hidden border-b border-border"
     >
-      <div className="mx-auto grid w-full max-w-6xl gap-14 px-5 pt-12 pb-16 sm:px-8 md:pt-16 md:pb-20 lg:grid-cols-[1.05fr_1fr] lg:items-start">
+      <div className="mx-auto grid w-full max-w-6xl gap-14 px-5 pb-16 pt-12 sm:px-8 md:pb-24 md:pt-16 lg:grid-cols-[1.05fr_1fr] lg:items-center">
         <div>
-          <span className="inline-flex items-center gap-2 rounded-full border border-border bg-accent px-3 py-1 font-mono text-[0.7rem] tracking-[0.18em] text-mint-foreground uppercase">
+          <span className="inline-flex items-center gap-2 rounded-full border border-border bg-accent px-3 py-1 font-mono text-[0.7rem] uppercase tracking-[0.18em] text-mint-foreground">
             Employee Continuity Intelligence
           </span>
 
           <h1 className="mt-6 text-4xl font-semibold tracking-tight text-balance sm:text-5xl lg:text-[3.4rem] lg:leading-[1.03]">
-            When people leave, the knowledge shouldn&apos;t.
+            Keep critical work moving through every employee transition.
           </h1>
 
           <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Relay helps managers prepare structured handoffs, gives employees a
-            Continuity Hub for the work they receive, and gives administrators
-            the controls to govern roles, access, retention, and reporting.
+            Relay gives managers, employees, and administrators a shared place
+            to protect ownership, access, and operational context when work
+            changes hands.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -110,10 +110,10 @@ export function Hero() {
             </a>
           </div>
 
-          <div className="mt-10 border-t border-border pt-6 text-sm text-muted-foreground">
-            <span className="flex items-center gap-2">
+          <div className="mt-10 border-t border-border pt-6">
+            <span className="flex items-center gap-2 text-sm text-muted-foreground">
               <TrendingUp className="size-4 text-mint-strong" />
-              Built for HR, Operations, and the employees carrying work forward.
+              Built for departures, extended leave, and role changes
             </span>
           </div>
         </div>
@@ -153,7 +153,7 @@ function WorkflowCard() {
     <div className="rounded-xl border border-border bg-background p-4">
       <div className="flex items-start justify-between gap-4">
         <div>
-          <p className="font-mono text-[0.65rem] tracking-[0.14em] text-mint-foreground uppercase">
+          <p className="font-mono text-[0.65rem] uppercase tracking-[0.14em] text-mint-foreground">
             Relay continuity process
           </p>
 
@@ -162,7 +162,7 @@ function WorkflowCard() {
           </p>
         </div>
 
-        <span className="hidden shrink-0 rounded-md bg-accent px-2 py-1 font-mono text-[0.6rem] tracking-wide text-mint-foreground uppercase sm:inline-flex">
+        <span className="hidden shrink-0 rounded-md bg-accent px-2 py-1 font-mono text-[0.6rem] uppercase tracking-wide text-mint-foreground sm:inline-flex">
           Active
         </span>
       </div>
@@ -175,7 +175,7 @@ function WorkflowCard() {
             <div key={step.label} className="relative text-center">
               <div className="relative flex items-center justify-center">
                 {index > 0 && (
-                  <span className="absolute right-1/2 left-[-50%] top-1/2 h-px bg-border" />
+                  <span className="absolute left-[-50%] right-1/2 top-1/2 h-px bg-border" />
                 )}
 
                 <span
@@ -256,7 +256,7 @@ function HandoffCard() {
     <div className="rounded-xl border border-border bg-background">
       <div className="flex items-center justify-between border-b border-border px-4 py-3">
         <div>
-          <p className="font-mono text-[0.62rem] tracking-[0.14em] text-mint-foreground uppercase">
+          <p className="font-mono text-[0.62rem] uppercase tracking-[0.14em] text-mint-foreground">
             My work
           </p>
 
