@@ -88,9 +88,7 @@ export function Hero() {
           </h1>
 
           <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Relay gives managers, employees, and administrators a shared place
-            to protect ownership, access, and operational context when work
-            changes hands.
+            Relay gives managers and employees a shared place to transfer ownership, access, and operational context—while giving administrators reporting and governance across every transition.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
