@@ -11,12 +11,19 @@ const navLinks = [
 export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-border/70 bg-background/80 backdrop-blur-md">
-      <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-5 sm:px-8">
-        <Link href="#top" aria-label="Relay home">
+      <div className="mx-auto flex h-24 w-full max-w-6xl items-center justify-between px-5 sm:px-8">
+        <Link
+          href="#top"
+          aria-label="Relay home"
+          className="flex items-center"
+        >
           <RelayLogo />
         </Link>
 
-        <nav className="hidden items-center gap-8 md:flex" aria-label="Primary">
+        <nav
+          className="hidden items-center gap-8 md:flex"
+          aria-label="Primary"
+        >
           {navLinks.map((link) => (
             <a
               key={link.href}
