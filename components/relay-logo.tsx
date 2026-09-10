@@ -17,7 +17,7 @@ export function RelayLogo({
         priority
         className={cn(
           'block w-auto object-contain',
-          showWordmark ? 'h-16' : 'h-12'
+          showWordmark ? 'h-14' : 'h-11'
         )}
       />
     </span>
