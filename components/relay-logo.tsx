@@ -16,8 +16,10 @@ export function RelayLogo({
         alt="Relay ECI"
         priority
         className={cn(
-          'block w-auto object-contain',
-          showWordmark ? 'h-20 sm:h-24' : 'h-16'
+          'block origin-left w-auto object-contain',
+          showWordmark
+            ? 'h-20 scale-110 sm:h-24'
+            : 'h-16 scale-110'
         )}
       />
     </span>
