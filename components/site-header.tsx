@@ -10,7 +10,16 @@ const navLinks = [
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 border-b border-border/70 bg-background/80 backdrop-blur-md">
+    <header
+      className="
+        sticky top-0 z-50
+        bg-background/80 backdrop-blur-md
+        after:pointer-events-none
+        after:absolute after:inset-x-0 after:bottom-0
+        after:z-[60] after:h-px
+        after:bg-border/70 after:content-['']
+      "
+    >
       <div className="mx-auto flex h-24 w-full max-w-6xl items-center justify-between px-5 sm:px-8">
         <Link
           href="#top"
