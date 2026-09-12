@@ -10,7 +10,7 @@ import {
 
 const capabilities = [
   'Ask questions across connected Jira, Outlook, SharePoint, and Relay records',
-  'See outstanding work, upcoming meetings, deadlines, and responsibilities',
+  'See work that still needs an owner, upcoming meetings, and responsibilities',
   'Every answer links back to an authorized original source',
 ]
 
@@ -68,21 +68,26 @@ function AskRelayExamples() {
         role="Manager workspace"
         title="Ask about connected work"
         description="Answers use the connected records you are authorized to view."
-        question="How many tickets does Aubrey have outstanding in Jira?"
+        question="Which of Aubrey’s connected work items still need a new owner?"
         answer={
           <>
-            Aubrey has{' '}
             <span className="font-medium text-white">
-              seven open Jira tickets
-            </span>
-            . Four are in progress, two are blocked, and one is awaiting review.
+              Three connected work items
+            </span>{' '}
+            still need a new owner: two open Jira tickets and Aubrey’s weekly
+            status report in SharePoint.
           </>
         }
         sources={[
           {
             icon: FileText,
-            title: 'Aubrey’s assigned issues',
-            detail: 'Jira · View open tickets',
+            title: 'Aubrey’s unassigned work',
+            detail: 'Relay · Open handoff',
+          },
+          {
+            icon: FileText,
+            title: 'Open Jira tickets',
+            detail: 'Jira · View 2 tickets',
           },
         ]}
       />
