@@ -10,7 +10,7 @@ import {
 
 const capabilities = [
   'Ask questions across connected Jira, Outlook, SharePoint, and Relay records',
-  'See outstanding work, upcoming meetings, deadlines, and assigned responsibilities',
+  'See outstanding work, upcoming meetings, deadlines, and responsibilities',
   'Every answer links back to the authorized original source',
 ]
 
@@ -78,20 +78,6 @@ function AskRelayExamples() {
             . Four are in progress, two are blocked, and one is awaiting review.
           </>
         }
-        insights={[
-          {
-            value: '4',
-            label: 'In progress',
-          },
-          {
-            value: '2',
-            label: 'Blocked',
-          },
-          {
-            value: '1',
-            label: 'Awaiting review',
-          },
-        ]}
         sources={[
           {
             icon: FileText,
@@ -113,23 +99,11 @@ function AskRelayExamples() {
             <span className="font-medium text-white">
               three upcoming meetings
             </span>{' '}
-            connected to responsibilities assigned to you.
+            connected to responsibilities assigned to you: a project handoff on
+            Monday, a payroll review on Wednesday, and a vendor check-in on
+            Friday.
           </>
         }
-        insights={[
-          {
-            value: 'MON',
-            label: 'Project handoff',
-          },
-          {
-            value: 'WED',
-            label: 'Payroll review',
-          },
-          {
-            value: 'FRI',
-            label: 'Vendor check-in',
-          },
-        ]}
         sources={[
           {
             icon: CalendarDays,
@@ -147,11 +121,6 @@ function AskRelayExamples() {
   )
 }
 
-type InsightItem = {
-  value: string
-  label: string
-}
-
 type SourceItem = {
   icon: typeof FileText
   title: string
@@ -165,7 +134,6 @@ function RelayExample({
   description,
   question,
   answer,
-  insights,
   sources,
 }: {
   icon: typeof BriefcaseBusiness
@@ -174,7 +142,6 @@ function RelayExample({
   description: string
   question: string
   answer: React.ReactNode
-  insights: InsightItem[]
   sources: SourceItem[]
 }) {
   return (
@@ -226,23 +193,6 @@ function RelayExample({
           <p className="mt-2 text-xs leading-relaxed text-[#e5e9f2]">
             {answer}
           </p>
-
-          <div className="mt-4 grid grid-cols-3 gap-2">
-            {insights.map((insight) => (
-              <div
-                key={insight.label}
-                className="flex min-w-0 flex-col items-center rounded-xl border border-[#34435f] bg-[#0f1a2d] px-2 py-3 text-center"
-              >
-                <span className="grid size-9 place-items-center rounded-full bg-[#4b39a8] text-[0.68rem] font-semibold text-white shadow-[0_0_20px_rgba(124,99,255,0.2)]">
-                  {insight.value}
-                </span>
-
-                <span className="mt-2 text-[0.58rem] leading-tight text-[#aeb9cc]">
-                  {insight.label}
-                </span>
-              </div>
-            ))}
-          </div>
 
           <div className="mt-4 space-y-2">
             {sources.map((source) => {
