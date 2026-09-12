@@ -2,7 +2,6 @@ import {
   BarChart3,
   BookOpenCheck,
   ClipboardCheck,
-  Database,
   ShieldCheck,
   UserRoundCheck,
 } from 'lucide-react'
@@ -48,49 +47,6 @@ const reportingPoints = [
   'Coverage and access gaps',
   'Completion reporting',
   'Auditable activity',
-]
-
-const connectedSystems = [
-  {
-    name: 'SharePoint',
-    description: 'Documents and knowledge',
-    logo: '/logos/sharepoint.svg',
-  },
-  {
-    name: 'Outlook',
-    description: 'Meetings and calendars',
-    logo: '/logos/outlook.svg',
-  },
-  {
-    name: 'Azure DevOps',
-    description: 'Work items, repositories and code',
-    logo: '/logos/azure-devops.svg',
-  },
-  {
-    name: 'Jira',
-    description: 'Projects and issues',
-    logo: '/logos/jira.svg',
-  },
-  {
-    name: 'Confluence',
-    description: 'Knowledge and documentation',
-    logo: '/logos/confluence.svg',
-  },
-  {
-    name: 'Google Drive',
-    description: 'Files and documents',
-    logo: '/logos/google-drive.svg',
-  },
-  {
-    name: 'Asana',
-    description: 'Tasks and projects',
-    logo: '/logos/asana.svg',
-  },
-  {
-    name: 'Monday.com',
-    description: 'Work management',
-    logo: '/logos/monday.svg',
-  },
 ]
 
 export function HowItWorks() {
@@ -193,48 +149,6 @@ export function HowItWorks() {
                 </li>
               ))}
             </ul>
-          </div>
-        </div>
-
-        <div className="mt-16">
-          <p className="font-mono text-xs uppercase tracking-[0.2em] text-mint-foreground">
-            Connected work systems
-          </p>
-
-          <h2 className="mt-4 text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
-            Discover evidence from the tools your teams already use
-          </h2>
-
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {connectedSystems.map((system) => (
-              <article
-                key={system.name}
-                className="flex min-h-36 items-center gap-5 rounded-2xl border border-border bg-card p-6"
-              >
-                <img
-                  src={system.logo}
-                  alt={`${system.name} logo`}
-                  className="size-11 shrink-0 object-contain"
-                />
-
-                <div className="min-w-0">
-                  <h3 className="text-lg font-medium">{system.name}</h3>
-
-                  <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-                    {system.description}
-                  </p>
-                </div>
-              </article>
-            ))}
-          </div>
-
-          <div className="mt-6 flex items-center gap-3 rounded-2xl border border-border bg-card p-5 text-muted-foreground">
-            <Database className="size-5 shrink-0 text-mint-strong" />
-
-            <p className="text-sm leading-relaxed">
-              Source content stays in its original system with existing access
-              controls.
-            </p>
           </div>
         </div>
       </div>
