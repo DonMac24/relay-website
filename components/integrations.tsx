@@ -19,6 +19,11 @@ const integrations: Integration[] = [
     src: '/logos/outlook.svg',
   },
   {
+    name: 'Azure DevOps',
+    category: 'Work items, repositories and code',
+    src: '/logos/azure-devops.svg',
+  },
+  {
     name: 'Jira',
     category: 'Projects and issues',
     src: '/logos/jira.svg',
