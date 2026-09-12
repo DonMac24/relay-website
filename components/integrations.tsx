@@ -20,7 +20,7 @@ const integrations: Integration[] = [
   },
   {
     name: 'Azure DevOps',
-    category: 'Work items, commits and pull requests',
+    category: 'Work items, commits and PRs',
     src: '/logos/azure-devops.svg',
   },
   {
@@ -202,9 +202,9 @@ function IntegrationCard({ tool }: { tool: Integration }) {
       />
 
       <div className="min-w-0">
-        <p className="truncate text-sm font-medium">{tool.name}</p>
+        <p className="text-sm font-medium">{tool.name}</p>
 
-        <p className="mt-0.5 truncate text-xs text-muted-foreground">
+        <p className="mt-0.5 text-xs leading-relaxed text-muted-foreground">
           {tool.category}
         </p>
       </div>
