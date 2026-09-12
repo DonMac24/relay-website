@@ -9,9 +9,9 @@ import {
 } from 'lucide-react'
 
 const capabilities = [
-  'Managers can identify unassigned work, deadlines, risks, and readiness gaps',
-  'Employees can see priorities and next steps for responsibilities they inherit',
-  'Every answer links back to authorized Relay records and original sources',
+  'Ask questions across connected Jira, Outlook, SharePoint, and Relay records',
+  'See outstanding work, upcoming meetings, deadlines, and assigned responsibilities',
+  'Every answer links back to the authorized original source',
 ]
 
 export function AskRelay() {
@@ -25,13 +25,13 @@ export function AskRelay() {
           </span>
 
           <h2 className="mt-6 text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
-            Answers for managers and the employees carrying work forward
+            Ask about the work people leave behind
           </h2>
 
           <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-            Ask Relay turns authorized continuity records into clear answers
-            about ownership, deadlines, risks, readiness, and the work people
-            inherit.
+            Ask Relay gives managers and employees simple answers using the
+            connected work records, calendars, documents, and responsibilities
+            they are authorized to view.
           </p>
 
           <ul className="mt-8 space-y-3">
@@ -66,35 +66,37 @@ function AskRelayExamples() {
       <RelayExample
         icon={BriefcaseBusiness}
         role="Manager workspace"
-        title="Identify continuity risks"
-        description="Answers are limited to this handoff and its approved sources."
-        question="What needs my attention before Taylor’s final day?"
+        title="Ask about connected work"
+        description="Answers use the connected records you are authorized to view."
+        question="How many tickets does Aubrey have outstanding in Jira?"
         answer={
           <>
-            Taylor’s handoff has three areas requiring attention. Two work items
-            still need owners, one deadline is overdue, and three assignments
-            are waiting for recipient confirmation.
+            Aubrey has{' '}
+            <span className="font-medium text-white">
+              seven open Jira tickets
+            </span>
+            . Four are in progress, two are blocked, and one is awaiting review.
           </>
         }
         insights={[
           {
+            value: '4',
+            label: 'In progress',
+          },
+          {
             value: '2',
-            label: 'Unassigned',
+            label: 'Blocked',
           },
           {
             value: '1',
-            label: 'Overdue',
-          },
-          {
-            value: '3',
-            label: 'Unconfirmed',
+            label: 'Awaiting review',
           },
         ]}
         sources={[
           {
             icon: FileText,
-            title: 'Taylor Brooks continuity record',
-            detail: 'Relay · Open handoff',
+            title: 'Aubrey’s assigned issues',
+            detail: 'Jira · View open tickets',
           },
         ]}
       />
@@ -102,40 +104,42 @@ function AskRelayExamples() {
       <RelayExample
         icon={UserRound}
         role="Employee Continuity Hub"
-        title="Understand my next steps"
-        description="Answers are limited to records and sources you can access."
-        question="What do I need to complete before Friday’s payroll approval?"
+        title="Ask about upcoming commitments"
+        description="Answers use calendars and continuity records you can access."
+        question="Are there any upcoming meetings I should know about?"
         answer={
           <>
-            Complete these three steps before submitting the weekly payroll
-            approval. The supporting checklist and payroll calendar are linked
-            below.
+            You have{' '}
+            <span className="font-medium text-white">
+              three upcoming meetings
+            </span>{' '}
+            connected to responsibilities assigned to you.
           </>
         }
         insights={[
           {
-            value: '1',
-            label: 'Review checklist',
+            value: 'MON',
+            label: 'Project handoff',
           },
           {
-            value: '2',
-            label: 'Confirm exceptions',
+            value: 'WED',
+            label: 'Payroll review',
           },
           {
-            value: '3',
-            label: 'Submit approval',
+            value: 'FRI',
+            label: 'Vendor check-in',
           },
         ]}
         sources={[
           {
-            icon: FileText,
-            title: 'Weekly Payroll Approval Checklist',
-            detail: 'SharePoint · Open document',
+            icon: CalendarDays,
+            title: 'Upcoming continuity meetings',
+            detail: 'Outlook · Open calendar',
           },
           {
-            icon: CalendarDays,
-            title: 'Payroll Close Calendar',
-            detail: 'Outlook · Open calendar',
+            icon: FileText,
+            title: 'Assigned responsibilities',
+            detail: 'Relay · Open Continuity Hub',
           },
         ]}
       />
@@ -205,7 +209,7 @@ function RelayExample({
             {question}
           </p>
 
-          <span className="shrink-0 rounded-lg bg-[#4b39a8] px-4 py-2.5 text-[0.68rem] font-medium text-white">
+          <span className="shrink-0 rounded-lg bg-[#4b39a8] px-4 py-2.5 text-[0.68rem] font-medium text-white transition-colors hover:bg-[#5b47c7]">
             Ask Relay
           </span>
         </div>
@@ -229,7 +233,7 @@ function RelayExample({
                 key={insight.label}
                 className="flex min-w-0 flex-col items-center rounded-xl border border-[#34435f] bg-[#0f1a2d] px-2 py-3 text-center"
               >
-                <span className="grid size-9 place-items-center rounded-full bg-[#4b39a8] text-sm font-semibold text-white shadow-[0_0_20px_rgba(124,99,255,0.2)]">
+                <span className="grid size-9 place-items-center rounded-full bg-[#4b39a8] text-[0.68rem] font-semibold text-white shadow-[0_0_20px_rgba(124,99,255,0.2)]">
                   {insight.value}
                 </span>
 
