@@ -20,8 +20,13 @@ const integrations: Integration[] = [
   },
   {
     name: 'Azure DevOps',
-    category: 'Work items, commits and PRs',
+    category: 'Work items, commits and pull requests',
     src: '/logos/azure-devops.svg',
+  },
+  {
+    name: 'GitLab',
+    category: 'Assigned issues, authored commits and merge requests',
+    src: '/logos/gitlab.svg',
   },
   {
     name: 'Jira',
@@ -58,11 +63,11 @@ export function Integrations() {
     >
       <div className="mx-auto w-full max-w-6xl px-5 py-16 sm:px-8 md:py-24">
         <div className="max-w-3xl">
-          <p className="font-mono text-xs tracking-[0.2em] text-mint-foreground uppercase">
+          <p className="font-mono text-xs uppercase tracking-[0.2em] text-mint-foreground">
             Integrations
           </p>
 
-          <h2 className="mt-4 text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
+          <h2 className="mt-4 text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
             Built for your identity. Connected to your work
           </h2>
 
@@ -99,7 +104,7 @@ export function Integrations() {
 
         <div className="mt-10">
           <div className="mb-5">
-            <p className="font-mono text-[0.68rem] tracking-[0.16em] text-mint-foreground uppercase">
+            <p className="font-mono text-[0.68rem] uppercase tracking-[0.16em] text-mint-foreground">
               Connected work systems
             </p>
 
@@ -162,11 +167,11 @@ function PlatformCard({
 
         <div className="min-w-0 flex-1">
           <div className="flex items-center justify-between gap-3">
-            <p className="font-mono text-[0.65rem] tracking-[0.14em] text-mint-foreground uppercase">
+            <p className="font-mono text-[0.65rem] uppercase tracking-[0.14em] text-mint-foreground">
               {eyebrow}
             </p>
 
-            <span className="shrink-0 rounded-full bg-accent px-2 py-1 font-mono text-[0.58rem] text-mint-foreground uppercase">
+            <span className="shrink-0 rounded-full bg-accent px-2 py-1 font-mono text-[0.58rem] uppercase text-mint-foreground">
               {badge}
             </span>
           </div>
@@ -192,19 +197,21 @@ function PlatformCard({
 
 function IntegrationCard({ tool }: { tool: Integration }) {
   return (
-    <div className="flex min-h-20 items-center gap-3 rounded-xl border border-border bg-card px-4 py-4 transition-colors hover:bg-accent/50">
+    <div className="flex min-h-24 items-start gap-3 rounded-xl border border-border bg-card px-4 py-4 transition-colors hover:bg-accent/50">
       <Image
         src={tool.src}
         alt={`${tool.name} logo`}
         width={30}
         height={30}
-        className="size-[30px] shrink-0 object-contain"
+        className="mt-0.5 size-[30px] shrink-0 object-contain"
       />
 
-      <div className="min-w-0">
-        <p className="text-sm font-medium">{tool.name}</p>
+      <div className="min-w-0 flex-1">
+        <p className="text-sm font-medium leading-snug">
+          {tool.name}
+        </p>
 
-        <p className="mt-0.5 text-xs leading-relaxed text-muted-foreground">
+        <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
           {tool.category}
         </p>
       </div>
