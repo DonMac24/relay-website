@@ -168,12 +168,12 @@ function RelayExample({
           </span>
         </div>
 
-        <div className="mt-4 flex items-center gap-3 rounded-xl border border-[#36445f] bg-[#111e32] p-2">
-          <p className="min-w-0 flex-1 truncate px-2 text-xs text-[#aeb9cc]">
+        <div className="mt-4 flex items-center gap-2 rounded-xl border border-[#36445f] bg-[#111e32] p-2">
+          <p className="min-w-0 flex-1 truncate rounded-lg border border-[#cbd2dd] bg-white px-3 py-2.5 text-xs text-[#7c879a]">
             {question}
           </p>
 
-          <span className="shrink-0 rounded-lg bg-[#6047d7] px-4 py-2 text-[0.68rem] font-medium text-white shadow-sm">
+          <span className="shrink-0 rounded-lg bg-[#4b39a8] px-4 py-2.5 text-[0.68rem] font-medium text-white transition-colors hover:bg-[#5b47c7]">
             Ask Relay
           </span>
         </div>
