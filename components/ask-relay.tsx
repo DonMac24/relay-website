@@ -11,7 +11,7 @@ import {
 const capabilities = [
   'Ask questions across connected Jira, Outlook, SharePoint, and Relay records',
   'See outstanding work, upcoming meetings, deadlines, and responsibilities',
-  'Every answer links back to the authorized original source',
+  'Every answer links back to an authorized original source',
 ]
 
 export function AskRelay() {
@@ -30,7 +30,7 @@ export function AskRelay() {
 
           <p className="mt-4 text-base leading-relaxed text-muted-foreground">
             Ask Relay gives managers and employees simple answers using the
-            connected work records, calendars, documents, and responsibilities
+            connected work records, meetings, documents, and responsibilities
             they are authorized to view.
           </p>
 
@@ -91,7 +91,7 @@ function AskRelayExamples() {
         icon={UserRound}
         role="Employee Continuity Hub"
         title="Ask about upcoming commitments"
-        description="Answers use calendars and continuity records you can access."
+        description="Answers use meeting details and continuity records you can access."
         question="Are there any upcoming meetings I should know about?"
         answer={
           <>
@@ -108,7 +108,7 @@ function AskRelayExamples() {
           {
             icon: CalendarDays,
             title: 'Upcoming continuity meetings',
-            detail: 'Outlook · Open calendar',
+            detail: 'Outlook · View meeting details',
           },
           {
             icon: FileText,
