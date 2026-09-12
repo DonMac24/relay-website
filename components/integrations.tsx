@@ -20,7 +20,7 @@ const integrations: Integration[] = [
   },
   {
     name: 'Azure DevOps',
-    category: 'Work items, repositories and code',
+    category: 'Work items, commits and pull requests',
     src: '/logos/azure-devops.svg',
   },
   {
