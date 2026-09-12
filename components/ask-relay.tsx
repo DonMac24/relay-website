@@ -9,9 +9,9 @@ import {
 } from 'lucide-react'
 
 const capabilities = [
-  'Managers can review assignments, deadlines, risks, and readiness',
-  'Employees can understand the work they receive in the Continuity Hub',
-  'Every answer links back to authorized Relay records and sources',
+  'Managers can identify unassigned work, deadlines, risks, and readiness gaps',
+  'Employees can see priorities and next steps for responsibilities they inherit',
+  'Every answer links back to authorized Relay records and original sources',
 ]
 
 export function AskRelay() {
@@ -29,9 +29,9 @@ export function AskRelay() {
           </h2>
 
           <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-            Ask Relay helps managers understand active handoffs and gives
-            employees clear answers about the responsibilities they receive in
-            the Continuity Hub.
+            Ask Relay turns authorized continuity records into clear answers
+            about ownership, deadlines, risks, readiness, and the work people
+            inherit.
           </p>
 
           <ul className="mt-8 space-y-3">
@@ -66,16 +66,30 @@ function AskRelayExamples() {
       <RelayExample
         icon={BriefcaseBusiness}
         role="Manager workspace"
-        title="Ask about this handoff"
+        title="Identify continuity risks"
         description="Answers are limited to this handoff and its approved sources."
-        question="How much work is still unassigned for Taylor Brooks?"
+        question="What needs my attention before Taylor’s final day?"
         answer={
           <>
-            <span className="font-medium text-white">Taylor Brooks</span> has six
-            confirmed work items. Four are assigned and two still need
-            recipients.
+            Taylor’s handoff has three areas requiring attention. Two work items
+            still need owners, one deadline is overdue, and three assignments
+            are waiting for recipient confirmation.
           </>
         }
+        insights={[
+          {
+            value: '2',
+            label: 'Unassigned',
+          },
+          {
+            value: '1',
+            label: 'Overdue',
+          },
+          {
+            value: '3',
+            label: 'Unconfirmed',
+          },
+        ]}
         sources={[
           {
             icon: FileText,
@@ -88,19 +102,30 @@ function AskRelayExamples() {
       <RelayExample
         icon={UserRound}
         role="Employee Continuity Hub"
-        title="Ask about my assigned work"
+        title="Understand my next steps"
         description="Answers are limited to records and sources you can access."
-        question="What should I focus on while covering Elena’s role?"
+        question="What do I need to complete before Friday’s payroll approval?"
         answer={
           <>
-            You have three assigned responsibilities. The next item is the{' '}
-            <span className="font-medium text-white">
-              weekly payroll approval
-            </span>
-            , due Friday. The supporting checklist and payroll calendar are
-            linked below.
+            Complete these three steps before submitting the weekly payroll
+            approval. The supporting checklist and payroll calendar are linked
+            below.
           </>
         }
+        insights={[
+          {
+            value: '1',
+            label: 'Review checklist',
+          },
+          {
+            value: '2',
+            label: 'Confirm exceptions',
+          },
+          {
+            value: '3',
+            label: 'Submit approval',
+          },
+        ]}
         sources={[
           {
             icon: FileText,
@@ -118,6 +143,11 @@ function AskRelayExamples() {
   )
 }
 
+type InsightItem = {
+  value: string
+  label: string
+}
+
 type SourceItem = {
   icon: typeof FileText
   title: string
@@ -131,6 +161,7 @@ function RelayExample({
   description,
   question,
   answer,
+  insights,
   sources,
 }: {
   icon: typeof BriefcaseBusiness
@@ -139,6 +170,7 @@ function RelayExample({
   description: string
   question: string
   answer: React.ReactNode
+  insights: InsightItem[]
   sources: SourceItem[]
 }) {
   return (
@@ -173,7 +205,7 @@ function RelayExample({
             {question}
           </p>
 
-          <span className="shrink-0 rounded-lg bg-[#4b39a8] px-4 py-2.5 text-[0.68rem] font-medium text-white transition-colors hover:bg-[#5b47c7]">
+          <span className="shrink-0 rounded-lg bg-[#4b39a8] px-4 py-2.5 text-[0.68rem] font-medium text-white">
             Ask Relay
           </span>
         </div>
@@ -191,7 +223,24 @@ function RelayExample({
             {answer}
           </p>
 
-          <div className="mt-3 space-y-2">
+          <div className="mt-4 grid grid-cols-3 gap-2">
+            {insights.map((insight) => (
+              <div
+                key={insight.label}
+                className="flex min-w-0 flex-col items-center rounded-xl border border-[#34435f] bg-[#0f1a2d] px-2 py-3 text-center"
+              >
+                <span className="grid size-9 place-items-center rounded-full bg-[#4b39a8] text-sm font-semibold text-white shadow-[0_0_20px_rgba(124,99,255,0.2)]">
+                  {insight.value}
+                </span>
+
+                <span className="mt-2 text-[0.58rem] leading-tight text-[#aeb9cc]">
+                  {insight.label}
+                </span>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-4 space-y-2">
             {sources.map((source) => {
               const SourceIcon = source.icon
 
