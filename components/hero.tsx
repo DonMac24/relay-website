@@ -3,20 +3,16 @@ import {
   ArrowRight,
   BriefcaseBusiness,
   CalendarDays,
-  FileText,
   ListChecks,
   Search,
-  ShieldCheck,
   TrendingUp,
   UserRound,
 } from 'lucide-react'
 
 const workflow = [
   { label: 'Discover', icon: Search },
-  { label: 'Review', icon: FileText },
-  { label: 'Assign', icon: UserRound },
-  { label: 'Readiness', icon: ShieldCheck },
-  { label: 'Publish', icon: Archive },
+  { label: 'Review & assign', icon: UserRound },
+  { label: 'Preview & publish', icon: Archive },
 ]
 
 const metrics = [
@@ -53,13 +49,13 @@ const metrics = [
 const handoffs = [
   {
     employee: 'Taylor Brooks',
-    detail: 'Planned departure · Assignment',
+    detail: 'Planned departure · Review & assign',
     status: 'Needs attention',
     tone: 'attention',
   },
   {
     employee: 'Elena Rodriguez',
-    detail: 'Extended leave · Readiness',
+    detail: 'Extended leave · Preview & publish',
     status: 'In progress',
     tone: 'progress',
   },
@@ -88,7 +84,9 @@ export function Hero() {
           </h1>
 
           <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Relay gives managers and employees a shared place to transfer ownership, access, and operational context—while giving administrators reporting and governance across every transition.
+            Relay gives managers and employees a shared place to transfer
+            ownership, access, and operational context—while giving
+            administrators reporting and governance across every transition.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -165,7 +163,7 @@ function WorkflowCard() {
         </span>
       </div>
 
-      <div className="mt-4 grid grid-cols-5 gap-1">
+      <div className="mt-4 grid grid-cols-3 gap-2">
         {workflow.map((step, index) => {
           const Icon = step.icon
 
@@ -178,7 +176,7 @@ function WorkflowCard() {
 
                 <span
                   className={`relative z-10 grid size-8 place-items-center rounded-full border ${
-                    index < 3
+                    index < 2
                       ? 'border-mint-strong bg-mint-strong text-primary-foreground'
                       : 'border-border bg-background text-muted-foreground'
                   }`}
@@ -187,7 +185,7 @@ function WorkflowCard() {
                 </span>
               </div>
 
-              <span className="mt-2 block truncate text-[0.58rem] font-medium text-muted-foreground sm:text-[0.65rem]">
+              <span className="mt-2 block text-[0.58rem] font-medium leading-tight text-muted-foreground sm:text-[0.65rem]">
                 {step.label}
               </span>
             </div>
