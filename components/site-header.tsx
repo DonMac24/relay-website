@@ -1,5 +1,5 @@
+import Image from 'next/image'
 import Link from 'next/link'
-import { RelayLogo } from '@/components/relay-logo'
 
 const navLinks = [
   { label: 'Problem', href: '#problem' },
@@ -13,20 +13,27 @@ export function SiteHeader() {
     <header
       className="
         sticky top-0 z-50
-        bg-background/80 backdrop-blur-md
+        bg-white
         after:pointer-events-none
         after:absolute after:inset-x-0 after:bottom-0
         after:z-[60] after:h-px
         after:bg-border/70 after:content-['']
       "
     >
-      <div className="mx-auto flex h-24 w-full max-w-6xl items-center justify-between px-5 sm:px-8">
+      <div className="mx-auto flex h-24 w-full max-w-6xl items-center justify-between gap-6 px-5 sm:px-8">
         <Link
           href="#top"
           aria-label="Relay home"
-          className="flex items-center"
+          className="flex shrink-0 items-center"
         >
-          <RelayLogo />
+          <Image
+            src="/relay-eci-logo-coral.png"
+            alt="Relay ECI"
+            width={2048}
+            height={684}
+            priority
+            className="h-auto w-[150px] object-contain sm:w-[180px]"
+          />
         </Link>
 
         <nav
@@ -47,7 +54,7 @@ export function SiteHeader() {
         <div className="flex items-center gap-3">
           <a
             href="#demo"
-            className="hidden text-sm text-muted-foreground transition-colors hover:text-foreground sm:inline"
+            className="hidden whitespace-nowrap text-sm text-muted-foreground transition-colors hover:text-foreground sm:inline"
           >
             Request a demo
           </a>
