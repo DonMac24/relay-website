@@ -30,7 +30,7 @@ export function AskRelay() {
           </span>
 
           <h2 className="mt-6 text-3xl font-semibold tracking-tight text-balance text-[#171A18] sm:text-4xl">
-            Ask about the work people leave behind
+            Questions come up. Context stays close.
           </h2>
 
           <p className="mt-4 text-base leading-relaxed text-[#586660]">
@@ -60,7 +60,7 @@ export function AskRelay() {
           </ul>
 
           <p className="mt-6 text-xs leading-relaxed text-[#586660]">
-            Ask Relay is governed by workspace permissions and cannot change,
+            AI supports the handoff; managers control the decisions. Ask Relay is governed by workspace permissions and cannot change,
             assign, approve, or delete records.
           </p>
         </div>
@@ -74,6 +74,7 @@ export function AskRelay() {
 function AskRelayExamples() {
   return (
     <div className="space-y-6">
+      <p className="text-xs text-[#586660]">Illustrative Ask Relay conversations</p>
       <RelayExample
         icon={BriefcaseBusiness}
         role="Manager workspace"

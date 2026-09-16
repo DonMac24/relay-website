@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { AskRelay } from "./ask-relay";
 import {
   ArrowRight,
   Check,
@@ -332,45 +333,7 @@ export function ContinuityHome() {
             </div>
           </div>
         </section>
-        <section className={`${s.wrap} ${s.aiSection}`} id="ask-relay">
-          <div>
-            <p className={s.eyebrow}>AI with a defined role</p>
-            <h2>
-              Questions come up.
-              <br />
-              <span>Context stays close.</span>
-            </h2>
-            <p className={s.lead}>
-              Ask Relay helps managers and recipients find answers within the
-              continuity records they are authorized to view.
-            </p>
-            <p className={s.muted}>
-              It supports the handoff. It cannot assign, approve, change, or
-              delete records.
-            </p>
-          </div>
-          <div className={s.askCard}>
-            <div className={s.cardBar}>
-              <Sparkles size={18} /> Ask about your work <span>READ-ONLY</span>
-            </div>
-            <div className={s.transferBody}>
-              <p className={s.question}>What still needs an owner?</p>
-              <div className={s.answer}>
-                <Sparkles size={18} />
-                <p>
-                  Use Ask Relay to explore unassigned work, upcoming
-                  commitments, and linked context in your authorized records.
-                </p>
-              </div>
-              <a href="#demo" className={s.textLink}>
-                See Ask Relay in the demo <ArrowUpRight size={16} />
-              </a>
-              <p className={s.finePrint}>
-                Verify important details using the original sources.
-              </p>
-            </div>
-          </div>
-        </section>
+        <AskRelay />
         <section className={s.integrations} id="integrations">
           <div className={s.wrap}>
             <p className={s.eyebrow}>Connected to the work</p>
