@@ -164,170 +164,64 @@ export function ContinuityHome() {
             </span>
           </div>
         </div>
-        <section id="difference" className={`${s.wrap} ${s.difference}`}>
-          <div>
-            <p className={s.eyebrow}>Beyond the generated handoff</p>
-            <h2>
-              An answer can tell you
-              <br />
-              what needs to happen.
-              <br />
-              <span>Who makes it happen?</span>
-            </h2>
+        <section id="difference" className={`${s.wrap} ${s.visualDifference}`}>
+          <p className={s.eyebrow}>Why Relay</p>
+          <h2>A handoff needs <span>more than an answer.</span></h2>
+          <p className={s.visualIntro}>AI helps find the context. Relay puts ownership, access gaps, and manager decisions alongside the work.</p>
+          <div className={s.evidenceGrid}>
+            <article className={s.evidenceCard}>
+              <div className={s.evidenceTop}><Users size={20} /><h3>A named owner</h3></div>
+              <div className={s.evidenceSample}>
+                <span className={s.sampleLabel}>Responsibility</span>
+                <strong>Run forecast calls</strong>
+                <div className={s.ownerSample}><span className={s.miniAvatar}>SC</span><div><strong>Sarah Chen</strong><span>Assigned recipient</span></div><Check size={17} /></div>
+              </div>
+              <p>Make it clear who takes over.</p>
+            </article>
+            <article className={s.evidenceCard}>
+              <div className={s.evidenceTop}><ShieldCheck size={20} /><h3>A visible gap</h3></div>
+              <div className={s.evidenceSample}>
+                <span className={s.sampleLabel}>Responsibility</span>
+                <strong>Approve commercial exceptions</strong>
+                <div className={s.gapSample}><span className={s.warning}>Access issue</span><span>1 linked source</span></div>
+              </div>
+              <p>Keep unresolved access issues in view.</p>
+            </article>
+            <article className={s.evidenceCard}>
+              <div className={s.evidenceTop}><FileText size={20} /><h3>A lasting record</h3></div>
+              <div className={s.evidenceSample}>
+                <span className={s.sampleLabel}>Published continuity record</span>
+                <strong>Alex Morgan</strong>
+                <div className={s.recordSample}><span>Prepared for <strong>Sarah Chen</strong></span><span>Managed by <strong>Jordan Patel</strong></span></div>
+              </div>
+              <p>Give the next owner a place to start.</p>
+            </article>
           </div>
-          <div className={s.differenceCopy}>
-            <p>
-              AI can help find information and draft a handoff. Your team still
-              needs to decide what matters, assign responsibility, check access,
-              and publish what each person should receive.
-            </p>
-            <p>
-              <strong>
-                Relay gives those decisions a shared place to live.
-              </strong>{" "}
-              AI assists within the process. Managers control the handoff.
-            </p>
-            <a href="#how-it-works" className={s.textLink}>
-              Follow the transfer <ArrowRight size={17} />
-            </a>
-          </div>
-          <div className={s.proofGrid}>
-            {[
-              {
-                icon: Users,
-                number: "01",
-                title: "Ownership you can point to.",
-                text: "Assign confirmed work to named recipients. See what still has no owner.",
-              },
-              {
-                icon: ShieldCheck,
-                number: "02",
-                title: "Gaps you can act on.",
-                text: "Keep access issues and unverified checks visible alongside the work they affect.",
-              },
-              {
-                icon: FileText,
-                number: "03",
-                title: "A handoff people can use.",
-                text: "Publish assigned work, operational context, and approved source links into the Continuity Hub.",
-              },
-            ].map(({ icon: Icon, number, title, text }) => (
-              <article className={s.proof} key={number}>
-                <div>
-                  <Icon size={24} />
-                  <span>{number}</span>
-                </div>
-                <h3>{title}</h3>
-                <p>{text}</p>
-              </article>
-            ))}
-          </div>
+          <p className={s.exampleNote}>Illustrative details from the handoff above.</p>
         </section>
         <section id="how-it-works" className={s.workflow}>
           <div className={s.wrap}>
-            <div className={s.sectionHead}>
-              <div>
-                <p className={s.eyebrow}>One transfer. Two sides.</p>
-                <h2>
-                  From “what did they own?”
-                  <br />
-                  to “here’s what’s yours.”
-                </h2>
+            <div className={s.flowHeading}><p className={s.eyebrow}>The handoff</p><h2>Follow the work.<br />From Alex to Sarah.</h2><p>One manager-led process, from discovery to the Continuity Hub.</p></div>
+            <div className={s.flowRail}>
+              <div><span>01</span><strong>Discover</strong><p>Find the work and its sources.</p></div>
+              <div><span>02</span><strong>Review & assign</strong><p>Confirm what matters and who takes over.</p></div>
+              <div><span>03</span><strong>Preview & publish</strong><p>Review each recipient’s handoff.</p></div>
+            </div>
+            <div className={s.handoffScene}>
+              <div className={s.sceneProfile}>
+                <span className={s.recordPhoto}><Image src="/alex-morgan-profile.png" alt="Alex Morgan" width={198} height={210} /></span>
+                <div><span className={s.sampleLabel}>From</span><h3>Alex Morgan</h3><p>Product Manager</p></div>
+                <div className={s.sceneManager}><span className={s.sampleLabel}>Managed by</span><strong>Jordan Patel</strong></div>
               </div>
-              <p>
-                Follow the work from manager review to the person taking over.
-              </p>
+              <div className={s.sceneTransfer}><ArrowRight size={24} aria-hidden="true" /></div>
+              <div className={s.sceneWork}>
+                <div className={s.sceneRecipient}><span className={s.miniAvatar}>SC</span><div><span className={s.sampleLabel}>Prepared for Sarah Chen</span><h3>My assigned work</h3></div></div>
+                <div className={s.sceneRow}><div><strong>Run forecast calls</strong><span>Responsibilities · 1 linked source</span></div><span className={s.todoPill}>To do</span></div>
+                <div className={s.sceneRow}><div><strong>Approve commercial exceptions</strong><span>Responsibilities · 1 linked source</span></div><span className={s.warning}>Access issue</span></div>
+                <p className={s.sceneFoot}>Continuity Hub · Illustrative record</p>
+              </div>
             </div>
-            <div className={s.transferGrid}>
-              <article className={s.managerCard}>
-                <div className={s.cardBar}>
-                  <Users size={18} /> Manager workspace{" "}
-                  <span>01 / PREPARE</span>
-                </div>
-                <div className={s.transferBody}>
-                  <h3>Decide what continues.</h3>
-                  <p>
-                    Review discovered work, confirm responsibility, and check
-                    the sources that support it.
-                  </p>
-                  <ol className={s.steps}>
-                    <li>
-                      <span>1</span>
-                      <div>
-                        <strong>Discover & validate</strong>
-                        <p>
-                          Review connected work with optional input from the
-                          departing employee.
-                        </p>
-                      </div>
-                    </li>
-                    <li>
-                      <span>2</span>
-                      <div>
-                        <strong>Assign & check</strong>
-                        <p>
-                          Name recipients and identify gaps in supporting source
-                          access.
-                        </p>
-                      </div>
-                    </li>
-                    <li>
-                      <span>3</span>
-                      <div>
-                        <strong>Preview & publish</strong>
-                        <p>
-                          See what each recipient will receive before publishing
-                          the handoff.
-                        </p>
-                      </div>
-                    </li>
-                  </ol>
-                </div>
-              </article>
-              <article className={s.recipientCard}>
-                <div className={s.cardBar}>
-                  <FileText size={18} /> Continuity Hub{" "}
-                  <span>02 / TAKE OVER</span>
-                </div>
-                <div className={s.transferBody}>
-                  <h3>A starting point for the next owner.</h3>
-                  <p>
-                    Assigned work and supporting context, together in one
-                    recipient workspace.
-                  </p>
-                  <div className={s.recipientExample}>
-                    <div className={s.recipientTop}>
-                      <span className={s.miniAvatar}>SC</span>
-                      <strong>Sarah’s assigned work</strong>
-                      <small>Illustrative example</small>
-                    </div>
-                    <h4>Approve production releases</h4>
-                    <p>
-                      Review release readiness and coordinate the production
-                      approval.
-                    </p>
-                    <div className={s.sourceRow}>
-                      <FileText size={17} />
-                      <span>Release runbook</span>
-                      <span className={s.warning}>Access issue</span>
-                    </div>
-                    <div className={s.sourceRow}>
-                      <FileText size={17} />
-                      <span>Release calendar</span>
-                      <span className={s.sourceLabel}>Source link</span>
-                    </div>
-                  </div>
-                  <p className={s.finePrint}>
-                    Source permissions still apply. Publishing a link does not
-                    grant access.
-                  </p>
-                </div>
-              </article>
-            </div>
-            <div className={s.workflowBottom}>
-              <strong>The handoff stays connected to the original work.</strong>
-              <span>Your existing tools remain the source of record.</span>
-            </div>
+            <p className={s.flowNote}>Original tools remain the source of record. Publishing a link does not grant access.</p>
           </div>
         </section>
         <AskRelay />

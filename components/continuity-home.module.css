@@ -853,3 +853,49 @@
 .recordProfile { display: flex; align-items: center; gap: 13px; margin-bottom: 15px; }
 .recordPhoto { position: relative; display: block; width: 60px; height: 60px; border-radius: 50%; overflow: hidden; flex-shrink: 0; background: white; }
 .recordPhoto img { position: absolute; width: 85px; height: 90px; max-width: none; left: -13px; top: -19px; }
+
+/* Visual proof and a compact, connected handoff story. */
+.visualDifference { padding-top: 65px; padding-bottom: 60px; }
+.visualIntro { max-width: 680px; margin-top: 16px; color: #586660; font-size: 16px; }
+.evidenceGrid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-top: 30px; }
+.evidenceCard { border: 1px solid var(--line); border-radius: 12px; background: white; padding: 20px; min-width: 0; }
+.evidenceTop { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; }
+.evidenceTop svg { color: var(--deep); flex-shrink: 0; }
+.evidenceTop h3 { font-size: 18px; letter-spacing: -.025em; }
+.evidenceSample { background: #fafaf7; border: 1px solid #e3e4df; border-radius: 8px; padding: 14px; min-height: 162px; }
+.sampleLabel { display: block; font-size: 10px; letter-spacing: .06em; text-transform: uppercase; color: #647169; }
+.evidenceSample > strong { display: block; font-size: 13px; line-height: 1.4; margin-top: 5px; }
+.ownerSample { display: flex; align-items: center; gap: 9px; border-top: 1px solid var(--line); margin-top: 16px; padding-top: 12px; }
+.ownerSample strong { font-size: 12px; display: block; }
+.ownerSample div > span { font-size: 10px; color: #647169; display: block; }
+.ownerSample > svg { margin-left: auto; color: var(--deep); }
+.gapSample { display: flex; flex-wrap: wrap; gap: 9px; align-items: center; border-top: 1px solid var(--line); margin-top: 16px; padding-top: 12px; font-size: 11px; color: var(--deep); }
+.recordSample { display: flex; gap: 15px; margin-top: 16px; font-size: 10px; color: #647169; }
+.recordSample strong { display: block; color: var(--ink); font-size: 11px; }
+.evidenceCard > p { margin-top: 15px; font-size: 13px; color: #586660; }
+.exampleNote { color: #647169; font-size: 11px; margin-top: 12px; }
+.flowHeading { max-width: 650px; }
+.flowHeading > p:last-child { color: #c4cbc7; font-size: 15px; margin-top: 15px; }
+.flowRail { display: grid; grid-template-columns: repeat(3,1fr); gap: 26px; margin: 30px 0; }
+.flowRail > div { border-top: 1px solid #566059; padding-top: 16px; }
+.flowRail span { color: #ffa78e; font-size: 12px; margin-right: 10px; }
+.flowRail strong { font-size: 15px; }
+.flowRail p { font-size: 12px; color: #c4cbc7; margin-top: 5px; }
+.handoffScene { display: grid; grid-template-columns: .8fr 50px 1.7fr; align-items: center; gap: 24px; padding: 28px; background: #fafaf7; color: var(--ink); border-radius: 14px; }
+.sceneProfile { display: flex; align-items: center; flex-wrap: wrap; gap: 14px; }
+.sceneProfile h3 { font-size: 22px; letter-spacing: -.03em; }
+.sceneProfile p { font-size: 12px; color: #586660; }
+.sceneManager { width: 100%; border-top: 1px solid var(--line); padding-top: 15px; margin-top: 5px; }
+.sceneManager strong { font-size: 13px; }
+.sceneTransfer { color: var(--deep); display: grid; place-items: center; }
+.sceneWork { border: 1px solid var(--line); border-radius: 10px; padding: 18px; background: white; min-width: 0; }
+.sceneRecipient { display: flex; align-items: center; gap: 10px; margin-bottom: 17px; }
+.sceneRecipient h3 { font-size: 18px; }
+.sceneRow { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 13px 0; border-top: 1px solid var(--line); }
+.sceneRow strong { font-size: 13px; display: block; }
+.sceneRow div > span { color: #586660; font-size: 11px; display: block; margin-top: 3px; }
+.todoPill { padding: 4px 9px; font-size: 10px; background: #f0f1ee; border-radius: 5px; white-space: nowrap; }
+.sceneFoot { font-size: 10px; color: #647169; margin-top: 10px; }
+.flowNote { color: #c4cbc7; font-size: 11px; margin-top: 20px; }
+@media(max-width: 900px) { .evidenceGrid { gap: 12px; } .evidenceCard { padding: 14px; } .handoffScene { grid-template-columns: 1fr 2fr; gap: 20px; } .sceneTransfer { display: none; } }
+@media(max-width: 760px) { .visualDifference { padding-top: 45px; padding-bottom: 45px; } .evidenceGrid { grid-template-columns: 1fr; } .evidenceSample { min-height: 0; } .flowRail { grid-template-columns: 1fr; gap: 15px; } .handoffScene { grid-template-columns: 1fr; padding: 18px; } .sceneManager { width: auto; margin-left: auto; border: 0; padding: 0; } .sceneRow { flex-wrap: wrap; } }
