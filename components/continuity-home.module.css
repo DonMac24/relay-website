@@ -822,3 +822,30 @@
       color 0.15s;
   }
 }
+
+/* Compact published-record preview, based on the Relay app. */
+.recordPreview { background: #fafaf7; border: 1px solid #dedfdc; border-radius: 12px; padding: 18px; box-shadow: 0 16px 35px -24px #171a1844; }
+.recordTitle > p { color: var(--deep); font-size: 10px; font-weight: 700; letter-spacing: .12em; }
+.recordTitle h3 { font-size: 25px; line-height: 1.2; letter-spacing: -.04em; margin-top: 4px; }
+.recordTitle > span { font-size: 11px; color: #586660; }
+.publishedStatus { margin: 14px 0 8px; padding: 9px 11px; border: 1px solid #c3e6d5; border-radius: 7px; background: #effaf5; color: #267452; }
+.publishedStatus strong { display: block; font-size: 10px; letter-spacing: .1em; }
+.publishedStatus span { display: block; font-size: 11px; }
+.recordPeople { display: grid; grid-template-columns: .85fr 1.2fr 1fr; gap: 10px; background: #fff0eb; border: 1px solid #e5dcd7; border-radius: 7px; padding: 10px; }
+.recordPeople dt { font-size: 9px; text-transform: uppercase; color: #586660; font-weight: 600; }
+.recordPeople dd { font-size: 10px; font-weight: 600; overflow-wrap: anywhere; }
+.recordPeople > div:nth-child(2) dd { color: var(--deep); }
+.recordLabel { display: flex; align-items: center; gap: 5px; font-size: 11px; margin: 13px 0 5px; }
+.recordCategories { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.recordCategory, .recordRisk { min-width: 0; padding: 11px; background: white; border: 1px solid #dedfdc; border-radius: 8px; }
+.recordPreview h4 { display: flex; justify-content: space-between; gap: 8px; font-size: 11px; font-weight: 500; margin: 0 0 8px; }
+.recordItem + .recordItem { border-top: 1px solid #e5e6e2; margin-top: 9px; padding-top: 9px; }
+.recordItem strong, .recordRisk > strong { display: block; font-size: 11px; line-height: 1.45; font-weight: 600; }
+.recordItem > span { display: block; font-size: 10px; color: #586660; line-height: 1.5; margin-top: 3px; }
+.recordItem small, .recordRisk small { display: block; color: var(--deep); font-size: 10px; margin-top: 5px; font-weight: 600; }
+.recordItem em { display: inline-block; font-size: 9px; font-style: normal; color: #a62f27; background: #fff0eb; border-radius: 3px; padding: 1px 5px; margin-top: 3px; }
+.recordRisk { margin-top: 8px; }
+.recordAccess { margin-top: 8px; border: 1px solid #dedfdc; border-radius: 8px; padding: 10px; background: white; }
+.recordAccess strong, .recordAccess span { display: block; font-size: 10px; }
+.recordAccess span { color: #586660; margin-top: 3px; }
+@media (max-width: 400px) { .recordPreview { padding: 12px; } .recordCategories { grid-template-columns: 1fr; } }

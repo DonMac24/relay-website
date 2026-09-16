@@ -90,69 +90,63 @@ export function ContinuityHome() {
             </p>
           </div>
           <div className={s.heroVisual}>
-            <div className={s.document}>
-              <div className={s.documentTop}>
-                <span>
-                  <span className={s.tinyDot} /> HANDOFF WORKSPACE
-                </span>
-                <span>Illustrative example</span>
+            <div className={s.recordPreview} aria-label="Compact preview of the published continuity record">
+              <div className={s.recordTitle}>
+                <p>PUBLISHED CONTINUITY RECORD</p>
+                <h3>Alex Morgan</h3>
+                <span>Product Manager · Aug 30, 2026</span>
               </div>
-              <div className={s.documentBody}>
-                <div className={s.documentHeading}>
-                  <div>
-                    <p className={s.muted}>Customer platform</p>
-                    <h3>Keep the release moving.</h3>
+              <div className={s.publishedStatus}>
+                <strong>PUBLISHED</strong>
+                <span>Official read-only continuity record</span>
+              </div>
+              <dl className={s.recordPeople}>
+                <div><dt>From</dt><dd>Alex Morgan</dd></div>
+                <div><dt>Prepared for</dt><dd>Relay Demo Recipient</dd></div>
+                <div><dt>Managed by</dt><dd>Relay VIP Demo</dd></div>
+              </dl>
+              <p className={s.recordLabel}>My assigned work <ArrowRight size={12} /></p>
+              <div className={s.recordCategories}>
+                <div className={s.recordCategory}>
+                  <h4>Projects <span>4</span></h4>
+                  <div className={s.recordItem}>
+                    <strong>Enterprise renewal portfolio</strong>
+                    <span>Relay Demo Recipient · Completed</span>
+                    <small>1 linked source ↓</small>
                   </div>
-                  <span className={s.avatar}>AM</span>
+                  <div className={s.recordItem}>
+                    <strong>Q4 territory planning</strong>
+                    <span>Relay Demo Recipient · Completed</span>
+                    <small>1 linked source ↓</small>
+                  </div>
                 </div>
-                <div className={s.workItem}>
-                  <FileText size={19} />
-                  <div>
-                    <strong>Approve production releases</strong>
-                    <span>Ongoing responsibility</span>
+                <div className={s.recordCategory}>
+                  <h4>Responsibilities <span>4</span></h4>
+                  <div className={s.recordItem}>
+                    <strong>Approve commercial exceptions</strong>
+                    <span>Relay Demo Recipient · To do</span>
+                    <em>Access issue</em>
+                    <small>1 linked source ↓</small>
                   </div>
-                </div>
-                <dl className={s.facts}>
-                  <div>
-                    <dt>New owner</dt>
-                    <dd>
-                      <span className={s.miniAvatar}>SC</span> Sarah Chen
-                    </dd>
+                  <div className={s.recordItem}>
+                    <strong>Run forecast calls</strong>
+                    <span>Relay Demo Recipient · To do</span>
+                    <small>1 linked source ↓</small>
                   </div>
-                  <div>
-                    <dt>Supporting source</dt>
-                    <dd>
-                      Release runbook <Link2 size={14} />
-                    </dd>
-                  </div>
-                  <div>
-                    <dt>Source access</dt>
-                    <dd>
-                      <span className={s.warning}>Needs attention</span>
-                    </dd>
-                  </div>
-                  <div>
-                    <dt>Publication</dt>
-                    <dd>Awaiting manager decision</dd>
-                  </div>
-                </dl>
-                <div className={s.issue}>
-                  <ShieldCheck size={19} />
-                  <p>
-                    <strong>A gap the next owner should know about.</strong>
-                    <br />
-                    Sarah needs access to the release runbook.
-                  </p>
                 </div>
               </div>
-              <div className={s.documentFooter}>
-                Discover <ArrowRight size={13} /> Review & assign{" "}
-                <ArrowRight size={13} /> Preview & publish
+              <div className={s.recordRisk}>
+                <h4>Risks <span>1</span></h4>
+                <strong>Two renewals require executive sponsorship</strong>
+                <small>1 linked source ↓</small>
+              </div>
+              <div className={s.recordAccess}>
+                <strong>Source access · Demo simulation</strong>
+                <span>1 confirmed by recipient · 1 reported issue · 4 other checks</span>
               </div>
             </div>
             <div className={s.caption}>
-              <span className={s.captionLine} /> The work. The owner. The
-              unresolved issue.
+              <span className={s.captionLine} /> Compact demo preview · Selected items shown
             </div>
           </div>
         </section>
