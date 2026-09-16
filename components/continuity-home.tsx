@@ -43,6 +43,7 @@ export function ContinuityHome() {
           <nav aria-label="Main navigation" className={s.desktopNav}>
             <a href="#difference">Why Relay</a>
             <a href="#how-it-works">The handoff</a>
+          <a href="#ask-relay">Ask Relay</a>
             <a href="#integrations">Integrations</a>
           </nav>
           <a href="#demo" className={s.smallButton}>
@@ -52,6 +53,7 @@ export function ContinuityHome() {
         <nav aria-label="Mobile navigation" className={s.mobileNav}>
           <a href="#difference">Why Relay</a>
           <a href="#how-it-works">The handoff</a>
+          <a href="#ask-relay">Ask Relay</a>
           <a href="#integrations">Integrations</a>
         </nav>
       </header>
