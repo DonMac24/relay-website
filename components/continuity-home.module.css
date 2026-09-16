@@ -849,3 +849,7 @@
 .recordAccess strong, .recordAccess span { display: block; font-size: 10px; }
 .recordAccess span { color: #586660; margin-top: 3px; }
 @media (max-width: 400px) { .recordPreview { padding: 12px; } .recordCategories { grid-template-columns: 1fr; } }
+
+.recordProfile { display: flex; align-items: center; gap: 13px; margin-bottom: 15px; }
+.recordPhoto { position: relative; display: block; width: 60px; height: 60px; border-radius: 50%; overflow: hidden; flex-shrink: 0; background: white; }
+.recordPhoto img { position: absolute; width: 85px; height: 90px; max-width: none; left: -13px; top: -19px; }

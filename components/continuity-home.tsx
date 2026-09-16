@@ -91,19 +91,20 @@ export function ContinuityHome() {
           </div>
           <div className={s.heroVisual}>
             <div className={s.recordPreview} aria-label="Compact preview of the published continuity record">
-              <div className={s.recordTitle}>
-                <p>PUBLISHED CONTINUITY RECORD</p>
-                <h3>Alex Morgan</h3>
-                <span>Product Manager · Aug 30, 2026</span>
-              </div>
-              <div className={s.publishedStatus}>
-                <strong>PUBLISHED</strong>
-                <span>Official read-only continuity record</span>
+              <div className={s.recordProfile}>
+                <span className={s.recordPhoto}>
+                  <Image src="/alex-morgan-profile.png" alt="Alex Morgan" width={198} height={210} />
+                </span>
+                <div className={s.recordTitle}>
+                  <p>PUBLISHED CONTINUITY RECORD</p>
+                  <h3>Alex Morgan</h3>
+                  <span>Product Manager</span>
+                </div>
               </div>
               <dl className={s.recordPeople}>
                 <div><dt>From</dt><dd>Alex Morgan</dd></div>
-                <div><dt>Prepared for</dt><dd>Relay Demo Recipient</dd></div>
-                <div><dt>Managed by</dt><dd>Relay VIP Demo</dd></div>
+                <div><dt>Prepared for</dt><dd>Sarah Chen</dd></div>
+                <div><dt>Managed by</dt><dd>Jordan Patel</dd></div>
               </dl>
               <p className={s.recordLabel}>My assigned work <ArrowRight size={12} /></p>
               <div className={s.recordCategories}>
@@ -111,12 +112,12 @@ export function ContinuityHome() {
                   <h4>Projects <span>4</span></h4>
                   <div className={s.recordItem}>
                     <strong>Enterprise renewal portfolio</strong>
-                    <span>Relay Demo Recipient · Completed</span>
+                    <span>Sarah Chen · Completed</span>
                     <small>1 linked source ↓</small>
                   </div>
                   <div className={s.recordItem}>
                     <strong>Q4 territory planning</strong>
-                    <span>Relay Demo Recipient · Completed</span>
+                    <span>Sarah Chen · Completed</span>
                     <small>1 linked source ↓</small>
                   </div>
                 </div>
@@ -124,13 +125,13 @@ export function ContinuityHome() {
                   <h4>Responsibilities <span>4</span></h4>
                   <div className={s.recordItem}>
                     <strong>Approve commercial exceptions</strong>
-                    <span>Relay Demo Recipient · To do</span>
+                    <span>Sarah Chen · To do</span>
                     <em>Access issue</em>
                     <small>1 linked source ↓</small>
                   </div>
                   <div className={s.recordItem}>
                     <strong>Run forecast calls</strong>
-                    <span>Relay Demo Recipient · To do</span>
+                    <span>Sarah Chen · To do</span>
                     <small>1 linked source ↓</small>
                   </div>
                 </div>
@@ -141,12 +142,12 @@ export function ContinuityHome() {
                 <small>1 linked source ↓</small>
               </div>
               <div className={s.recordAccess}>
-                <strong>Source access · Demo simulation</strong>
+                <strong>Source access</strong>
                 <span>1 confirmed by recipient · 1 reported issue · 4 other checks</span>
               </div>
             </div>
             <div className={s.caption}>
-              <span className={s.captionLine} /> Compact demo preview · Selected items shown
+              <span className={s.captionLine} /> Illustrative record · Selected items shown
             </div>
           </div>
         </section>
