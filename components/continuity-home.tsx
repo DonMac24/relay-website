@@ -147,7 +147,6 @@ export function ContinuityHome() {
               </div>
             </div>
             <div className={s.caption}>
-              <span className={s.captionLine} /> Illustrative record · Selected items shown
             </div>
           </div>
         </section>
