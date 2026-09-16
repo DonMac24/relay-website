@@ -5,7 +5,7 @@ import { ArrowRight, Check } from 'lucide-react'
 
 const benefits = [
   'Walk through a handoff from discovery to the Continuity Hub',
-  'See assignments, access checks, readiness, and Ask Relay AI',
+  'See who owns the work and what still needs attention',
   'Discuss how Relay could support a real transition or pilot',
 ]
 
@@ -69,7 +69,7 @@ export function DemoCta() {
           </p>
 
           <h2 className="mt-4 text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
-            See Relay&apos;s continuity workflow in action
+            Bring one transition. See the whole handoff.
           </h2>
 
           <p className="mt-4 max-w-md text-base leading-relaxed text-background/70">

@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.relayeci.com'),
 
-  title: 'Relay ECI | Employee Continuity Intelligence',
+  title: 'Relay ECI | Keep work moving when people move on',
 
   description:
     'Relay helps organizations discover, assign, transfer, and govern critical work through employee departures, extended leave, and role transitions.',
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: 'Relay ECI | Employee Continuity Intelligence',
+    title: 'Relay ECI | Keep work moving when people move on',
     description:
       'Discover, assign, transfer, and govern critical work through employee departures, extended leave, and role transitions.',
     url: '/',
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
 
   twitter: {
     card: 'summary_large_image',
-    title: 'Relay ECI | Employee Continuity Intelligence',
+    title: 'Relay ECI | Keep work moving when people move on',
     description:
       'Discover, assign, transfer, and govern critical work through employee departures, extended leave, and role transitions.',
   },
