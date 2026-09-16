@@ -89,7 +89,7 @@
   grid-template-columns: 1.1fr 1fr;
   gap: 55px;
   align-items: center;
-  padding-top: 84px;
+  padding-top: 40px;
   padding-bottom: 80px;
 }
 .eyebrow {
@@ -681,7 +681,7 @@
 @media (max-width: 1000px) {
   .hero {
     gap: 25px;
-    padding-top: 55px;
+    padding-top: 32px;
   }
   .wrap {
     padding-left: 25px;
@@ -731,7 +731,7 @@
     grid-template-columns: 1fr;
   }
   .hero {
-    padding-top: 40px;
+    padding-top: 28px;
     padding-bottom: 40px;
     gap: 35px;
   }
