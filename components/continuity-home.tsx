@@ -167,7 +167,7 @@ export function ContinuityHome() {
         <section id="difference" className={`${s.wrap} ${s.visualDifference}`}>
           <p className={s.eyebrow}>Why Relay</p>
           <h2>A handoff needs <span>more than an answer.</span></h2>
-          <p className={s.visualIntro}>AI helps find the context. Relay puts ownership, access gaps, and manager decisions alongside the work.</p>
+          <p className={s.visualIntro}>Copilot and other AI assistants can help find and summarize context. But a handoff still needs named owners, access checks, and manager decisions. Relay brings those together in one structured workflow.</p>
           <div className={s.evidenceGrid}>
             <article className={s.evidenceCard}>
               <div className={s.evidenceTop}><Users size={20} /><h3>A named owner</h3></div>

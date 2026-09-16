@@ -90,7 +90,7 @@
   gap: 55px;
   align-items: center;
   padding-top: 40px;
-  padding-bottom: 80px;
+  padding-bottom: 24px;
 }
 .eyebrow {
   font-size: 11px;
@@ -732,7 +732,7 @@
   }
   .hero {
     padding-top: 28px;
-    padding-bottom: 40px;
+    padding-bottom: 20px;
     gap: 35px;
   }
   .site h1 {
