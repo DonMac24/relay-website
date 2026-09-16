@@ -32,12 +32,11 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
-  /* Existing names retained so current components keep working */
+  /* Existing component classes remain supported. */
   --color-mint: var(--mint);
   --color-mint-strong: var(--mint-strong);
   --color-mint-foreground: var(--mint-foreground);
 
-  /* New Relay brand utilities */
   --color-relay: var(--relay);
   --color-relay-dark: var(--relay-dark);
   --color-relay-light: var(--relay-light);
@@ -67,61 +66,49 @@
 
   --radius: 0.75rem;
 
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.17 0.004 160);
+  --background: #fafaf7;
+  --foreground: #171a18;
 
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.17 0.004 160);
+  --card: #ffffff;
+  --card-foreground: #171a18;
 
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.17 0.004 160);
+  --popover: #ffffff;
+  --popover-foreground: #171a18;
 
-  /*
-   * Keep primary dark.
-   * This preserves intentional black buttons such as Request a demo.
-   */
-  --primary: oklch(0.18 0.004 160);
-  --primary-foreground: oklch(0.99 0 0);
+  /* Preserve intentional black primary buttons. */
+  --primary: #171a18;
+  --primary-foreground: #ffffff;
 
-  --secondary: oklch(0.97 0.004 160);
-  --secondary-foreground: oklch(0.2 0.004 160);
+  --secondary: #f3f4f1;
+  --secondary-foreground: #171a18;
 
-  --muted: oklch(0.975 0.004 160);
-  --muted-foreground: oklch(0.48 0.006 160);
+  --muted: #f3f4f1;
+  --muted-foreground: #586660;
 
-  /*
-   * Relay app violet palette
-   */
-  --relay: #684df6;
-  --relay-dark: #5542e8;
-  --relay-light: #f0edff;
-  --relay-border: #dcd5ff;
+  /* Relay orange and deeper coral. */
+  --relay: #ec6b4e;
+  --relay-dark: #c43d28;
+  --relay-hover: #a82f1e;
+  --relay-light: #fff0eb;
+  --relay-border: #edc6be;
 
-  --relay-gradient-start: #654df5;
-  --relay-gradient-end: #7548f5;
+  /* Retain gradient variables with a flat coral finish. */
+  --relay-gradient-start: var(--relay-dark);
+  --relay-gradient-end: var(--relay-dark);
 
-  /*
-   * Shadcn accent colours now match Relay.
-   */
   --accent: var(--relay-light);
   --accent-foreground: var(--relay-dark);
 
-  --destructive: oklch(0.577 0.245 27.325);
+  /* Errors remain distinct from brand accents. */
+  --destructive: #b52c40;
 
-  /*
-   * Neutral borders remain neutral.
-   * The focus ring uses Relay violet.
-   */
-  --border: oklch(0.912 0.006 274);
-  --input: oklch(0.912 0.006 274);
-  --ring: var(--relay);
+  --border: #dedfdc;
+  --input: #dedfdc;
+  --ring: var(--relay-dark);
 
-  /*
-   * Backward-compatible aliases.
-   * Existing bg-mint, text-mint-strong, etc. now use Relay violet.
-   */
+  /* Compatibility with existing mint utility classes. */
   --mint: var(--relay-light);
-  --mint-strong: var(--relay);
+  --mint-strong: var(--relay-dark);
   --mint-foreground: var(--relay-dark);
 }
 
@@ -135,31 +122,26 @@
   }
 
   ::selection {
-    background: var(--relay);
-    color: white;
+    background: var(--relay-dark);
+    color: #ffffff;
   }
 }
 
 @layer utilities {
-  /*
-   * Use this class for buttons that should match
-   * the app's Sign in button exactly.
-   */
+  /* Existing gradient buttons now use solid coral. */
   .bg-relay-gradient {
-    background-image: linear-gradient(
-      90deg,
-      var(--relay-gradient-start) 0%,
-      var(--relay-gradient-end) 100%
-    );
+    background-color: var(--relay-dark);
+    background-image: none;
+    color: #ffffff;
+  }
+
+  .bg-relay-gradient:hover {
+    background-color: var(--relay-hover);
   }
 
   .text-relay-gradient {
-    background-image: linear-gradient(
-      90deg,
-      var(--relay-gradient-start) 0%,
-      var(--relay-gradient-end) 100%
-    );
-    background-clip: text;
-    color: transparent;
+    background-image: none;
+    color: var(--relay-dark);
+    -webkit-text-fill-color: currentColor;
   }
 }
