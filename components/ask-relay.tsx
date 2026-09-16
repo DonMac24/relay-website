@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react'
 import {
   BriefcaseBusiness,
   CalendarDays,
@@ -6,6 +7,7 @@ import {
   FileText,
   Sparkles,
   UserRound,
+  type LucideIcon,
 } from 'lucide-react'
 
 const capabilities = [
@@ -16,19 +18,22 @@ const capabilities = [
 
 export function AskRelay() {
   return (
-    <section id="ask-relay" className="border-b border-border">
+    <section
+      id="ask-relay"
+      className="border-b border-[#DEDFDC] bg-[#FAFAF7]"
+    >
       <div className="mx-auto grid w-full max-w-6xl gap-12 px-5 py-16 sm:px-8 md:py-24 lg:grid-cols-2 lg:items-center">
         <div>
-          <span className="inline-flex items-center gap-2 rounded-full border border-[#ded8ff] bg-[#f1eeff] px-3 py-1 font-mono text-[0.7rem] tracking-[0.18em] text-[#6248f5] uppercase">
-            <Sparkles className="size-3.5" />
+          <span className="inline-flex items-center gap-2 rounded-full border border-[#EDC6BE] bg-[#FFF0EB] px-3 py-1 font-mono text-[0.7rem] tracking-[0.18em] text-[#C43D28] uppercase">
+            <Sparkles className="size-3.5" aria-hidden="true" />
             Ask Relay AI
           </span>
 
-          <h2 className="mt-6 text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
+          <h2 className="mt-6 text-3xl font-semibold tracking-tight text-balance text-[#171A18] sm:text-4xl">
             Ask about the work people leave behind
           </h2>
 
-          <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+          <p className="mt-4 text-base leading-relaxed text-[#586660]">
             Ask Relay gives managers and employees simple answers using the
             connected work records, meetings, documents, and responsibilities
             they are authorized to view.
@@ -36,19 +41,25 @@ export function AskRelay() {
 
           <ul className="mt-8 space-y-3">
             {capabilities.map((capability) => (
-              <li key={capability} className="flex items-start gap-3 text-sm">
-                <span className="mt-0.5 grid size-5 shrink-0 place-items-center rounded-full bg-[#f1eeff]">
-                  <Check className="size-3 text-[#6248f5]" />
+              <li
+                key={capability}
+                className="flex items-start gap-3 text-sm"
+              >
+                <span className="mt-0.5 grid size-5 shrink-0 place-items-center rounded-full bg-[#FFF0EB]">
+                  <Check
+                    className="size-3 text-[#C43D28]"
+                    aria-hidden="true"
+                  />
                 </span>
 
-                <span className="leading-relaxed text-foreground">
+                <span className="leading-relaxed text-[#171A18]">
                   {capability}
                 </span>
               </li>
             ))}
           </ul>
 
-          <p className="mt-6 text-xs leading-relaxed text-muted-foreground">
+          <p className="mt-6 text-xs leading-relaxed text-[#586660]">
             Ask Relay is governed by workspace permissions and cannot change,
             assign, approve, or delete records.
           </p>
@@ -62,7 +73,7 @@ export function AskRelay() {
 
 function AskRelayExamples() {
   return (
-    <div className="space-y-4">
+    <div className="space-y-6">
       <RelayExample
         icon={BriefcaseBusiness}
         role="Manager workspace"
@@ -71,7 +82,7 @@ function AskRelayExamples() {
         question="Which of Aubrey’s connected work items still need a new owner?"
         answer={
           <>
-            <span className="font-medium text-white">
+            <span className="font-semibold text-[#171A18]">
               Three connected work items
             </span>{' '}
             still need a new owner: two open Jira tickets and Aubrey’s weekly
@@ -101,7 +112,7 @@ function AskRelayExamples() {
         answer={
           <>
             You have{' '}
-            <span className="font-medium text-white">
+            <span className="font-semibold text-[#171A18]">
               three upcoming meetings
             </span>{' '}
             connected to responsibilities assigned to you: a project handoff on
@@ -127,9 +138,19 @@ function AskRelayExamples() {
 }
 
 type SourceItem = {
-  icon: typeof FileText
+  icon: LucideIcon
   title: string
   detail: string
+}
+
+type RelayExampleProps = {
+  icon: LucideIcon
+  role: string
+  title: string
+  description: string
+  question: string
+  answer: ReactNode
+  sources: SourceItem[]
 }
 
 function RelayExample({
@@ -140,62 +161,65 @@ function RelayExample({
   question,
   answer,
   sources,
-}: {
-  icon: typeof BriefcaseBusiness
-  role: string
-  title: string
-  description: string
-  question: string
-  answer: React.ReactNode
-  sources: SourceItem[]
-}) {
+}: RelayExampleProps) {
   return (
-    <article className="overflow-hidden rounded-2xl border border-[#33415c] bg-[#0f1a2d] shadow-[0_24px_60px_-32px_rgba(15,23,42,0.65)]">
+    <article className="overflow-hidden rounded-2xl border border-[#171A18] bg-white">
+      <div className="flex items-center gap-3 bg-[#171A18] px-5 py-4">
+        <Sparkles
+          className="size-4 shrink-0 text-[#EC6B4E]"
+          aria-hidden="true"
+        />
+
+        <h3 className="text-sm font-semibold text-white">
+          {title}
+        </h3>
+      </div>
+
       <div className="p-5">
-        <div className="flex items-start justify-between gap-4">
-          <div>
-            <div className="flex items-center gap-2">
-              <Icon className="size-3.5 text-[#a995ff]" />
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <div className="flex items-center gap-2">
+            <Icon
+              className="size-3.5 text-[#C43D28]"
+              aria-hidden="true"
+            />
 
-              <p className="font-mono text-[0.64rem] font-semibold tracking-[0.16em] text-[#b8a8ff] uppercase">
-                {role}
-              </p>
-            </div>
-
-            <h3 className="mt-2 text-base font-medium text-white">
-              {title}
-            </h3>
-
-            <p className="mt-1 text-xs leading-relaxed text-[#aeb9cc]">
-              {description}
+            <p className="font-mono text-[0.64rem] font-semibold tracking-[0.12em] text-[#586660] uppercase">
+              {role}
             </p>
           </div>
 
-          <span className="grid size-11 shrink-0 place-items-center rounded-xl border border-[#3b4965] bg-[#17243a] text-sm font-semibold text-[#a995ff]">
-            AI
+          <span className="rounded-md border border-[#DEDFDC] bg-[#FFF0EB] px-2 py-1 text-[0.6rem] font-semibold tracking-[0.1em] text-[#171A18] uppercase">
+            Governed · Read-only
           </span>
         </div>
 
-        <div className="mt-4 flex items-center gap-2 rounded-xl border border-[#36445f] bg-[#111e32] p-2">
-          <p className="min-w-0 flex-1 truncate rounded-lg border border-[#cbd2dd] bg-white px-3 py-2.5 text-xs text-[#7c879a]">
+        <p className="mt-3 text-xs leading-relaxed text-[#586660]">
+          {description}
+        </p>
+
+        <div className="mt-4 flex flex-col gap-2 rounded-xl border border-[#171A18] bg-white p-2 sm:flex-row sm:items-center">
+          <p className="min-w-0 flex-1 rounded-lg border border-[#171A18] bg-white px-3 py-2.5 text-xs leading-relaxed text-[#586660]">
             {question}
           </p>
 
-          <span className="shrink-0 rounded-lg bg-[#4b39a8] px-4 py-2.5 text-[0.68rem] font-medium text-white transition-colors hover:bg-[#5b47c7]">
+          <span className="inline-flex shrink-0 items-center justify-center self-end rounded-lg bg-[#C43D28] px-4 py-3 text-[0.68rem] font-semibold text-white sm:self-center">
             Ask Relay
           </span>
         </div>
 
-        <div className="mt-3 rounded-xl border border-[#33415c] bg-[#142136] p-4">
+        <div className="mt-3 rounded-xl border border-[#DEDFDC] bg-white p-4">
           <div className="flex items-center gap-2">
-            <Sparkles className="size-3.5 text-[#a995ff]" />
+            <Sparkles
+              className="size-3.5 text-[#C43D28]"
+              aria-hidden="true"
+            />
 
-            <span className="text-xs font-medium text-[#b8a8ff]">
+            <span className="text-xs font-semibold text-[#171A18]">
               Ask Relay
             </span>
           </div>
 
-          <p className="mt-2 text-xs leading-relaxed text-[#e5e9f2]">
+          <p className="mt-2 text-xs leading-relaxed text-[#171A18]">
             {answer}
           </p>
 
@@ -204,33 +228,38 @@ function RelayExample({
               const SourceIcon = source.icon
 
               return (
-                <button
+                <div
                   key={source.title}
-                  type="button"
-                  className="flex w-full items-center gap-3 rounded-lg border border-[#33415c] bg-[#0f1a2d] px-3 py-2.5 text-left transition-colors hover:border-[#6752d9] hover:bg-[#192740]"
+                  className="flex w-full items-center gap-3 rounded-lg border border-[#DEDFDC] bg-[#FAFAF7] px-3 py-2.5 text-left"
                 >
-                  <span className="grid size-7 shrink-0 place-items-center rounded-md bg-[#28234b]">
-                    <SourceIcon className="size-3.5 text-[#aa96ff]" />
+                  <span className="grid size-7 shrink-0 place-items-center rounded-md bg-[#FFF0EB]">
+                    <SourceIcon
+                      className="size-3.5 text-[#C43D28]"
+                      aria-hidden="true"
+                    />
                   </span>
 
                   <span className="min-w-0">
-                    <span className="block truncate text-[0.7rem] font-medium text-white">
+                    <span className="block text-[0.7rem] font-medium text-[#171A18]">
                       {source.title}
                     </span>
 
-                    <span className="mt-0.5 block text-[0.6rem] text-[#8f9bb0]">
+                    <span className="mt-0.5 block text-[0.65rem] text-[#586660]">
                       {source.detail}
                     </span>
                   </span>
 
-                  <ExternalLink className="ml-auto size-3.5 shrink-0 text-[#a995ff]" />
-                </button>
+                  <ExternalLink
+                    className="ml-auto size-3.5 shrink-0 text-[#C43D28]"
+                    aria-hidden="true"
+                  />
+                </div>
               )
             })}
           </div>
         </div>
 
-        <p className="mt-3 text-center text-[0.58rem] leading-relaxed text-[#8290a6]">
+        <p className="mt-3 text-center text-[0.65rem] leading-relaxed text-[#586660]">
           Ask Relay can make mistakes. Verify important details using the linked
           original sources.
         </p>
