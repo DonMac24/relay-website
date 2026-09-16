@@ -215,7 +215,7 @@ export function ContinuityHome() {
               </div>
               <div className={s.sceneTransfer}><ArrowRight size={24} aria-hidden="true" /></div>
               <div className={s.sceneWork}>
-                <div className={s.sceneRecipient}><span className={s.miniAvatar}>SC</span><div><span className={s.sampleLabel}>Prepared for Sarah Chen</span><h3>My assigned work</h3></div></div>
+                <div className={s.sceneRecipient}><Image src="/sarah-chen-profile.png" alt="Sarah Chen" width={60} height={60} style={{ width: 60, height: 60, borderRadius: "50%", objectFit: "cover", flexShrink: 0 }} /><div><span className={s.sampleLabel}>Prepared for Sarah Chen</span><h3>My assigned work</h3></div></div>
                 <div className={s.sceneRow}><div><strong>Run forecast calls</strong><span>Responsibilities · 1 linked source</span></div><span className={s.todoPill}>To do</span></div>
                 <div className={s.sceneRow}><div><strong>Approve commercial exceptions</strong><span>Responsibilities · 1 linked source</span></div><span className={s.warning}>Access issue</span></div>
                 <p className={s.sceneFoot}>Continuity Hub · Illustrative record</p>
