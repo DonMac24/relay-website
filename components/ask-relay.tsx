@@ -1,3 +1,5 @@
+import styles from './continuity-home.module.css'
+
 const reportExample = [
   { name: 'Aubrey', count: 9 },
   { name: 'Jordan', count: 4 },
@@ -7,26 +9,25 @@ const reportExample = [
 export function AskRelay() {
   return (
     <section id="ask-relay" className="border-y border-[#DEDFDC] bg-[#FFFFFF] text-[#171A18]">
-      <div className="mx-auto w-full max-w-6xl px-5 pt-10 pb-5 sm:px-8 md:pt-14">
+      <div className={`${styles.wrap} pt-10 pb-6 md:pt-14`}>
         <div className="flex flex-wrap items-center gap-3 text-sm font-bold uppercase text-[#FF5838]">
           <span>Ask Relay AI</span>
           <span className="rounded-full bg-[#FFF0EB] px-3 py-1">Agentic</span>
         </div>
-        <h2 className="mt-6 text-3xl font-bold leading-tight tracking-tight sm:text-4xl">
+        <h2 className="mt-6">
           Ask a question, find what&apos;s missing, or run a report — all in Relay.
         </h2>
-        <p className="mt-6 max-w-4xl text-lg leading-relaxed text-[#586660]">
+        <p className={styles.visualIntro}>
           Get source-linked answers, review proposed work, and ask about your
           continuity data in plain language. Access follows your role: managers
           review handoffs, employees see their priorities, and admins and managers
           can run reports.
         </p>
-        <p className="mt-5 text-xs text-[#586660]">Illustrative examples · Fictional people and figures</p>
 
-        <div className="mt-4 grid gap-5 lg:grid-cols-3">
+        <div className="mt-6 grid items-start gap-5 lg:grid-cols-3">
           <article className="min-w-0 rounded-2xl border border-[#DEDFDC] bg-[#FFFFFF] p-5">
             <h3 className="text-sm font-bold uppercase text-[#586660]">Ask</h3>
-            <p className="mt-3 text-xl font-bold leading-snug">Get an answer</p>
+            <p className="mt-3 text-[18px] font-semibold leading-snug">Get an answer</p>
             <p className="mt-3 text-base leading-relaxed text-[#586660]">
               Ask about your handoffs and approved supporting records. Follow the
               sources behind the answer.
@@ -48,7 +49,7 @@ export function AskRelay() {
 
           <article className="min-w-0 rounded-2xl border border-[#DEDFDC] bg-[#FFFFFF] p-5">
             <h3 className="text-sm font-bold uppercase text-[#586660]">Discover</h3>
-            <p className="mt-3 text-xl font-bold leading-snug">Find what&apos;s missing</p>
+            <p className="mt-3 text-[18px] font-semibold leading-snug">Find what&apos;s missing</p>
             <p className="mt-3 text-base leading-relaxed text-[#586660]">
               Run discovery across connected work systems. Relay proposes work and
               flags gaps for a manager to review.
@@ -71,7 +72,7 @@ export function AskRelay() {
 
           <article className="min-w-0 rounded-2xl border border-[#DEDFDC] bg-[#FFFFFF] p-5">
             <h3 className="text-sm font-bold uppercase text-[#586660]">Report</h3>
-            <p className="mt-3 text-xl font-bold leading-snug">Ask about your data</p>
+            <p className="mt-3 text-[18px] font-semibold leading-snug">Ask about your data</p>
             <p className="mt-3 text-base leading-relaxed text-[#586660]">
               Ask a reporting question in plain language.
             </p>
@@ -108,14 +109,6 @@ export function AskRelay() {
             </p>
           </article>
         </div>
-      </div>
-      <div className="border-t border-[#DEDFDC]">
-        <p className="mx-auto w-full max-w-6xl px-5 py-4 text-base leading-relaxed text-[#586660] sm:px-8">
-          AI supports the work; people control the decisions. Answers, proposals
-          and reports respect workspace permissions. Managers choose what to add,
-          edit or dismiss. AI does not change, assign, approve or delete work
-          records on its own. Verify important details using the linked sources.
-        </p>
       </div>
     </section>
   )
