@@ -226,7 +226,7 @@ export function ContinuityHome() {
         <AskRelay />
         <section className={s.integrations} id="integrations">
           <div className={s.wrap}>
-            <p className={s.eyebrow}>Connected to the work</p>
+            <p className={s.eyebrow}>Integrations</p>
             <h2>
               Keep your tools.
               <br />
