@@ -1,3 +1,9 @@
+const reportExample = [
+  { name: 'Aubrey', count: 9 },
+  { name: 'Jordan', count: 4 },
+  { name: 'Priya', count: 2 },
+]
+
 export function AskRelay() {
   return (
     <section id="ask-relay" className="border-y border-[#DEDFDC] bg-[#FFFFFF] text-[#171A18]">
@@ -7,62 +13,109 @@ export function AskRelay() {
           <span className="rounded-full bg-[#FFF0EB] px-3 py-1">Agentic</span>
         </div>
         <h2 className="mt-6 text-3xl font-bold leading-tight tracking-tight sm:text-4xl">
-          It answers. It also tells you what you didn&apos;t ask.
+          Ask a question, find what&apos;s missing, or run a report — all in Relay.
         </h2>
         <p className="mt-6 max-w-4xl text-lg leading-relaxed text-[#586660]">
-          Ask Relay works the same way for managers and employees — governed access,
-          source-linked answers — but it doesn&apos;t wait to be asked. It surfaces
-          gaps for managers and priorities for employees on its own.
+          Get source-linked answers, review proposed work, and ask about your
+          continuity data in plain language. Access follows your role: managers
+          review handoffs, employees see their priorities, and admins and managers
+          can run reports.
         </p>
+        <p className="mt-5 text-xs text-[#586660]">Illustrative examples · Fictional people and figures</p>
 
-        <div className="mt-10 grid gap-6 md:grid-cols-2">
-          <article className="min-w-0 rounded-2xl border border-[#DEDFDC] bg-[#FFFFFF] p-5 sm:p-7">
-            <div className="flex flex-wrap items-center justify-between gap-3">
-              <h3 className="text-sm font-bold uppercase text-[#586660]">Manager workspace</h3>
-              <span className="rounded-full bg-[#FFF0EB] px-3 py-1 text-sm text-[#FF5838]">Proposes</span>
-            </div>
-            <p className="mt-5 text-xl font-bold leading-snug">
-              Which of Aubrey&apos;s work items need an owner?
+        <div className="mt-5 grid gap-6 lg:grid-cols-3">
+          <article className="min-w-0 rounded-2xl border border-[#DEDFDC] bg-[#FFFFFF] p-5 sm:p-6">
+            <h3 className="text-sm font-bold uppercase text-[#586660]">Ask</h3>
+            <p className="mt-4 text-xl font-bold leading-snug">Get an answer</p>
+            <p className="mt-4 text-base leading-relaxed text-[#586660]">
+              Ask about your handoffs and approved supporting records. Follow the
+              sources behind the answer.
             </p>
-            <div className="mt-5 rounded-xl bg-[#F3F4F1] p-5">
-              <p className="text-base leading-relaxed">
-                <strong>Three items</strong> need owners. <strong>Also flagged:</strong> the
-                enterprise renewal portfolio has no point of contact on file — want
-                to add it to this handoff?
+            <div className="mt-5 rounded-xl bg-[#F3F4F1] p-4">
+              <p className="text-sm leading-relaxed text-[#586660]">
+                Which of Aubrey&apos;s work items need an owner?
               </p>
-              <div className="mt-4 flex flex-wrap gap-2 text-sm text-[#586660]">
-                <span className="rounded-full border border-[#DEDFDC] bg-[#FFFFFF] px-3 py-1">Jira tickets</span>
-                <span className="rounded-full border border-[#DEDFDC] bg-[#FFFFFF] px-3 py-1">Suggested, not assigned</span>
+              <p className="mt-3 text-base leading-relaxed">
+                <strong>Three items:</strong> two open Jira tickets and the weekly
+                status report.
+              </p>
+              <div className="mt-4 flex flex-wrap gap-2 text-xs text-[#586660]" aria-label="Illustrative answer sources">
+                <span className="rounded-full border border-[#DEDFDC] bg-white px-3 py-1">[1] Relay handoff</span>
+                <span className="rounded-full border border-[#DEDFDC] bg-white px-3 py-1">[2] Jira tickets</span>
               </div>
             </div>
           </article>
 
-          <article className="min-w-0 rounded-2xl border border-[#DEDFDC] bg-[#FFFFFF] p-5 sm:p-7">
-            <div className="flex flex-wrap items-center justify-between gap-3">
-              <h3 className="text-sm font-bold uppercase text-[#586660]">Employee Continuity Hub</h3>
-              <span className="rounded-full bg-[#FFF0EB] px-3 py-1 text-sm text-[#FF5838]">Surfaces</span>
-            </div>
-            <p className="mt-5 text-xl font-bold leading-snug">Opens the Hub — no question asked</p>
-            <div className="mt-5 flex items-start gap-3 rounded-xl bg-[#F3F4F1] p-5">
+          <article className="min-w-0 rounded-2xl border border-[#DEDFDC] bg-[#FFFFFF] p-5 sm:p-6">
+            <h3 className="text-sm font-bold uppercase text-[#586660]">Discover</h3>
+            <p className="mt-4 text-xl font-bold leading-snug">Find what&apos;s missing</p>
+            <p className="mt-4 text-base leading-relaxed text-[#586660]">
+              Run discovery across connected work systems. Relay proposes work and
+              flags gaps for a manager to review.
+            </p>
+            <div className="mt-5 flex items-start gap-3 rounded-xl bg-[#F3F4F1] p-4">
               <span aria-hidden="true" className="mt-2 size-2 shrink-0 rounded-full bg-[#FF5838]" />
               <p className="text-base leading-relaxed">
-                <strong>2 responsibilities</strong> due this week, and <strong>1 access issue</strong> still
-                unresolved from your handoff.
+                <strong>Enterprise renewal portfolio</strong> — found in three
+                sources, with no point of contact recorded.
               </p>
             </div>
-            <div className="mt-6 flex flex-wrap gap-2 text-sm text-[#586660]">
-              <span className="rounded-full border border-[#DEDFDC] px-3 py-1">Assigned work</span>
-              <span className="rounded-full border border-[#DEDFDC] px-3 py-1">Pushed, not requested</span>
+            <div className="mt-4 flex flex-wrap gap-2 text-xs text-[#586660]">
+              <span className="rounded-full border border-[#DEDFDC] px-3 py-1">Suggested, not assigned</span>
             </div>
+            <p className="mt-5 text-sm leading-relaxed text-[#586660]">
+              Employees also see priorities automatically when they open their
+              Continuity Hub, including new assignments and unresolved access issues.
+            </p>
+          </article>
+
+          <article className="min-w-0 rounded-2xl border border-[#DEDFDC] bg-[#FFFFFF] p-5 sm:p-6">
+            <h3 className="text-sm font-bold uppercase text-[#586660]">Report</h3>
+            <p className="mt-4 text-xl font-bold leading-snug">Ask about your data</p>
+            <p className="mt-4 text-base leading-relaxed text-[#586660]">
+              Ask a reporting question in plain language. Relay calculates the
+              answer from authorized handoffs and shows the supporting records.
+            </p>
+            <div className="mt-5 rounded-xl bg-[#F3F4F1] p-4">
+              <p className="text-sm leading-relaxed text-[#586660]">
+                Which managers have the most unresolved access issues?
+              </p>
+              <p className="mt-3 text-base leading-relaxed">
+                <strong>Aubrey, with 9 issues</strong> — followed by Jordan with 4
+                and Priya with 2.
+              </p>
+            </div>
+            <figure className="mt-5" aria-label="Illustrative current unresolved access issues by manager: Aubrey 9, Jordan 4, Priya 2">
+              <div className="flex h-24 items-end gap-4" aria-hidden="true">
+                {reportExample.map(({ name, count }, index) => (
+                  <div key={name} className="flex h-full flex-1 flex-col justify-end gap-1 text-center">
+                    <span className="text-xs font-semibold text-[#586660]">{count}</span>
+                    <div
+                      className={`mx-auto w-full max-w-12 rounded-t ${index === 0 ? 'bg-[#FF5838]' : 'bg-[#C9DDD5]'}`}
+                      style={{ height: `${count * 6}px` }}
+                    />
+                    <span className="text-[0.65rem] text-[#586660]">{name}</span>
+                  </div>
+                ))}
+              </div>
+              <figcaption className="mt-3 text-xs text-[#586660]">Current issues · Example data</figcaption>
+            </figure>
+            <div className="mt-4 flex flex-wrap gap-2 text-xs text-[#586660]" aria-label="Illustrative report sources">
+              <span className="rounded-full border border-[#DEDFDC] px-3 py-1">[1–3] Supporting handoffs</span>
+            </div>
+            <p className="mt-4 text-sm leading-relaxed text-[#586660]">
+              Refine your question or pin the result to your dashboard to
+              recalculate when you return.
+            </p>
           </article>
         </div>
-
       </div>
       <div className="border-t border-[#DEDFDC]">
         <p className="mx-auto w-full max-w-6xl px-5 py-4 text-base leading-relaxed text-[#586660] sm:px-8">
-          AI supports the work; people control the decisions. Every suggestion is
-          governed by workspace permissions and can be confirmed, edited or
-          dismissed — it cannot change, assign, approve, or delete records on its own.
+          AI supports the work; people control the decisions. Answers, proposals
+          and reports respect workspace permissions. Managers choose what to add,
+          edit or dismiss. AI does not change, assign, approve or delete work
+          records on its own. Verify important details using the linked sources.
         </p>
       </div>
     </section>
