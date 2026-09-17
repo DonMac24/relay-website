@@ -924,3 +924,23 @@
     letter-spacing: .12em;
   }
 }
+
+/* Page dividers extend to the edges while text stays aligned with the content. */
+.integrationNotes,
+.footer small {
+  position: relative;
+  border-top: 0;
+}
+.integrationNotes::before,
+.footer small::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--line);
+  box-shadow: 0 0 0 100vmax var(--line);
+  clip-path: inset(0 -100vmax);
+  pointer-events: none;
+}
