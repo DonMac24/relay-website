@@ -1,140 +1,98 @@
-import type { ReactNode } from 'react'
-import {
-  BriefcaseBusiness,
-  CalendarDays,
-  Check,
-  FileText,
-  Sparkles,
-  UserRound,
-  type LucideIcon,
-} from 'lucide-react'
+import { ArrowUpRight, Sparkles } from 'lucide-react'
 
-const capabilities = [
-  'Ask questions across connected Jira, Outlook, SharePoint, and Relay records',
-  'See work that still needs an owner, upcoming meetings, and responsibilities',
-  'Every answer links back to an authorized original source',
-]
+const examples = [
+  {
+    role: 'Manager workspace',
+    action: 'Proposes',
+    question: 'Which of Aubrey’s work items need an owner?',
+    lead: 'Three items need owners.',
+    answer: ' Also flagged: the enterprise renewal portfolio has no point of contact on file — want to add it to this handoff?',
+    sources: ['Jira tickets', 'Suggested, not assigned'],
+  },
+  {
+    role: 'Employee Continuity Hub',
+    action: 'Surfaces',
+    question: 'Opens the Hub — no question asked',
+    lead: '2 responsibilities due this week,',
+    answer: ' and 1 access issue still unresolved from your handoff.',
+    sources: ['Assigned work', 'Pushed, not requested'],
+  },
+] as const
 
 export function AskRelay() {
   return (
     <section
       id="ask-relay"
-      className="border-b border-[#DEDFDC] bg-[#FAFAF7]"
+      aria-labelledby="ask-relay-heading"
+      className="border-b border-[#DCE5E2] bg-[#E6EEEB]"
     >
-      <div className="mx-auto grid w-full max-w-6xl gap-12 px-5 py-16 sm:px-8 md:py-24 lg:grid-cols-2 lg:items-center">
-        <div>
-          <span className="inline-flex items-center gap-2 rounded-full border border-[#EDC6BE] bg-[#FFF0EB] px-3 py-1 font-mono text-[0.7rem] tracking-[0.18em] text-[#C43D28] uppercase">
-            <Sparkles className="size-3.5" aria-hidden="true" />
+      <div className="mx-auto w-full max-w-6xl px-5 py-16 sm:px-8 md:py-20">
+        <div className="flex flex-wrap items-center gap-3">
+          <span className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.14em] text-[#AB351F] uppercase">
+            <Sparkles className="size-4" aria-hidden="true" />
             Ask Relay AI
           </span>
-
-          <h2 className="mt-6 text-3xl font-semibold tracking-tight text-balance text-[#171A18] sm:text-4xl">
-            Questions come up. Context stays close.
-          </h2>
-
-          <p className="mt-4 text-base leading-relaxed text-[#586660]">
-            Ask Relay gives managers and employees simple answers using the
-            connected work records, meetings, documents, and responsibilities
-            they are authorized to view.
-          </p>
-
-          <ul className="mt-8 space-y-3">
-            {capabilities.map((capability) => (
-              <li
-                key={capability}
-                className="flex items-start gap-3 text-sm"
-              >
-                <span className="mt-0.5 grid size-5 shrink-0 place-items-center rounded-full bg-[#FFF0EB]">
-                  <Check
-                    className="size-3 text-[#C43D28]"
-                    aria-hidden="true"
-                  />
-                </span>
-
-                <span className="leading-relaxed text-[#171A18]">
-                  {capability}
-                </span>
-              </li>
-            ))}
-          </ul>
-
-          <p className="mt-6 text-xs leading-relaxed text-[#586660]">
-            AI supports the handoff; managers control the decisions. Ask Relay is governed by workspace permissions and cannot change,
-            assign, approve, or delete records.
-          </p>
+          <span className="rounded-full border border-[#F0C7B9] bg-[#FFF0EA] px-3 py-1 text-xs font-semibold text-[#AB351F]">
+            Agentic
+          </span>
         </div>
 
-        <AskRelayExamples />
-      </div>
-    </section>
-  )
-}
+        <h2
+          id="ask-relay-heading"
+          className="mt-6 max-w-5xl text-3xl leading-tight font-semibold tracking-tight text-balance text-[#21413D] sm:text-4xl lg:text-5xl"
+        >
+          It answers. It also tells you what you didn&apos;t ask.
+        </h2>
+        <p className="mt-6 max-w-4xl text-base leading-relaxed text-[#425F59] sm:text-lg">
+          Ask Relay works the same way for managers and employees — governed
+          access, source-linked answers — but it doesn&apos;t wait to be asked.
+          It surfaces gaps for managers and priorities for employees on its own.
+        </p>
 
-function AskRelayExamples() {
-  return (
-    <div className="space-y-3">
-      <p className="text-xs text-[#586660]">Illustrative conversations · Governed, read-only</p>
-      <RelayExample
-        icon={BriefcaseBusiness}
-        role="Manager workspace"
-        question="Which of Aubrey’s work items need an owner?"
-        answer={<><strong>Three items:</strong> two open Jira tickets and the weekly status report in SharePoint.</>}
-        sources={[
-          { icon: FileText, title: 'Relay handoff' },
-          { icon: FileText, title: 'Jira tickets' },
-        ]}
-      />
-      <RelayExample
-        icon={UserRound}
-        role="Employee Continuity Hub"
-        question="What meetings are coming up for my assigned work?"
-        answer={<><strong>Three meetings:</strong> project handoff Monday, payroll review Wednesday, and vendor check-in Friday.</>}
-        sources={[
-          { icon: CalendarDays, title: 'Outlook meetings' },
-          { icon: FileText, title: 'Assigned work' },
-        ]}
-      />
-      <p className="text-xs leading-relaxed text-[#586660]">
-        Ask Relay can make mistakes. Verify important details using the original sources.
-      </p>
-    </div>
-  )
-}
-
-type SourceItem = { icon: LucideIcon; title: string }
-
-type RelayExampleProps = {
-  icon: LucideIcon
-  role: string
-  question: string
-  answer: ReactNode
-  sources: SourceItem[]
-}
-
-function RelayExample({ icon: Icon, role, question, answer, sources }: RelayExampleProps) {
-  return (
-    <article className="overflow-hidden rounded-xl border border-[#171A18] bg-white">
-      <div className="flex flex-wrap items-center gap-x-3 gap-y-1 bg-[#171A18] px-4 py-2.5">
-        <Sparkles className="size-4 shrink-0 text-[#EC6B4E]" aria-hidden="true" />
-        <h3 className="text-sm font-semibold text-white">Ask Relay</h3>
-        <span className="ml-auto flex items-center gap-1.5 text-xs text-white/80">
-          <Icon className="size-3.5 shrink-0" aria-hidden="true" />{role}
-        </span>
-      </div>
-      <div className="space-y-3 p-4">
-        <div className="flex items-center gap-2">
-          <p className="min-w-0 flex-1 rounded-lg border border-[#DEDFDC] px-3 py-2 text-xs leading-relaxed text-[#586660]">{question}</p>
-          <span className="shrink-0 rounded-lg bg-[#C43D28] px-3 py-2 text-xs font-semibold text-white">Ask Relay</span>
-        </div>
-        <p className="text-sm leading-relaxed text-[#171A18]">{answer}</p>
-        <div className="flex flex-wrap gap-2" aria-label="Example sources">
-          {sources.map(({icon: SourceIcon, title}) => (
-            <span key={title} className="inline-flex items-center gap-1.5 rounded-md border border-[#EDC6BE] bg-[#FFF0EB] px-2 py-1 text-xs text-[#99321F]">
-              <SourceIcon className="size-3 shrink-0" aria-hidden="true" />{title}
-            </span>
+        <div className="mt-10 grid gap-5 lg:grid-cols-2">
+          {examples.map((example, index) => (
+            <article
+              key={example.role}
+              className="flex min-w-0 flex-col rounded-2xl border border-[#DCE5E2] bg-white p-6 shadow-[0_3px_16px_rgba(33,65,61,0.04)] sm:p-8"
+            >
+              <div className="flex flex-wrap items-center justify-between gap-3">
+                <h3 className="text-xs font-semibold tracking-[0.08em] text-[#586F68] uppercase">
+                  {example.role}
+                </h3>
+                <span className="inline-flex items-center gap-1 rounded-full bg-[#FFF0EA] px-3 py-1 text-xs font-medium text-[#AB351F]">
+                  {example.action}
+                  <ArrowUpRight className="size-3.5" aria-hidden="true" />
+                </span>
+              </div>
+              <p className="mt-6 text-xl leading-snug font-semibold text-[#21413D] sm:text-2xl">
+                {example.question}
+              </p>
+              <div className="mt-5 rounded-xl border border-[#E4EBE7] bg-[#F5F8F7] p-5">
+                <p className="text-base leading-relaxed text-[#21413D]">
+                  {index === 1 && (
+                    <span className="mr-2 inline-block size-2.5 rounded-full bg-[#FF5738]" aria-hidden="true" />
+                  )}
+                  <strong className="font-semibold">{example.lead}</strong>
+                  {example.answer}
+                </p>
+              </div>
+              <div className="mt-auto flex flex-wrap gap-2 pt-5" aria-label={`${example.role} example context`}>
+                {example.sources.map((source) => (
+                  <span key={source} className="rounded-full border border-[#DCE5E2] bg-white px-3 py-1 text-xs leading-relaxed text-[#586F68]">
+                    {source}
+                  </span>
+                ))}
+              </div>
+            </article>
           ))}
         </div>
+
+        <p className="mt-8 border-t border-[#CBD9D3] pt-6 text-sm leading-relaxed text-[#425F59]">
+          AI supports the work; people control the decisions. Every suggestion is governed by workspace permissions and
+          can be confirmed, edited or dismissed — it cannot change, assign,
+          approve, or delete records on its own.
+        </p>
       </div>
-    </article>
+    </section>
   )
 }

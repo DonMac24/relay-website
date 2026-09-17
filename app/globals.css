@@ -66,35 +66,35 @@
 
   --radius: 0.75rem;
 
-  --background: #fafaf7;
-  --foreground: #171a18;
+  --background: #EEF3F2;
+  --foreground: #21413D;
 
   --card: #ffffff;
-  --card-foreground: #171a18;
+  --card-foreground: #21413D;
 
   --popover: #ffffff;
-  --popover-foreground: #171a18;
+  --popover-foreground: #21413D;
 
-  /* Preserve intentional black primary buttons. */
-  --primary: #171a18;
-  --primary-foreground: #ffffff;
+  /* Shared Elia-inspired palette, aligned with the Relay app. */
+  --primary: #FF5738;
+  --primary-foreground: #102B25;
 
-  --secondary: #f3f4f1;
-  --secondary-foreground: #171a18;
+  --secondary: #F5F8F7;
+  --secondary-foreground: #21413D;
 
-  --muted: #f3f4f1;
-  --muted-foreground: #586660;
+  --muted: #F5F8F7;
+  --muted-foreground: #586F68;
 
   /* Relay orange and deeper coral. */
-  --relay: #ec6b4e;
-  --relay-dark: #c43d28;
-  --relay-hover: #a82f1e;
-  --relay-light: #fff0eb;
-  --relay-border: #edc6be;
+  --relay: #FF5738;
+  --relay-dark: #AB351F;
+  --relay-hover: #97301E;
+  --relay-light: #FFF0EA;
+  --relay-border: #F0C7B9;
 
   /* Retain gradient variables with a flat coral finish. */
-  --relay-gradient-start: var(--relay-dark);
-  --relay-gradient-end: var(--relay-dark);
+  --relay-gradient-start: var(--relay);
+  --relay-gradient-end: var(--relay);
 
   --accent: var(--relay-light);
   --accent-foreground: var(--relay-dark);
@@ -102,8 +102,8 @@
   /* Errors remain distinct from brand accents. */
   --destructive: #b52c40;
 
-  --border: #dedfdc;
-  --input: #dedfdc;
+  --border: #DCE5E2;
+  --input: #DCE5E2;
   --ring: var(--relay-dark);
 
   /* Compatibility with existing mint utility classes. */
@@ -130,9 +130,9 @@
 @layer utilities {
   /* Existing gradient buttons now use solid coral. */
   .bg-relay-gradient {
-    background-color: var(--relay-dark);
+    background-color: var(--relay);
     background-image: none;
-    color: #ffffff;
+    color: #102B25;
   }
 
   .bg-relay-gradient:hover {

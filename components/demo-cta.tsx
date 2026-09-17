@@ -44,10 +44,10 @@ export function DemoCta() {
   }
 
   return (
-    <section id="demo" className="bg-foreground text-background">
+    <section id="demo" className="border-t border-[#DCE5E2] bg-[#E6EEEB] text-[#21413D]">
       <div className="mx-auto grid w-full max-w-6xl items-center gap-6 px-5 py-8 sm:px-8 md:grid-cols-[0.9fr_1.1fr] md:gap-10 md:py-9">
         <div>
-          <p className="font-mono text-xs uppercase tracking-[0.16em] text-[#FFA78E]">
+          <p className="font-mono text-xs uppercase tracking-[0.16em] text-[#AB351F]">
             Request a demo
           </p>
           <h2
@@ -56,12 +56,12 @@ export function DemoCta() {
           >
             Bring one transition.<br />See the whole handoff.
           </h2>
-          <p className="mt-3 max-w-md text-sm leading-relaxed text-background/75">
+          <p className="mt-3 max-w-md text-sm leading-relaxed text-[#425F59]">
             See how Relay connects named owners, access gaps, and the Continuity Hub in one walkthrough.
           </p>
         </div>
 
-        <div className="rounded-xl border border-white/10 bg-background p-4 text-foreground">
+        <div className="rounded-xl border border-[#DCE5E2] bg-white p-4 text-foreground">
           {status === 'success' ? (
             <div role="status" className="flex min-h-[220px] flex-col items-center justify-center text-center">
               <span className="grid size-9 place-items-center rounded-full bg-accent">
@@ -95,7 +95,7 @@ export function DemoCta() {
                 </div>
                 <button
                   type="submit" disabled={status === 'submitting'}
-                  className="inline-flex h-10 w-full items-center justify-center gap-2 self-end rounded-lg bg-foreground px-3 text-sm font-medium text-background transition-colors hover:bg-foreground/90 disabled:cursor-not-allowed disabled:opacity-60"
+                  className="inline-flex h-10 w-full items-center justify-center gap-2 self-end rounded-lg bg-[#FF5738] px-3 text-sm font-medium text-[#102B25] transition-colors hover:bg-[#FF7054] disabled:cursor-not-allowed disabled:opacity-60"
                 >
                   {status === 'submitting' ? 'Sending request…' : 'Request a demo'}
                   {status !== 'submitting' && <ArrowRight className="size-4" aria-hidden="true" />}
