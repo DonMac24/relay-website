@@ -23,15 +23,15 @@ export function AskRelay() {
         </p>
         <p className="mt-5 text-xs text-[#586660]">Illustrative examples · Fictional people and figures</p>
 
-        <div className="mt-5 grid gap-6 lg:grid-cols-3">
-          <article className="min-w-0 rounded-2xl border border-[#DEDFDC] bg-[#FFFFFF] p-5 sm:p-6">
+        <div className="mt-4 grid gap-5 lg:grid-cols-3">
+          <article className="min-w-0 rounded-2xl border border-[#DEDFDC] bg-[#FFFFFF] p-5">
             <h3 className="text-sm font-bold uppercase text-[#586660]">Ask</h3>
-            <p className="mt-4 text-xl font-bold leading-snug">Get an answer</p>
-            <p className="mt-4 text-base leading-relaxed text-[#586660]">
+            <p className="mt-3 text-xl font-bold leading-snug">Get an answer</p>
+            <p className="mt-3 text-base leading-relaxed text-[#586660]">
               Ask about your handoffs and approved supporting records. Follow the
               sources behind the answer.
             </p>
-            <div className="mt-5 rounded-xl bg-[#F3F4F1] p-4">
+            <div className="mt-4 rounded-xl bg-[#F3F4F1] p-4">
               <p className="text-sm leading-relaxed text-[#586660]">
                 Which of Aubrey&apos;s work items need an owner?
               </p>
@@ -40,20 +40,20 @@ export function AskRelay() {
                 status report.
               </p>
               <div className="mt-4 flex flex-wrap gap-2 text-xs text-[#586660]" aria-label="Illustrative answer sources">
-                <span className="rounded-full border border-[#DEDFDC] bg-white px-3 py-1">[1] Relay handoff</span>
-                <span className="rounded-full border border-[#DEDFDC] bg-white px-3 py-1">[2] Jira tickets</span>
+                <span className="rounded-full border border-[#DEDFDC] bg-white px-3 py-1">Relay handoff</span>
+                <span className="rounded-full border border-[#DEDFDC] bg-white px-3 py-1">Jira tickets</span>
               </div>
             </div>
           </article>
 
-          <article className="min-w-0 rounded-2xl border border-[#DEDFDC] bg-[#FFFFFF] p-5 sm:p-6">
+          <article className="min-w-0 rounded-2xl border border-[#DEDFDC] bg-[#FFFFFF] p-5">
             <h3 className="text-sm font-bold uppercase text-[#586660]">Discover</h3>
-            <p className="mt-4 text-xl font-bold leading-snug">Find what&apos;s missing</p>
-            <p className="mt-4 text-base leading-relaxed text-[#586660]">
+            <p className="mt-3 text-xl font-bold leading-snug">Find what&apos;s missing</p>
+            <p className="mt-3 text-base leading-relaxed text-[#586660]">
               Run discovery across connected work systems. Relay proposes work and
               flags gaps for a manager to review.
             </p>
-            <div className="mt-5 flex items-start gap-3 rounded-xl bg-[#F3F4F1] p-4">
+            <div className="mt-4 flex items-start gap-3 rounded-xl bg-[#F3F4F1] p-4">
               <span aria-hidden="true" className="mt-2 size-2 shrink-0 rounded-full bg-[#FF5838]" />
               <p className="text-base leading-relaxed">
                 <strong>Enterprise renewal portfolio</strong> — found in three
@@ -63,20 +63,19 @@ export function AskRelay() {
             <div className="mt-4 flex flex-wrap gap-2 text-xs text-[#586660]">
               <span className="rounded-full border border-[#DEDFDC] px-3 py-1">Suggested, not assigned</span>
             </div>
-            <p className="mt-5 text-sm leading-relaxed text-[#586660]">
+            <p className="mt-3 text-sm leading-relaxed text-[#586660]">
               Employees also see priorities automatically when they open their
               Continuity Hub, including new assignments and unresolved access issues.
             </p>
           </article>
 
-          <article className="min-w-0 rounded-2xl border border-[#DEDFDC] bg-[#FFFFFF] p-5 sm:p-6">
+          <article className="min-w-0 rounded-2xl border border-[#DEDFDC] bg-[#FFFFFF] p-5">
             <h3 className="text-sm font-bold uppercase text-[#586660]">Report</h3>
-            <p className="mt-4 text-xl font-bold leading-snug">Ask about your data</p>
-            <p className="mt-4 text-base leading-relaxed text-[#586660]">
-              Ask a reporting question in plain language. Relay calculates the
-              answer from authorized handoffs and shows the supporting records.
+            <p className="mt-3 text-xl font-bold leading-snug">Ask about your data</p>
+            <p className="mt-3 text-base leading-relaxed text-[#586660]">
+              Ask a reporting question in plain language.
             </p>
-            <div className="mt-5 rounded-xl bg-[#F3F4F1] p-4">
+            <div className="mt-4 rounded-xl bg-[#F3F4F1] p-4">
               <p className="text-sm leading-relaxed text-[#586660]">
                 Which managers have the most unresolved access issues?
               </p>
@@ -85,7 +84,7 @@ export function AskRelay() {
                 and Priya with 2.
               </p>
             </div>
-            <figure className="mt-5" aria-label="Illustrative current unresolved access issues by manager: Aubrey 9, Jordan 4, Priya 2">
+            <figure className="mt-4" aria-label="Illustrative current unresolved access issues by manager: Aubrey 9, Jordan 4, Priya 2">
               <div className="flex h-24 items-end gap-4" aria-hidden="true">
                 {reportExample.map(({ name, count }, index) => (
                   <div key={name} className="flex h-full flex-1 flex-col justify-end gap-1 text-center">
@@ -101,9 +100,9 @@ export function AskRelay() {
               <figcaption className="mt-3 text-xs text-[#586660]">Current issues · Example data</figcaption>
             </figure>
             <div className="mt-4 flex flex-wrap gap-2 text-xs text-[#586660]" aria-label="Illustrative report sources">
-              <span className="rounded-full border border-[#DEDFDC] px-3 py-1">[1–3] Supporting handoffs</span>
+              <span className="rounded-full border border-[#DEDFDC] px-3 py-1">Supporting handoffs</span>
             </div>
-            <p className="mt-4 text-sm leading-relaxed text-[#586660]">
+            <p className="mt-3 text-sm leading-relaxed text-[#586660]">
               Refine your question or pin the result to your dashboard to
               recalculate when you return.
             </p>
