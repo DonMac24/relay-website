@@ -899,3 +899,28 @@
 .flowNote { color: #c4cbc7; font-size: 11px; margin-top: 20px; }
 @media(max-width: 900px) { .evidenceGrid { gap: 12px; } .evidenceCard { padding: 14px; } .handoffScene { grid-template-columns: 1fr 2fr; gap: 20px; } .sceneTransfer { display: none; } }
 @media(max-width: 760px) { .visualDifference { padding-top: 45px; padding-bottom: 45px; } .evidenceGrid { grid-template-columns: 1fr; } .evidenceSample { min-height: 0; } .flowRail { grid-template-columns: 1fr; gap: 15px; } .handoffScene { grid-template-columns: 1fr; padding: 18px; } .sceneManager { width: auto; margin-left: auto; border: 0; padding: 0; } .sceneRow { flex-wrap: wrap; } }
+
+/* Consistent section typography; hero and demo retain their existing sizes. */
+.site :is(section[id="difference"], section[id="how-it-works"], section[id="integrations"]) .eyebrow,
+.site section[id="ask-relay"] > div > div:first-child > span:first-child {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: .16em;
+}
+
+.site :is(section[id="difference"], section[id="how-it-works"], section[id="ask-relay"], section[id="integrations"]) h2 {
+  font-size: clamp(30px, 3.6vw, 44px);
+  line-height: 1.15;
+  letter-spacing: -.04em;
+  text-wrap: balance;
+}
+
+@media (max-width: 760px) {
+  .site :is(section[id="difference"], section[id="how-it-works"], section[id="integrations"]) .eyebrow,
+  .site section[id="ask-relay"] > div > div:first-child > span:first-child {
+    font-size: 14px;
+    letter-spacing: .12em;
+  }
+}
