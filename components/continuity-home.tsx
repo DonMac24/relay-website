@@ -2,6 +2,9 @@ import Image from "next/image";
 import { AskRelay } from "./ask-relay";
 import {
   ArrowRight,
+  CalendarClock,
+  UserRoundCheck,
+  ListChecks,
   Check,
   FileText,
   ShieldCheck,
@@ -23,6 +26,15 @@ const systems = [
   ["Google Drive", "google-drive"],
   ["Asana", "asana"],
   ["Monday.com", "monday"],
+];
+
+const everydayPains = [
+  { question: "Who’s taking this over?", benefit: "Find work that still needs an owner.", icon: Users },
+  { question: "Do they have access?", benefit: "Surface gaps that block the next person.", icon: ShieldCheck },
+  { question: "Where’s the latest information?", benefit: "Keep source records linked to the work.", icon: Link2 },
+  { question: "What can’t wait?", benefit: "See approaching transition deadlines.", icon: CalendarClock },
+  { question: "Who covers this while they’re away?", benefit: "Make temporary responsibilities clear.", icon: UserRoundCheck },
+  { question: "What still needs my attention?", benefit: "Give managers a clear view of outstanding issues.", icon: ListChecks },
 ];
 
 export function ContinuityHome() {
@@ -61,7 +73,7 @@ export function ContinuityHome() {
         <section className={`${s.wrap} ${s.hero}`}>
           <div className={s.heroCopy}>
             <p className={s.eyebrow}>
-              <span className={s.dot} /> Employee continuity intelligence
+              <span className={s.dot} /> Business continuity through employee transitions
             </p>
             <h1>
               Someone leaves.
@@ -73,9 +85,9 @@ export function ContinuityHome() {
               </span>
             </h1>
             <p className={s.lead}>
-              Turn scattered work into a manager-approved handoff—with named
-              owners, source-access checks, and a workspace for the people
-              taking over.
+              Relay helps managers keep work moving through departures, leave,
+              and role changes—with clear ownership, linked context, and
+              visibility into what still needs attention.
             </p>
             <div className={s.actions}>
               <a className={s.primary} href="#how-it-works">
@@ -197,6 +209,22 @@ export function ContinuityHome() {
             </article>
           </div>
           <p className={s.exampleNote}>Illustrative details from the handoff above.</p>
+        </section>
+        <section id="everyday-continuity" className={s.painSection} aria-labelledby="pain-heading">
+          <div className={s.wrap}>
+            <h2 id="pain-heading">Sound familiar?</h2>
+            <div className={s.painGrid}>
+              {everydayPains.map(({ question, benefit, icon: Icon }) => (
+                <article key={question} className={s.painCard}>
+                  <Icon size={22} aria-hidden="true" />
+                  <div>
+                    <h3>{question}</h3>
+                    <p>{benefit}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
         </section>
         <section id="how-it-works" className={s.workflow}>
           <div className={s.wrap}>

@@ -944,3 +944,42 @@
   clip-path: inset(0 -100vmax);
   pointer-events: none;
 }
+
+/* Short manager pain points, between Why Relay and The Handoff. */
+.painSection {
+  border-top: 1px solid var(--line);
+  background: #fff;
+  padding: 40px 0;
+}
+.site .painSection h2 {
+  font-size: clamp(30px, 3.6vw, 44px);
+  line-height: 1.15;
+  letter-spacing: -.04em;
+}
+.painGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+.painCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  min-width: 0;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--paper);
+}
+.painCard > svg { flex-shrink: 0; color: var(--coral); margin-top: 2px; }
+.painCard h3 { margin: 0; font-size: 16px; font-weight: 600; line-height: 1.4; }
+.painCard p { margin: 6px 0 0; color: #586660; font-size: 16px; line-height: 1.6; }
+@media (max-width: 900px) {
+  .painGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 600px) {
+  .painSection { padding: 30px 0; }
+  .painGrid { grid-template-columns: 1fr; gap: 12px; margin-top: 20px; }
+  .painCard { padding: 16px; }
+}
