@@ -12,6 +12,7 @@ const questions = [
  ['Does Relay replace our existing tools?', 'Your existing tools remain the source of record. Relay brings relevant work into a handoff through connected integrations and keeps links back to the original sources.'],
  ['Does assigning work grant someone access?', 'No. Relay tracks source access separately from handoff preparation. A published link does not grant permission, and unresolved access issues remain visible for follow-up.'],
  ['What does the AI do?', 'Agentic discovery proposes work for review. Ask Relay supports questions using authorized context, and reporting helps managers inspect continuity data. People confirm the work and its ownership.'],
+ ['How do HR and managers track progress?', 'Managers can confirm assigned transition requests, manage their active handoffs and refer back to published records. HR has a workspace-wide oversight view of transitions, active handoffs and published handoffs, with reports it can pin to its dashboard. Both views follow the same linked records. Publication does not mean recipients have completed their assigned work.'],
  ['Can BambooHR start a handoff?', 'The BambooHR departure connector is in early pilot. After connection setup and validation, scheduled checks can detect eligible recorded departures, prepare a confidential draft and notify the responsible manager. The manager confirms the transition and controls employee participation, work assignment and publication. Manual handoffs remain available.'],
  ['Can we try it with our team?', 'Relay is an early-stage working product. Request a demo to explore the workflow and discuss whether a structured pilot fits your organization. Integration availability and setup can be reviewed during the walkthrough.'],
 ]
@@ -35,11 +36,11 @@ export function ContinuityHome() {
    </section>
 
    <section id="difference" className={`${s.wrap} ${s.section}`}>
-    <div className={s.sectionIntro}><p className={s.eyebrow}>The work doesn’t leave with them</p><h2>The person changes.<br/>The responsibility remains.</h2><p>A departure, extended leave or internal move can leave important work between owners. Relay gives managers a place to prepare the transition.</p></div>
+    <div className={s.sectionIntro}><p className={s.eyebrow}>The work doesn’t leave with them</p><h2>The person changes.<br/>The responsibility remains.</h2><p>A departure, extended leave or internal move can leave important work between owners. Relay helps managers follow each transition from the initial request through active preparation to a published handoff.</p></div>
     <div className={s.problemGrid}>
      <article><Users/><h3>“Who’s taking this over?”</h3><p>Give each responsibility a named recipient and the context they need to continue.</p><span>Clear ownership <ArrowRight size={16}/></span></article>
      <article><ShieldCheck/><h3>“Can they access it?”</h3><p>Keep source-access issues visible alongside the handoff, with follow-up for unresolved gaps.</p><span>Visible access gaps <ArrowRight size={16}/></span></article>
-     <article><CalendarClock/><h3>“What can’t wait?”</h3><p>Bring upcoming transitions, open actions and risks into the manager’s view.</p><span>Continuity oversight <ArrowRight size={16}/></span></article>
+     <article><CalendarClock/><h3>“Where does it stand?”</h3><p>Track transition requests, manage active handoffs and view published records.</p><span>From request to publication <ArrowRight size={16}/></span></article>
     </div>
    </section>
    <HandoffWalkthrough/>
@@ -59,7 +60,7 @@ export function ContinuityHome() {
    </article></div></section>
    <section className={`${s.wrap} ${s.section} ${s.controlSection}`}>
     <div className={s.sectionIntro}><p className={s.eyebrow}>People stay in control</p><h2>AI finds the context.<br/>Your team makes the decisions.</h2></div>
-    <div className={s.controlGrid}><article><ListChecks/><h3>Review before assignment</h3><p>Confirm proposed work and decide what belongs in the handoff.</p></article><article><Users/><h3>Role-scoped experiences</h3><p>HR tracks transitions and manager follow-through. Managers lead handoffs, members receive work, and admins manage the workspace.</p></article><article><Link2/><h3>Source permissions stay put</h3><p>Relay does not grant source access simply because someone receives an assignment.</p></article></div>
+    <div className={s.controlGrid}><article><ListChecks/><h3>Review before assignment</h3><p>Confirm proposed work and decide what belongs in the handoff.</p></article><article><Users/><h3>Oversight for HR and managers</h3><p>Managers follow their own transitions and handoffs. HR monitors workspace-wide progress and outstanding action.</p></article><article><Link2/><h3>Source permissions stay put</h3><p>Relay does not grant source access simply because someone receives an assignment.</p></article></div>
    </section>
    <section className={s.pilotSection}><div className={s.wrap}><div><p className={s.eyebrow}>Built from a familiar problem</p><h2>Less time reconstructing.<br/>More context to carry on.</h2></div><div><p>Relay grew out of the handoff gaps encountered in business analysis and transformation work. We’re now looking for teams to explore it through real transitions.</p><a href="#demo" className={s.textLink}>Talk about a pilot <ArrowRight size={18}/></a><span className={s.pilotTag}><Check size={15}/> Working product · Early-stage pilots</span></div></div></section>
    <section id="faq" className={`${s.wrap} ${s.section} ${s.faq}`}><div><p className={s.eyebrow}>A few useful answers</p><h2>Before you<br/>hand it over.</h2></div><div>{questions.map(([q,a])=><details key={q}><summary>{q}<Plus size={20}/></summary><p>{a}</p></details>)}</div></section>
