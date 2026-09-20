@@ -56,8 +56,6 @@ export function ContinuityHome() {
      <li><span>2</span><div><strong>Relay prepares a draft</strong><p>Eligible departures trigger a draft and manager notification.</p></div></li>
      <li><span>3</span><div><strong>The manager takes it forward</strong><p>Confirm the transition, invite employee input, then review and assign the work.</p></div></li>
     </ol>
-    <div className={s.hrBottom}><p>HR can track linked handoffs and outstanding action in its portfolio and reports. Assignment and publication stay with the manager; manual handoffs remain available.</p><a className={s.textLink} href="#demo">Explore an HR pilot <ArrowRight size={18}/></a></div>
-    <p className={s.hrScope}>Initial scope: departures. Customer setup and live-account validation required. Relay does not change BambooHR employee records.</p>
    </article></div></section>
    <section className={`${s.wrap} ${s.section} ${s.controlSection}`}>
     <div className={s.sectionIntro}><p className={s.eyebrow}>People stay in control</p><h2>AI finds the context.<br/>Your team makes the decisions.</h2></div>
