@@ -12,6 +12,7 @@ const questions = [
  ['Does Relay replace our existing tools?', 'Your existing tools remain the source of record. Relay brings relevant work into a handoff through connected integrations and keeps links back to the original sources.'],
  ['Does assigning work grant someone access?', 'No. Relay tracks source access separately from handoff preparation. A published link does not grant permission, and unresolved access issues remain visible for follow-up.'],
  ['What does the AI do?', 'Agentic discovery proposes work for review. Ask Relay supports questions using authorized context, and reporting helps managers inspect continuity data. People confirm the work and its ownership.'],
+ ['Can BambooHR start a handoff?', 'The BambooHR departure connector is in early pilot. After connection setup and validation, scheduled checks can detect eligible recorded departures, prepare a confidential draft and notify the responsible manager. The manager confirms the transition and controls employee participation, work assignment and publication. Manual handoffs remain available.'],
  ['Can we try it with our team?', 'Relay is an early-stage working product. Request a demo to explore the workflow and discuss whether a structured pilot fits your organization. Integration availability and setup can be reviewed during the walkthrough.'],
 ]
 
@@ -46,10 +47,21 @@ export function ContinuityHome() {
    <section id="integrations" className={`${s.section} ${s.integrationSection}`}><div className={`${s.wrap} ${s.integrationLayout}`}>
     <div><p className={s.eyebrow}>Connected by design</p><h2>Your tools.<br/>Your context.<br/><span>One handoff.</span></h2><p className={s.sectionText}>Read-only API integrations bring relevant work into review, with links back to its original sources.</p><a className={s.textLink} href="#demo">Explore your setup <ArrowRight size={18}/></a></div>
     <div><div className={s.systemGrid}>{systems.map(([name,file])=><div key={file}><Image src={`/logos/${file}.svg`} alt="" width={32} height={32}/><span>{name}</span></div>)}</div><p className={s.note}>Discovery uses the systems connected to your workspace. We’ll review integration availability and setup in your demo.</p></div>
-   </div></section>
+   </div><div className={s.wrap}><article className={s.hrIntegration} aria-labelledby="hr-trigger-title">
+    <div className={s.hrIntegrationTop}><Image src="/logos/bamboohr.svg" alt="BambooHR" width={150} height={30} className={s.hrLogo}/><span className={s.hrPilot}>Departure integration · Early pilot</span></div>
+    <h3 id="hr-trigger-title">An HR update can start the handoff.</h3>
+    <p className={s.hrLead}>HR records the departure in BambooHR. Once configured, Relay can pick it up on a scheduled check and prepare a confidential draft for the responsible manager.</p>
+    <ol className={s.hrSteps}>
+     <li><span>1</span><div><strong>HR records the departure</strong><p>Use the employee record already maintained in BambooHR.</p></div></li>
+     <li><span>2</span><div><strong>Relay prepares a draft</strong><p>Eligible departures trigger a draft and manager notification.</p></div></li>
+     <li><span>3</span><div><strong>The manager takes it forward</strong><p>Confirm the transition, invite employee input, then review and assign the work.</p></div></li>
+    </ol>
+    <div className={s.hrBottom}><p>HR can track linked handoffs and outstanding action in its portfolio and reports. Assignment and publication stay with the manager; manual handoffs remain available.</p><a className={s.textLink} href="#demo">Explore an HR pilot <ArrowRight size={18}/></a></div>
+    <p className={s.hrScope}>Initial scope: departures. Customer setup and live-account validation required. Relay does not change BambooHR employee records.</p>
+   </article></div></section>
    <section className={`${s.wrap} ${s.section} ${s.controlSection}`}>
     <div className={s.sectionIntro}><p className={s.eyebrow}>People stay in control</p><h2>AI finds the context.<br/>Your team makes the decisions.</h2></div>
-    <div className={s.controlGrid}><article><ListChecks/><h3>Review before assignment</h3><p>Confirm proposed work and decide what belongs in the handoff.</p></article><article><Users/><h3>Role-scoped experiences</h3><p>Separate Admin, Manager and Member views support each person’s responsibilities.</p></article><article><Link2/><h3>Source permissions stay put</h3><p>Relay does not grant source access simply because someone receives an assignment.</p></article></div>
+    <div className={s.controlGrid}><article><ListChecks/><h3>Review before assignment</h3><p>Confirm proposed work and decide what belongs in the handoff.</p></article><article><Users/><h3>Role-scoped experiences</h3><p>HR tracks transitions and manager follow-through. Managers lead handoffs, members receive work, and admins manage the workspace.</p></article><article><Link2/><h3>Source permissions stay put</h3><p>Relay does not grant source access simply because someone receives an assignment.</p></article></div>
    </section>
    <section className={s.pilotSection}><div className={s.wrap}><div><p className={s.eyebrow}>Built from a familiar problem</p><h2>Less time reconstructing.<br/>More context to carry on.</h2></div><div><p>Relay grew out of the handoff gaps encountered in business analysis and transformation work. We’re now looking for teams to explore it through real transitions.</p><a href="#demo" className={s.textLink}>Talk about a pilot <ArrowRight size={18}/></a><span className={s.pilotTag}><Check size={15}/> Working product · Early-stage pilots</span></div></div></section>
    <section id="faq" className={`${s.wrap} ${s.section} ${s.faq}`}><div><p className={s.eyebrow}>A few useful answers</p><h2>Before you<br/>hand it over.</h2></div><div>{questions.map(([q,a])=><details key={q}><summary>{q}<Plus size={20}/></summary><p>{a}</p></details>)}</div></section>
