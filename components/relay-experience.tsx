@@ -15,7 +15,7 @@ export function ProductPreview() {
 }
 function UsersIcon(){return <CircleCheck size={15}/>}
 const steps=[
- {title:'Discover',headline:'Find the work behind the handoff.',body:'Run agentic discovery across connected systems. Bring proposed work and its supporting sources together for review.',action:'Review proposed work',label:'Discovery proposal',status:'For review'},
+ {title:'Discover',headline:'Find the work behind the handoff.',body:'AI discovers relevant work across connected systems and proposes what belongs in the handoff, with supporting sources for your review.',action:'Review proposed work',label:'Discovery proposal',status:'For review'},
  {title:'Review & assign',headline:'Make the next owner explicit.',body:'Review what matters, add missing context and assign responsibilities. Keep recipient access issues visible as you prepare the handoff.',action:'Preview the handoff',label:'Reviewed responsibility',status:'Assigned'},
  {title:'Preview & publish',headline:'Give the recipient a place to start.',body:'Review the recipient’s handoff and outstanding gaps, then publish a usable record to the Continuity Hub. Source permissions still apply.',action:'Start again',label:'Published continuity record',status:'Published'},
 ]
@@ -28,7 +28,7 @@ export function HandoffWalkthrough(){
  }
  const step=steps[active]
  return <section id="how-it-works" className={s.workflow}><div className={s.wrap}>
-  <div className={s.workflowHeading}><div><p className={s.eyebrow}>The handoff, made visible</p><h2>Keep the work moving.<br/><span>One step at a time.</span></h2></div><p>Follow an example from Alex to Sarah.<br/>You decide what moves forward.</p></div>
+  <div className={s.workflowHeading}><div><p className={s.eyebrow}>AI-assisted discovery. Manager-led handoffs.</p><h2>Keep the work moving.<br/><span>One step at a time.</span></h2></div><p>Follow an example from Alex to Sarah.<br/>You decide what moves forward.</p></div>
   <div className={s.stepTabs} role="tablist" aria-label="Handoff walkthrough">{steps.map((st,i)=><button key={st.title} role="tab" id={`step-${i}`} aria-selected={active===i} aria-controls={`panel-${i}`} tabIndex={active===i?0:-1} onClick={()=>setActive(i)} onKeyDown={e=>navigate(e,i)}><span>0{i+1}</span>{st.title}<ArrowRight size={17}/></button>)}</div>
   <div id={`panel-${active}`} role="tabpanel" aria-labelledby={`step-${active}`} className={s.walkPanel}>
    <div className={s.walkCopy}><h3>{step.headline}</h3><p>{step.body}</p><button className={s.walkNext} onClick={()=>setActive((active+1)%3)}>{step.action}<ArrowRight size={18}/></button></div>

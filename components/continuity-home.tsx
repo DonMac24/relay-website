@@ -6,12 +6,12 @@ import { HandoffWalkthrough, MobileNavigation } from './relay-experience'
 import s from './continuity-home.module.css'
 
 const systems = [['SharePoint','sharepoint'],['Outlook','outlook'],['Jira','jira'],['Confluence','confluence'],['Azure DevOps','azure-devops'],['GitLab','gitlab'],['Google Drive','google-drive'],['Asana','asana'],['Monday.com','monday']]
-const links = [['Why Relay','#difference'],['How it works','#how-it-works'],['Ask Relay','#ask-relay'],['Integrations','#integrations'],['FAQs','#faq']]
+const links = [['Why Relay','#difference'],['How it works','#how-it-works'],['Ask Relay AI','#ask-relay'],['Integrations','#integrations'],['FAQs','#faq']]
 const questions = [
- ['Is Relay a chatbot or a handoff platform?', 'Relay is a continuity workflow and hub for work. Managers discover evidence, review and assign responsibilities, then prepare and publish a handoff. Ask Relay helps people find answers within that process.'],
+ ['Is Relay a chatbot or a handoff platform?', 'Relay is a continuity workflow and hub for work. Managers discover evidence, review and assign responsibilities, then prepare and publish a handoff. Ask Relay AI helps people find answers within that process.'],
  ['Does Relay replace our existing tools?', 'Your existing tools remain the source of record. Relay brings relevant work into a handoff through connected integrations and keeps links back to the original sources.'],
  ['Does assigning work grant someone access?', 'No. Relay tracks source access separately from handoff preparation. A published link does not grant permission, and unresolved access issues remain visible for follow-up.'],
- ['What does the AI do?', 'Agentic discovery proposes work for review. Ask Relay supports questions using authorized context, and reporting helps managers inspect continuity data. People confirm the work and its ownership.'],
+ ['What does the AI do?', 'AI discovery proposes relevant work from connected systems. Ask Relay AI answers questions using authorized context, while natural-language reporting turns continuity data into reports you can save and pin. People confirm assignments and publication.'],
  ['How do HR and managers track progress?', 'Managers can confirm assigned transition requests, manage their active handoffs and refer back to published records. HR has a workspace-wide oversight view of transitions, active handoffs and published handoffs, with reports it can pin to its dashboard. Both views follow the same linked records. Publication does not mean recipients have completed their assigned work.'],
  ['Can BambooHR start a handoff?', 'The BambooHR departure connector is in early pilot. After connection setup and validation, scheduled checks can detect eligible recorded departures, prepare a confidential draft and notify the responsible manager. The manager confirms the transition and controls employee participation, work assignment and publication. Manual handoffs remain available.'],
  ['Can we try it with our team?', 'Relay is an early-stage working product. Request a demo to explore the workflow and discuss whether a structured pilot fits your organization. Integration availability and setup can be reviewed during the walkthrough.'],
@@ -28,9 +28,9 @@ export function ContinuityHome() {
   </div></header>
   <main id="main">
    <section className={`${s.wrap} ${s.hero}`}>
-    <p className={s.eyebrow}><span className={s.dot}/> Business continuity through employee transitions</p>
+    <p className={s.eyebrow}><span className={s.dot}/> AI-powered handoffs. Human-led decisions.</p>
     <h1>When people leave,<br/>the knowledge <span>shouldn’t.</span></h1>
-    <p className={s.heroLead}>Give the next person more than a folder of links.<br className={s.desktopBreak}/> Discover the work, make ownership clear, and keep the context in Relay.</p>
+    <p className={s.heroLead}>Give the next person more than a folder of links.<br className={s.desktopBreak}/> Use AI to discover the work, then review it, assign ownership and preserve the context.</p>
     <div className={s.actions}><a href="#how-it-works" className={s.primary}>Explore a handoff <ArrowRight size={18}/></a></div>
     <p className={s.heroNote}>A working product for HR, Operations and IT teams.</p>
    </section>
