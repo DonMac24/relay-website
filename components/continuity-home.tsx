@@ -6,7 +6,7 @@ import { HandoffWalkthrough, MobileNavigation } from './relay-experience'
 import s from './continuity-home.module.css'
 
 const systems = [['SharePoint','sharepoint'],['Outlook','outlook'],['Jira','jira'],['Confluence','confluence'],['Azure DevOps','azure-devops'],['GitLab','gitlab'],['Google Drive','google-drive'],['Asana','asana'],['Monday.com','monday']]
-const links = [['The handoff','#how-it-works'],['Ask Relay','#ask-relay'],['Integrations','#integrations'],['Why Relay','#difference']]
+const links = [['Why Relay','#difference'],['How it works','#how-it-works'],['Ask Relay','#ask-relay'],['Integrations','#integrations'],['FAQs','#faq']]
 const questions = [
  ['Is Relay a chatbot or a handoff platform?', 'Relay is a continuity workflow and hub for work. Managers discover evidence, review and assign responsibilities, then prepare and publish a handoff. Ask Relay helps people find answers within that process.'],
  ['Does Relay replace our existing tools?', 'Your existing tools remain the source of record. Relay brings relevant work into a handoff through connected integrations and keeps links back to the original sources.'],
@@ -29,7 +29,7 @@ export function ContinuityHome() {
     <p className={s.eyebrow}><span className={s.dot}/> Business continuity through employee transitions</p>
     <h1>When people leave,<br/>the knowledge <span>shouldn’t.</span></h1>
     <p className={s.heroLead}>Give the next person more than a folder of links.<br className={s.desktopBreak}/> Discover the work, make ownership clear, and keep the context in Relay.</p>
-    <div className={s.actions}><a href="#how-it-works" className={s.secondary}>Explore a handoff <ArrowRight size={18}/></a></div>
+    <div className={s.actions}><a href="#how-it-works" className={s.primary}>Explore a handoff <ArrowRight size={18}/></a></div>
     <p className={s.heroNote}>A working product for HR, Operations and IT teams.</p>
    </section>
 
@@ -52,7 +52,7 @@ export function ContinuityHome() {
     <div className={s.controlGrid}><article><ListChecks/><h3>Review before assignment</h3><p>Confirm proposed work and decide what belongs in the handoff.</p></article><article><Users/><h3>Role-scoped experiences</h3><p>Separate Admin, Manager and Member views support each person’s responsibilities.</p></article><article><Link2/><h3>Source permissions stay put</h3><p>Relay does not grant source access simply because someone receives an assignment.</p></article></div>
    </section>
    <section className={s.pilotSection}><div className={s.wrap}><div><p className={s.eyebrow}>Built from a familiar problem</p><h2>Less time reconstructing.<br/>More context to carry on.</h2></div><div><p>Relay grew out of the handoff gaps encountered in business analysis and transformation work. We’re now looking for teams to explore it through real transitions.</p><a href="#demo" className={s.textLink}>Talk about a pilot <ArrowRight size={18}/></a><span className={s.pilotTag}><Check size={15}/> Working product · Early-stage pilots</span></div></div></section>
-   <section className={`${s.wrap} ${s.section} ${s.faq}`}><div><p className={s.eyebrow}>A few useful answers</p><h2>Before you<br/>hand it over.</h2></div><div>{questions.map(([q,a])=><details key={q}><summary>{q}<Plus size={20}/></summary><p>{a}</p></details>)}</div></section>
+   <section id="faq" className={`${s.wrap} ${s.section} ${s.faq}`}><div><p className={s.eyebrow}>A few useful answers</p><h2>Before you<br/>hand it over.</h2></div><div>{questions.map(([q,a])=><details key={q}><summary>{q}<Plus size={20}/></summary><p>{a}</p></details>)}</div></section>
    <div className={s.demo}><DemoCta/></div>
   </main>
   <footer className={`${s.wrap} ${s.footer}`}><div><a href="#top" aria-label="Relay ECI home"><Image src="/relay-eci-logo-coral.png" alt="Relay ECI" width={2048} height={684} className={s.logo}/></a><p>A continuity workflow<br/>and hub for work.</p></div><nav aria-label="Footer">{links.map(([label,url])=><a key={url} href={url}>{label}</a>)}</nav><div><a className={s.textLink} href="#demo">Let’s talk <ArrowUpRight size={17}/></a><small>© {new Date().getFullYear()} Relay ECI</small></div></footer>
