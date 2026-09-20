@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { ArrowRight, ArrowUpRight, Check, ShieldCheck, Link2, Users, ListChecks, CalendarClock, Plus } from 'lucide-react'
 import { AskRelay } from './ask-relay'
 import { DemoCta } from './demo-cta'
-import { HandoffWalkthrough, ProductPreview, MobileNavigation } from './relay-experience'
+import { HandoffWalkthrough, MobileNavigation } from './relay-experience'
 import s from './continuity-home.module.css'
 
 const systems = [['SharePoint','sharepoint'],['Outlook','outlook'],['Jira','jira'],['Confluence','confluence'],['Azure DevOps','azure-devops'],['GitLab','gitlab'],['Google Drive','google-drive'],['Asana','asana'],['Monday.com','monday']]
@@ -29,11 +29,10 @@ export function ContinuityHome() {
     <p className={s.eyebrow}><span className={s.dot}/> Business continuity through employee transitions</p>
     <h1>When people leave,<br/>the knowledge <span>shouldn’t.</span></h1>
     <p className={s.heroLead}>Give the next person more than a folder of links.<br className={s.desktopBreak}/> Discover the work, make ownership clear, and keep the context in Relay.</p>
-    <div className={s.actions}><a href="#demo" className={s.primary}>Request a demo <ArrowUpRight size={18}/></a><a href="#how-it-works" className={s.secondary}>Explore a handoff <ArrowRight size={18}/></a></div>
+    <div className={s.actions}><a href="#how-it-works" className={s.secondary}>Explore a handoff <ArrowRight size={18}/></a></div>
     <p className={s.heroNote}>A working product for HR, Operations and IT teams.</p>
-    <ProductPreview/>
    </section>
-   <div className={s.systemStrip}><div className={s.wrap}><p>Connected work. One handoff.</p><div>{systems.slice(0,5).map(([name,file])=><span key={file}><Image src={`/logos/${file}.svg`} alt="" width={22} height={22}/>{name}</span>)}</div></div></div>
+
    <section id="difference" className={`${s.wrap} ${s.section}`}>
     <div className={s.sectionIntro}><p className={s.eyebrow}>The work doesn’t leave with them</p><h2>The person changes.<br/>The responsibility remains.</h2><p>A departure, extended leave or internal move can leave important work between owners. Relay gives managers a place to prepare the transition.</p></div>
     <div className={s.problemGrid}>
