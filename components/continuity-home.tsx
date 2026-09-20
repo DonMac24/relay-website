@@ -1,327 +1,61 @@
-import Image from "next/image";
-import { AskRelay } from "./ask-relay";
-import {
-  ArrowRight,
-  CalendarClock,
-  UserRoundCheck,
-  ListChecks,
-  Check,
-  FileText,
-  ShieldCheck,
-  Users,
-  Sparkles,
-  Link2,
-  ArrowUpRight,
-} from "lucide-react";
-import { DemoCta } from "./demo-cta";
-import s from "./continuity-home.module.css";
+import Image from 'next/image'
+import { ArrowRight, ArrowUpRight, Check, ShieldCheck, Link2, Users, ListChecks, CalendarClock, Plus } from 'lucide-react'
+import { AskRelay } from './ask-relay'
+import { DemoCta } from './demo-cta'
+import { HandoffWalkthrough, ProductPreview, MobileNavigation } from './relay-experience'
+import s from './continuity-home.module.css'
 
-const systems = [
-  ["SharePoint", "sharepoint"],
-  ["Outlook", "outlook"],
-  ["Jira", "jira"],
-  ["Confluence", "confluence"],
-  ["Azure DevOps", "azure-devops"],
-  ["GitLab", "gitlab"],
-  ["Google Drive", "google-drive"],
-  ["Asana", "asana"],
-  ["Monday.com", "monday"],
-];
-
-const everydayPains = [
-  { question: "Who’s taking this over?", benefit: "Find work that still needs an owner.", icon: Users },
-  { question: "Do they have access?", benefit: "Surface gaps that block the next person.", icon: ShieldCheck },
-  { question: "Where’s the latest information?", benefit: "Keep source records linked to the work.", icon: Link2 },
-  { question: "What can’t wait?", benefit: "See approaching transition deadlines.", icon: CalendarClock },
-  { question: "Who covers this while they’re away?", benefit: "Make temporary responsibilities clear.", icon: UserRoundCheck },
-  { question: "What still needs my attention?", benefit: "Give managers a clear view of outstanding issues.", icon: ListChecks },
-];
+const systems = [['SharePoint','sharepoint'],['Outlook','outlook'],['Jira','jira'],['Confluence','confluence'],['Azure DevOps','azure-devops'],['GitLab','gitlab'],['Google Drive','google-drive'],['Asana','asana'],['Monday.com','monday']]
+const links = [['The handoff','#how-it-works'],['Ask Relay','#ask-relay'],['Integrations','#integrations'],['Why Relay','#difference']]
+const questions = [
+ ['Is Relay a chatbot or a handoff platform?', 'Relay is a continuity workflow and hub for work. Managers discover evidence, review and assign responsibilities, then prepare and publish a handoff. Ask Relay helps people find answers within that process.'],
+ ['Does Relay replace our existing tools?', 'Your existing tools remain the source of record. Relay brings relevant work into a handoff through connected integrations and keeps links back to the original sources.'],
+ ['Does assigning work grant someone access?', 'No. Relay tracks source access separately from handoff preparation. A published link does not grant permission, and unresolved access issues remain visible for follow-up.'],
+ ['What does the AI do?', 'Agentic discovery proposes work for review. Ask Relay supports questions using authorized context, and reporting helps managers inspect continuity data. People confirm the work and its ownership.'],
+ ['Can we try it with our team?', 'Relay is an early-stage working product. Request a demo to explore the workflow and discuss whether a structured pilot fits your organization. Integration availability and setup can be reviewed during the walkthrough.'],
+]
 
 export function ContinuityHome() {
-  return (
-    <div className={s.site} id="top">
-      <header className={s.header}>
-        <div className={s.nav}>
-          <a href="#top" aria-label="Relay ECI home">
-            <Image
-              src="/relay-eci-logo-coral.png"
-              alt="Relay ECI"
-              width={2048}
-              height={684}
-              priority
-              className={s.logo}
-            />
-          </a>
-          <nav aria-label="Main navigation" className={s.desktopNav}>
-            <a href="#difference">Why Relay</a>
-            <a href="#how-it-works">The Handoff</a>
-          <a href="#ask-relay">Ask Relay</a>
-            <a href="#integrations">Integrations</a>
-          </nav>
-          <a href="#demo" className={s.smallButton}>
-            Request a demo <ArrowUpRight size={16} />
-          </a>
-        </div>
-        <nav aria-label="Mobile navigation" className={s.mobileNav}>
-          <a href="#difference">Why Relay</a>
-          <a href="#how-it-works">The Handoff</a>
-          <a href="#ask-relay">Ask Relay</a>
-          <a href="#integrations">Integrations</a>
-        </nav>
-      </header>
-      <main>
-        <section className={`${s.wrap} ${s.hero}`}>
-          <div className={s.heroCopy}>
-            <p className={s.eyebrow}>
-              <span className={s.dot} /> Business continuity through employee transitions
-            </p>
-            <h1>
-              Someone leaves.
-              <br />
-              The work{" "}
-              <span>
-                still needs
-                <br className={s.desktopBreak} /> an owner.
-              </span>
-            </h1>
-            <p className={s.lead}>
-              Relay helps managers keep work moving through departures, leave,
-              and role changes—with clear ownership, linked context, and
-              visibility into what still needs attention.
-            </p>
-            <div className={s.actions}>
-              <a className={s.primary} href="#how-it-works">
-                See a handoff in action <ArrowRight size={18} />
-              </a>
-              <a className={s.textLink} href="#demo">
-                Request a demo <ArrowUpRight size={16} />
-              </a>
-            </div>
-            <p className={s.heroNote}>
-              For departures, extended leave, and role changes.
-            </p>
-          </div>
-          <div className={s.heroVisual}>
-            <div className={s.recordPreview} aria-label="Compact preview of the published continuity record">
-              <div className={s.recordProfile}>
-                <span className={s.recordPhoto}>
-                  <Image src="/alex-morgan-profile.png" alt="Alex Morgan" width={198} height={210} />
-                </span>
-                <div className={s.recordTitle}>
-                  <p>PUBLISHED CONTINUITY RECORD</p>
-                  <h3>Alex Morgan</h3>
-                  <span>Product Manager</span>
-                </div>
-              </div>
-              <dl className={s.recordPeople}>
-                <div><dt>From</dt><dd>Alex Morgan</dd></div>
-                <div><dt>Prepared for</dt><dd>Sarah Chen</dd></div>
-                <div><dt>Managed by</dt><dd>Jordan Patel</dd></div>
-              </dl>
-              <p className={s.recordLabel}>My assigned work <ArrowRight size={12} /></p>
-              <div className={s.recordCategories}>
-                <div className={s.recordCategory}>
-                  <h4>Projects <span>4</span></h4>
-                  <div className={s.recordItem}>
-                    <strong>Enterprise renewal portfolio</strong>
-                    <span>Sarah Chen · Completed</span>
-                    <small>1 linked source ↓</small>
-                  </div>
-                  <div className={s.recordItem}>
-                    <strong>Q4 territory planning</strong>
-                    <span>Sarah Chen · Completed</span>
-                    <small>1 linked source ↓</small>
-                  </div>
-                </div>
-                <div className={s.recordCategory}>
-                  <h4>Responsibilities <span>4</span></h4>
-                  <div className={s.recordItem}>
-                    <strong>Approve commercial exceptions</strong>
-                    <span>Sarah Chen · To do</span>
-                    <em>Access issue</em>
-                    <small>1 linked source ↓</small>
-                  </div>
-                  <div className={s.recordItem}>
-                    <strong>Run forecast calls</strong>
-                    <span>Sarah Chen · To do</span>
-                    <small>1 linked source ↓</small>
-                  </div>
-                </div>
-              </div>
-              <div className={s.recordRisk}>
-                <h4>Risks <span>1</span></h4>
-                <strong>Two renewals require executive sponsorship</strong>
-                <small>1 linked source ↓</small>
-              </div>
-              <div className={s.recordAccess}>
-                <strong>Source access</strong>
-                <span>1 confirmed by recipient · 1 reported issue · 4 other checks</span>
-              </div>
-            </div>
-            <div className={s.caption}>
-            </div>
-          </div>
-        </section>
-        <div className={s.outcomeStrip}>
-          <div className={s.wrap}>
-            <span>
-              <Check /> Make ownership explicit
-            </span>
-            <span>
-              <Check /> Surface access gaps
-            </span>
-            <span>
-              <Check /> Keep context with the work
-            </span>
-          </div>
-        </div>
-        <section id="difference" className={`${s.wrap} ${s.visualDifference}`}>
-          <p className={s.eyebrow}>Why Relay</p>
-          <h2>A handoff needs <span>more than an answer.</span></h2>
-          <p className={s.visualIntro}>Copilot and other AI assistants can help find and summarize context. But a handoff still needs named owners, access checks, and manager decisions. Relay brings those together in one structured workflow.</p>
-          <div className={s.evidenceGrid}>
-            <article className={s.evidenceCard}>
-              <div className={s.evidenceTop}><Users size={20} /><h3>A named owner</h3></div>
-              <div className={s.evidenceSample}>
-                <span className={s.sampleLabel}>Responsibility</span>
-                <strong>Run forecast calls</strong>
-                <div className={s.ownerSample}><span className={s.miniAvatar}>SC</span><div><strong>Sarah Chen</strong><span>Assigned recipient</span></div><Check size={17} /></div>
-              </div>
-              <p>Make it clear who takes over.</p>
-            </article>
-            <article className={s.evidenceCard}>
-              <div className={s.evidenceTop}><ShieldCheck size={20} /><h3>A visible gap</h3></div>
-              <div className={s.evidenceSample}>
-                <span className={s.sampleLabel}>Responsibility</span>
-                <strong>Approve commercial exceptions</strong>
-                <div className={s.gapSample}><span className={s.warning}>Access issue</span><span>1 linked source</span></div>
-              </div>
-              <p>Keep unresolved access issues in view.</p>
-            </article>
-            <article className={s.evidenceCard}>
-              <div className={s.evidenceTop}><FileText size={20} /><h3>A lasting record</h3></div>
-              <div className={s.evidenceSample}>
-                <span className={s.sampleLabel}>Published continuity record</span>
-                <strong>Alex Morgan</strong>
-                <div className={s.recordSample}><span>Prepared for <strong>Sarah Chen</strong></span><span>Managed by <strong>Jordan Patel</strong></span></div>
-              </div>
-              <p>Give the next owner a place to start.</p>
-            </article>
-          </div>
-          <p className={s.exampleNote}>Illustrative details from the handoff above.</p>
-        </section>
-        <section id="everyday-continuity" className={s.painSection} aria-labelledby="pain-heading">
-          <div className={s.wrap}>
-            <h2 id="pain-heading">Sound familiar?</h2>
-            <div className={s.painGrid}>
-              {everydayPains.map(({ question, benefit, icon: Icon }) => (
-                <article key={question} className={s.painCard}>
-                  <Icon size={22} aria-hidden="true" />
-                  <div>
-                    <h3>{question}</h3>
-                    <p>{benefit}</p>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-        <section id="how-it-works" className={s.workflow}>
-          <div className={s.wrap}>
-            <div className={s.flowHeading}><p className={s.eyebrow}>The handoff</p><h2>Follow the work.<br />From Alex to Sarah.</h2><p>One manager-led process, from discovery to the Continuity Hub.</p></div>
-            <div className={s.flowRail}>
-              <div><span>01</span><strong>Discover</strong><p>Find the work and its sources.</p></div>
-              <div><span>02</span><strong>Review & assign</strong><p>Confirm what matters and who takes over.</p></div>
-              <div><span>03</span><strong>Preview & publish</strong><p>Review each recipient’s handoff.</p></div>
-            </div>
-            <div className={s.handoffScene}>
-              <div className={s.sceneProfile}>
-                <span className={s.recordPhoto}><Image src="/alex-morgan-profile.png" alt="Alex Morgan" width={198} height={210} /></span>
-                <div><span className={s.sampleLabel}>From</span><h3>Alex Morgan</h3><p>Product Manager</p></div>
-                <div className={s.sceneManager}><span className={s.sampleLabel}>Managed by</span><strong>Jordan Patel</strong></div>
-              </div>
-              <div className={s.sceneTransfer}><ArrowRight size={24} aria-hidden="true" /></div>
-              <div className={s.sceneWork}>
-                <div className={s.sceneRecipient}><Image src="/sarah-chen-profile.png" alt="Sarah Chen" width={60} height={60} style={{ width: 60, height: 60, borderRadius: "50%", objectFit: "cover", flexShrink: 0 }} /><div><span className={s.sampleLabel}>Prepared for Sarah Chen</span><h3>My assigned work</h3></div></div>
-                <div className={s.sceneRow}><div><strong>Run forecast calls</strong><span>Responsibilities · 1 linked source</span></div><span className={s.todoPill}>To do</span></div>
-                <div className={s.sceneRow}><div><strong>Approve commercial exceptions</strong><span>Responsibilities · 1 linked source</span></div><span className={s.warning}>Access issue</span></div>
-                <p className={s.sceneFoot}>Continuity Hub · Illustrative record</p>
-              </div>
-            </div>
-            <p className={s.flowNote}>Original tools remain the source of record. Publishing a link does not grant access.</p>
-          </div>
-        </section>
-        <AskRelay />
-        <section className={s.integrations} id="integrations">
-          <div className={s.wrap}>
-            <p className={s.eyebrow}>Integrations</p>
-            <h2>
-              Keep your tools.
-              <br />
-              Connect the handoff.
-            </h2>
-            <p className={s.lead}>
-              Bring relevant work into review with links back to its original
-              sources.
-            </p>
-            <div className={s.systemGrid}>
-              {systems.map(([name, file]) => (
-                <div key={file}>
-                  <Image
-                    src={`/logos/${file}.svg`}
-                    alt=""
-                    width={25}
-                    height={25}
-                  />
-                  <span>{name}</span>
-                </div>
-              ))}
-            </div>
-            <div className={s.integrationNotes}>
-              <p>
-                <ShieldCheck size={20} />
-                <span>
-                  <strong>Organizational identity</strong>Microsoft Entra ID and
-                  workspace roles support who can access Relay.
-                </span>
-              </p>
-              <p>
-                <Link2 size={20} />
-                <span>
-                  <strong>Existing source permissions</strong>Relay links to
-                  supporting work. Source-access checks do not change
-                  permissions.
-                </span>
-              </p>
-            </div>
-          </div>
-        </section>
-        <div className={s.demo}>
-          <DemoCta />
-        </div>
-      </main>
-      <footer className={`${s.wrap} ${s.footer}`}>
-        <a href="#top" aria-label="Relay ECI home">
-          <Image
-            src="/relay-eci-logo-coral.png"
-            alt="Relay ECI"
-            width={2048}
-            height={684}
-            className={s.logo}
-          />
-        </a>
-        <p>
-          Keep ownership and context moving
-          <br />
-          through every employee transition.
-        </p>
-        <nav aria-label="Footer">
-          <a href="#difference">Why Relay</a>
-          <a href="#integrations">Integrations</a>
-          <a href="#demo">Request a demo</a>
-        </nav>
-        <small>© {new Date().getFullYear()} Relay ECI</small>
-      </footer>
+ return <div className={s.site} id="top">
+  <a href="#main" className={s.skip}>Skip to content</a>
+  <header className={s.header}><div className={s.nav}>
+   <a href="#top" aria-label="Relay ECI home"><Image src="/relay-eci-logo-coral.png" alt="Relay ECI" width={2048} height={684} priority className={s.logo}/></a>
+   <nav className={s.desktopNav} aria-label="Main navigation">{links.map(([label,url])=><a key={url} href={url}>{label}</a>)}</nav>
+   <a className={s.smallButton} href="#demo">Request a demo <ArrowUpRight size={16}/></a>
+   <MobileNavigation links={links}/>
+  </div></header>
+  <main id="main">
+   <section className={`${s.wrap} ${s.hero}`}>
+    <p className={s.eyebrow}><span className={s.dot}/> Business continuity through employee transitions</p>
+    <h1>When people leave,<br/>the knowledge <span>shouldn’t.</span></h1>
+    <p className={s.heroLead}>Give the next person more than a folder of links.<br className={s.desktopBreak}/> Discover the work, make ownership clear, and keep the context in Relay.</p>
+    <div className={s.actions}><a href="#demo" className={s.primary}>Request a demo <ArrowUpRight size={18}/></a><a href="#how-it-works" className={s.secondary}>Explore a handoff <ArrowRight size={18}/></a></div>
+    <p className={s.heroNote}>A working product for HR, Operations and IT teams.</p>
+    <ProductPreview/>
+   </section>
+   <div className={s.systemStrip}><div className={s.wrap}><p>Connected work. One handoff.</p><div>{systems.slice(0,5).map(([name,file])=><span key={file}><Image src={`/logos/${file}.svg`} alt="" width={22} height={22}/>{name}</span>)}</div></div></div>
+   <section id="difference" className={`${s.wrap} ${s.section}`}>
+    <div className={s.sectionIntro}><p className={s.eyebrow}>The work doesn’t leave with them</p><h2>The person changes.<br/>The responsibility remains.</h2><p>A departure, extended leave or internal move can leave important work between owners. Relay gives managers a place to prepare the transition.</p></div>
+    <div className={s.problemGrid}>
+     <article><Users/><h3>“Who’s taking this over?”</h3><p>Give each responsibility a named recipient and the context they need to continue.</p><span>Clear ownership <ArrowRight size={16}/></span></article>
+     <article><ShieldCheck/><h3>“Can they access it?”</h3><p>Keep source-access issues visible alongside the handoff, with follow-up for unresolved gaps.</p><span>Visible access gaps <ArrowRight size={16}/></span></article>
+     <article><CalendarClock/><h3>“What can’t wait?”</h3><p>Bring upcoming transitions, open actions and risks into the manager’s view.</p><span>Continuity oversight <ArrowRight size={16}/></span></article>
     </div>
-  );
+   </section>
+   <HandoffWalkthrough/>
+   <AskRelay/>
+   <section id="integrations" className={`${s.section} ${s.integrationSection}`}><div className={`${s.wrap} ${s.integrationLayout}`}>
+    <div><p className={s.eyebrow}>Connected by design</p><h2>Your tools.<br/>Your context.<br/><span>One handoff.</span></h2><p className={s.sectionText}>Read-only API integrations bring relevant work into review, with links back to its original sources.</p><a className={s.textLink} href="#demo">Explore your setup <ArrowRight size={18}/></a></div>
+    <div><div className={s.systemGrid}>{systems.map(([name,file])=><div key={file}><Image src={`/logos/${file}.svg`} alt="" width={32} height={32}/><span>{name}</span></div>)}</div><p className={s.note}>Discovery uses the systems connected to your workspace. We’ll review integration availability and setup in your demo.</p></div>
+   </div></section>
+   <section className={`${s.wrap} ${s.section} ${s.controlSection}`}>
+    <div className={s.sectionIntro}><p className={s.eyebrow}>People stay in control</p><h2>AI finds the context.<br/>Your team makes the decisions.</h2></div>
+    <div className={s.controlGrid}><article><ListChecks/><h3>Review before assignment</h3><p>Confirm proposed work and decide what belongs in the handoff.</p></article><article><Users/><h3>Role-scoped experiences</h3><p>Separate Admin, Manager and Member views support each person’s responsibilities.</p></article><article><Link2/><h3>Source permissions stay put</h3><p>Relay does not grant source access simply because someone receives an assignment.</p></article></div>
+   </section>
+   <section className={s.pilotSection}><div className={s.wrap}><div><p className={s.eyebrow}>Built from a familiar problem</p><h2>Less time reconstructing.<br/>More context to carry on.</h2></div><div><p>Relay grew out of the handoff gaps encountered in business analysis and transformation work. We’re now looking for teams to explore it through real transitions.</p><a href="#demo" className={s.textLink}>Talk about a pilot <ArrowRight size={18}/></a><span className={s.pilotTag}><Check size={15}/> Working product · Early-stage pilots</span></div></div></section>
+   <section className={`${s.wrap} ${s.section} ${s.faq}`}><div><p className={s.eyebrow}>A few useful answers</p><h2>Before you<br/>hand it over.</h2></div><div>{questions.map(([q,a])=><details key={q}><summary>{q}<Plus size={20}/></summary><p>{a}</p></details>)}</div></section>
+   <div className={s.demo}><DemoCta/></div>
+  </main>
+  <footer className={`${s.wrap} ${s.footer}`}><div><a href="#top" aria-label="Relay ECI home"><Image src="/relay-eci-logo-coral.png" alt="Relay ECI" width={2048} height={684} className={s.logo}/></a><p>A continuity workflow<br/>and hub for work.</p></div><nav aria-label="Footer">{links.map(([label,url])=><a key={url} href={url}>{label}</a>)}</nav><div><a className={s.textLink} href="#demo">Let’s talk <ArrowUpRight size={17}/></a><small>© {new Date().getFullYear()} Relay ECI</small></div></footer>
+ </div>
 }
