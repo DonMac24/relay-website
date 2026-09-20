@@ -38,3 +38,21 @@
 .problemGrid p{grid-column:2;font-size:15px;line-height:1.5}
 .problemGrid article>span{grid-column:2;margin-top:2px;font-size:12px;line-height:1.4;gap:8px}
 @media(max-width:700px){.problemGrid{gap:10px;margin-top:20px}.problemGrid article{padding:14px;grid-template-rows:auto auto auto}.problemGrid h3{font-size:18px}}
+
+/* Compact walkthrough across Discover, Review and Publish. */
+.workflow{padding-block:48px 24px}
+.workflow .stepTabs{margin-top:24px}
+.workflow .stepTabs button{padding-block:13px;min-height:44px}
+.workflow .walkPanel{min-height:0;padding-top:24px;gap:36px}
+.workflow .walkCopy>p{line-height:1.55;margin-top:14px;min-height:0}
+.workflow .walkNext{margin-top:18px}
+.workflow .handoffCard .cardTop{padding:10px 16px}
+.workflow .people{padding:12px 16px;gap:16px}
+.workflow .personPhoto{width:34px;height:34px;flex-basis:34px}
+.workflow .people>div{gap:8px}
+.workflow .workItem{margin-inline:16px;padding-block:10px;gap:12px}
+.workflow .workItem p{max-width:none;line-height:1.45;margin-top:3px}
+.workflow .accessRow{padding:10px 16px;line-height:1.4;flex-wrap:wrap}
+.workflow .publishedNote{padding:8px 16px;line-height:1.4}
+.workflow .darkNote{margin-top:12px!important}
+@media(max-width:700px){.workflow{padding-block:32px 20px}.workflow .walkPanel{gap:18px;padding-top:18px}.workflow .stepTabs button{padding:10px 7px}.workflow .people{gap:10px}.workflow .workItem h4{font-size:13px}.workflow .workItem p{font-size:11px}}
