@@ -29,6 +29,7 @@ export function HandoffWalkthrough(){
  const step=steps[active]
  return <section id="how-it-works" className={s.workflow}><div className={s.wrap}>
   <div className={s.workflowHeading}><div><p className={s.eyebrow}>AI-assisted discovery. Manager-led handoffs.</p><h2>Keep the work moving.<br/><span>One step at a time.</span></h2></div><p>Follow an example from Alex to Sarah.<br/>You decide what moves forward.</p></div>
+  <p style={{ margin: '16px 0 0', fontSize: '16px', lineHeight: 1.6, color: '#bfc6bf' }}>Managers lead the handoff. Employees contribute and receive the work. HR oversees transition progress.</p>
   <div className={s.stepTabs} role="tablist" aria-label="Handoff walkthrough">{steps.map((st,i)=><button key={st.title} role="tab" id={`step-${i}`} aria-selected={active===i} aria-controls={`panel-${i}`} tabIndex={active===i?0:-1} onClick={()=>setActive(i)} onKeyDown={e=>navigate(e,i)}><span>0{i+1}</span>{st.title}<ArrowRight size={17}/></button>)}</div>
   <div id={`panel-${active}`} role="tabpanel" aria-labelledby={`step-${active}`} className={s.walkPanel}>
    <div className={s.walkCopy}><h3>{step.headline}</h3><p>{step.body}</p><button className={s.walkNext} onClick={()=>setActive((active+1)%3)}>{step.action}<ArrowRight size={18}/></button></div>
