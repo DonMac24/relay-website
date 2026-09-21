@@ -9,7 +9,7 @@ const systems = [['SharePoint','sharepoint'],['Outlook','outlook'],['Jira','jira
 const links = [['Why Relay','#difference'],['How it works','#how-it-works'],['Ask Relay AI','#ask-relay'],['Integrations','#integrations'],['FAQs','#faq']]
 const questions = [
  ['Is Relay a chatbot or a handoff platform?', 'Relay is a continuity workflow and hub for work. Managers discover evidence, review and assign responsibilities, then prepare and publish a handoff. Ask Relay AI helps people find answers within that process.'],
- ['Does Relay replace our existing tools?', 'Your existing tools remain the source of record. Relay brings relevant work into a handoff through connected integrations and keeps links back to the original sources.'],
+ ['Does Relay replace our existing tools?', 'Your existing tools remain the source for documents, tasks and meetings. Relay becomes the system of record for work continuity—capturing what needs to continue, who owns it and the context they need.'],
  ['Does assigning work grant someone access?', 'No. Relay tracks source access separately from handoff preparation. A published link does not grant permission, and unresolved access issues remain visible for follow-up.'],
  ['What does the AI do?', 'AI discovery proposes relevant work from connected systems. Ask Relay AI answers questions using authorized context, while natural-language reporting turns continuity data into reports you can save and pin. People confirm assignments and publication.'],
  ['How do HR and managers track progress?', 'Managers can confirm assigned transition requests, manage their active handoffs and refer back to published records. HR has a workspace-wide oversight view of transitions, active handoffs and published handoffs, with reports it can pin to its dashboard. Both views follow the same linked records. Publication does not mean recipients have completed their assigned work.'],
@@ -28,7 +28,7 @@ export function ContinuityHome() {
   </div></header>
   <main id="main">
    <section className={`${s.wrap} ${s.hero}`}>
-    <p className={s.eyebrow}><span className={s.dot}/> AI-powered handoffs. Human-led decisions.</p>
+    <p className={s.eyebrow}><span className={s.dot}/> The system of record for work continuity.</p>
     <h1>When people leave,<br/>the knowledge <span>shouldn’t.</span></h1>
     <p className={s.heroLead}>Give the next person more than a folder of links.<br className={s.desktopBreak}/> Use AI to discover the work, then review it, assign ownership and preserve the context.</p>
     <div className={s.actions}><a href="#how-it-works" className={s.primary}>Explore a handoff <ArrowRight size={18}/></a></div>
@@ -65,6 +65,6 @@ export function ContinuityHome() {
    <section id="faq" className={`${s.wrap} ${s.section} ${s.faq}`}><div><p className={s.eyebrow}>A few useful answers</p><h2>Before you<br/>hand it over.</h2></div><div>{questions.map(([q,a])=><details key={q}><summary>{q}<Plus size={20}/></summary><p>{a}</p></details>)}</div></section>
    <div className={s.demo}><DemoCta/></div>
   </main>
-  <footer className={`${s.wrap} ${s.footer}`}><div><a href="#top" aria-label="Relay ECI home"><Image src="/relay-eci-logo-coral.png" alt="Relay ECI" width={2048} height={684} className={s.logo}/></a><p>A continuity workflow<br/>and hub for work.</p></div><nav aria-label="Footer">{links.map(([label,url])=><a key={url} href={url}>{label}</a>)}</nav><div><a className={s.textLink} href="#demo">Let’s talk <ArrowUpRight size={17}/></a><small>© {new Date().getFullYear()} Relay ECI</small></div></footer>
+  <footer className={`${s.wrap} ${s.footer}`}><div><a href="#top" aria-label="Relay ECI home"><Image src="/relay-eci-logo-coral.png" alt="Relay ECI" width={2048} height={684} className={s.logo}/></a><p>The system of record<br/>for work continuity.</p></div><nav aria-label="Footer">{links.map(([label,url])=><a key={url} href={url}>{label}</a>)}</nav><div><a className={s.textLink} href="#demo">Let’s talk <ArrowUpRight size={17}/></a><small>© {new Date().getFullYear()} Relay ECI</small></div></footer>
  </div>
 }
