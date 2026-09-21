@@ -49,7 +49,7 @@ export function ContinuityHome() {
     <div><p className={s.eyebrow}>Connected by design</p><h2>Your tools.<br/>Your context.<br/><span>One handoff.</span></h2><p className={s.sectionText}>Read-only API integrations bring relevant work into review, with links back to its original sources.</p><a className={s.textLink} href="#demo">Explore your setup <ArrowRight size={18}/></a></div>
     <div><div className={s.systemGrid}>{systems.map(([name,file])=><div key={file}><Image src={`/logos/${file}.svg`} alt="" width={32} height={32}/><span>{name}</span></div>)}</div><p className={s.note}>Discovery uses the systems connected to your workspace. We’ll review integration availability and setup in your demo.</p></div>
    </div><div className={s.wrap}><article className={s.hrIntegration} aria-labelledby="hr-trigger-title">
-    <div className={s.hrIntegrationTop}><Image src="/logos/bamboohr.svg" alt="BambooHR" width={150} height={30} className={s.hrLogo}/><span className={s.hrPilot}>Departure integration · Early pilot</span></div>
+    <div className={s.hrIntegrationTop}><Image src="/logos/bamboohr.svg" alt="BambooHR" width={150} height={30} className={s.hrLogo}/><span 
     <h3 id="hr-trigger-title">An HR update can start the handoff.</h3>
     <p className={s.hrLead}>HR records the departure in BambooHR. Once configured, Relay can pick it up on a scheduled check and prepare a confidential draft for the responsible manager.</p>
     <ol className={s.hrSteps}>
