@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { ArrowRight, ArrowUpRight, ShieldCheck, Link2, Users, ListChecks, CalendarClock, Plus } from 'lucide-react'
 import { AskRelay } from './ask-relay'
 import { DemoCta } from './demo-cta'
+import { BusinessCase } from './business-case'
 import { HandoffWalkthrough, MobileNavigation } from './relay-experience'
 import s from './continuity-home.module.css'
 
@@ -40,6 +41,7 @@ export function ContinuityHome() {
     </figure>
    </section>
 
+   <BusinessCase />
    <section id="difference" className={`${s.wrap} ${s.section}`}>
     <div className={s.sectionIntro}><p className={s.eyebrow}>The work doesn’t leave with them</p><h2>The person changes.<br/>The responsibility remains.</h2><p>A departure, extended leave or internal move can leave important work between owners. Relay helps managers follow each transition from the initial request through active preparation to a published handoff.</p></div>
     <div className={s.problemGrid}>
