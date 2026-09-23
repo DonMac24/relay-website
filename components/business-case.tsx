@@ -59,7 +59,7 @@ function AnimatedNumber({ value, prefix, suffix }: { value: number; prefix: stri
 }
 
 export function BusinessCase() {
-  return <section className={s.section} aria-labelledby="business-case-heading">
+  return <section id="business-case" className={s.section} aria-labelledby="business-case-heading">
     <div className={s.wrap}>
       <p className={s.eyebrow}>The business case</p>
       <h2 id="business-case-heading">The cost of losing<br />the thread.</h2>

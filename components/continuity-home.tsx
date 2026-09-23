@@ -3,11 +3,11 @@ import { ArrowRight, ArrowUpRight, ShieldCheck, Link2, Users, ListChecks, Calend
 import { AskRelay } from './ask-relay'
 import { DemoCta } from './demo-cta'
 import { BusinessCase } from './business-case'
-import { HandoffWalkthrough, MobileNavigation } from './relay-experience'
+import { MobileNavigation } from './relay-experience'
 import s from './continuity-home.module.css'
 
 const systems = [['SharePoint','sharepoint'],['Outlook','outlook'],['Jira','jira'],['Confluence','confluence'],['Azure DevOps','azure-devops'],['GitLab','gitlab'],['Google Drive','google-drive'],['Asana','asana'],['Monday.com','monday']]
-const links = [['Why Relay','#difference'],['How it works','#how-it-works'],['Ask Relay AI','#ask-relay'],['Integrations','#integrations'],['FAQs','#faq']]
+const links = [['Why Relay','#difference'],['Business case','#business-case'],['Ask Relay AI','#ask-relay'],['Integrations','#integrations'],['FAQs','#faq']]
 const questions = [
  ['Is Relay a chatbot or a handoff platform?', 'Relay is a continuity workflow and hub for work. Managers discover evidence, review and assign responsibilities, then prepare and publish a handoff. Ask Relay AI helps people find answers within that process.'],
  ['Does Relay replace our existing tools?', 'Your existing tools remain the source for documents, tasks and meetings. Relay becomes the system of record for work continuity—capturing what needs to continue, who owns it and the context they need.'],
@@ -33,7 +33,7 @@ export function ContinuityHome() {
      <p className={s.eyebrow}><span className={s.dot}/> The system of record for work continuity.</p>
      <h1>When people leave,<br/>the knowledge <span>shouldn’t.</span></h1>
      <p className={s.heroLead}>Give the next person more than a folder of links. Use AI to discover the work, then review it, assign ownership and preserve the context.</p>
-     <div className={s.actions}><a href="#how-it-works" className={s.primary}>Explore a handoff <ArrowRight size={18}/></a></div>
+     <div className={s.actions}><a href="#difference" className={s.primary}>See why Relay <ArrowRight size={18}/></a></div>
      <p className={s.heroNote}>A working product for HR, Operations and IT teams.</p>
     </div>
     <figure className={s.heroDiagram}>
@@ -50,7 +50,6 @@ export function ContinuityHome() {
      <article><CalendarClock/><h3>“Where does it stand?”</h3><p>Track transition requests, manage active handoffs and view published records.</p><span>From request to publication <ArrowRight size={16}/></span></article>
     </div>
    </section>
-   <HandoffWalkthrough/>
    <AskRelay/>
    <section id="integrations" className={`${s.section} ${s.integrationSection}`}><div className={`${s.wrap} ${s.integrationLayout}`}>
     <div><p className={s.eyebrow}>Connected by design</p><h2>Your tools.<br/>Your context.<br/><span>One handoff.</span></h2><p className={s.sectionText}>Read-only API integrations bring relevant work into review, with links back to its original sources.</p><a className={s.textLink} href="#demo">Explore your setup <ArrowRight size={18}/></a></div>
