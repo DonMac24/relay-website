@@ -43,7 +43,7 @@ export function BusinessCase() {
   return <section id="business-case" className={s.section} aria-labelledby="business-case-heading">
     <div className={s.wrap}>
       <p className={s.eyebrow}>The business case</p>
-      <h2 id="business-case-heading">The cost of losing the thread.</h2>
+      <h2 id="business-case-heading">The cost of losing the thread of work.</h2>
       <div className={s.grid}>
         {facts.map((fact) => <article className={s.fact} key={fact.label}>
           <p className={s.number}><AnimatedNumber value={fact.value} prefix={fact.prefix} suffix={fact.suffix} /></p>
@@ -51,7 +51,6 @@ export function BusinessCase() {
           <a className={s.source} href={fact.url} target="_blank" rel="noopener noreferrer">{fact.source} ↗</a>
         </article>)}
       </div>
-      <p className={s.note}>Why handoffs matter: these are different survey measures, not measured knowledge-loss costs or savings from Relay.</p>
     </div>
   </section>
 }

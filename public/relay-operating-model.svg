@@ -1,21 +1,34 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="900" height="720" viewBox="0 0 900 720" role="img" aria-labelledby="title desc">
-<title id="title">Relay in the employee transition operating model</title>
-<desc id="desc">A signal from a manager or HR leads to manager decisions. Relay maintains a continuity hub linked to work systems, with HR oversight.</desc>
-<style>text{font-family:Arial,Helvetica,sans-serif} .label{fill:#4d5652;font-size:19px;font-weight:700;letter-spacing:1.4px} .detail{fill:#171a18;font-size:24px;font-weight:600} .small{fill:#65706b;font-size:18px} .mint{fill:#255a4c}</style>
-<rect x="1" y="1" width="898" height="718" rx="28" fill="#f7faf8" stroke="#d9e5df" stroke-width="2"/>
-<text x="39" y="62" fill="#255a4c" font-size="20" font-weight="700" letter-spacing="1.5">WHERE RELAY FITS</text>
-<text x="39" y="104" fill="#171a18" font-size="30" font-weight="700">Employee transition operating model</text>
-<path d="M450 192V608" fill="none" stroke="#d1dcd6" stroke-width="4"/>
-<rect x="38" y="136" width="824" height="92" rx="15" fill="#fff" stroke="#d7e2dc" stroke-width="2"/>
-<text class="label" x="62" y="171">SIGNAL</text><text class="detail" x="62" y="203">Manager starts a handoff · HR can prepare a draft</text>
-<rect x="38" y="241" width="824" height="92" rx="15" fill="#fff" stroke="#d7e2dc" stroke-width="2"/>
-<text class="label" x="62" y="276">DECISION</text><text class="detail" x="62" y="308">Manager reviews, assigns and approves</text>
-<rect x="30" y="346" width="840" height="108" rx="18" fill="#e5f8f1" stroke="#5CCBAE" stroke-width="3"/>
-<rect x="52" y="366" width="124" height="39" rx="9" fill="#171a18"/><text x="74" y="393" fill="#fff" font-size="22" font-weight="700">RELAY</text>
-<text x="194" y="393" fill="#171a18" font-size="25" font-weight="700">Continuity hub</text><text x="52" y="430" class="small">Ownership · linked context · risks · actions</text>
-<rect x="38" y="467" width="824" height="92" rx="15" fill="#fff" stroke="#d7e2dc" stroke-width="2"/>
-<text class="label" x="62" y="502">SOURCE SYSTEMS</text><text class="detail" x="62" y="534">Work remains in existing tools · read-only links</text>
-<rect x="38" y="572" width="824" height="92" rx="15" fill="#fff" stroke="#d7e2dc" stroke-width="2"/>
-<text class="label" x="62" y="607">OVERSIGHT</text><text class="detail" x="62" y="639">HR sees progress and outstanding action</text>
-<text x="40" y="696" class="small">People confirm the handoff. Source permissions stay in place.</text>
+<title id="title">Where Relay fits in the employee transition</title>
+<desc id="desc">People and governance: HR monitors progress, managers review and assign work, and the next owner receives a handoff. Relay connects three workflow steps: Discover, Review and assign, Preview and publish. A continuity record links to existing work systems without granting access to them.</desc>
+<style>text{font-family:Arial,Helvetica,sans-serif}.kicker{fill:#275c4d;font-size:18px;font-weight:700;letter-spacing:1.3px}.head{fill:#1b211e;font-size:27px;font-weight:700}.role{fill:#1b211e;font-size:20px;font-weight:700}.sub{fill:#586761;font-size:16px}.step{fill:#1b211e;font-size:21px;font-weight:700}.minor{fill:#50615b;font-size:17px;font-weight:600}.num{fill:#277f68;font-size:15px;font-weight:700}</style>
+<rect x="1" y="1" width="898" height="718" rx="26" fill="#fcfefd" stroke="#d8e7df" stroke-width="2"/>
+<text x="36" y="52" class="kicker">WHERE RELAY FITS</text>
+<text x="36" y="89" class="head">A continuity layer for work in transition</text>
+<text x="36" y="126" class="kicker">PEOPLE &amp; GOVERNANCE</text>
+<rect x="36" y="146" width="260" height="94" rx="15" fill="#fff" stroke="#d9e6df" stroke-width="2"/>
+<rect x="320" y="146" width="260" height="94" rx="15" fill="#fff" stroke="#d9e6df" stroke-width="2"/>
+<rect x="604" y="146" width="260" height="94" rx="15" fill="#fff" stroke="#d9e6df" stroke-width="2"/>
+<text x="55" y="180" class="role">HR</text><text x="55" y="211" class="sub">Monitors progress</text>
+<text x="339" y="180" class="role">Manager</text><text x="339" y="211" class="sub">Reviews and assigns</text>
+<text x="623" y="180" class="role">Next owner</text><text x="623" y="211" class="sub">Receives the handoff</text>
+<path d="M166 240v31M450 240v31M734 240v31" fill="none" stroke="#cbded4" stroke-width="3"/>
+<rect x="28" y="269" width="844" height="258" rx="20" fill="#e9fbf5" stroke="#5CCBAE" stroke-width="3"/>
+<rect x="46" y="285" width="103" height="36" rx="8" fill="#1b211e"/>
+<text x="63" y="311" fill="#fff" font-size="19" font-family="Arial,Helvetica,sans-serif" font-weight="700">RELAY</text>
+<text x="163" y="310" class="kicker">CONTINUITY WORKFLOW</text>
+<rect x="46" y="341" width="256" height="105" rx="13" fill="#fff" stroke="#cae5da" stroke-width="2"/>
+<rect x="322" y="341" width="256" height="105" rx="13" fill="#fff" stroke="#cae5da" stroke-width="2"/>
+<rect x="598" y="341" width="256" height="105" rx="13" fill="#fff" stroke="#cae5da" stroke-width="2"/>
+<text x="64" y="369" class="num">01</text><text x="64" y="399" class="step">Discover</text><text x="64" y="426" class="sub">Find work and context</text>
+<text x="340" y="369" class="num">02</text><text x="340" y="399" class="step">Review &amp; assign</text><text x="340" y="426" class="sub">Confirm the next owner</text>
+<text x="616" y="369" class="num">03</text><text x="616" y="399" class="step">Preview &amp; publish</text><text x="616" y="426" class="sub">Share the handoff</text>
+<path d="M307 393h10m-5-5 5 5-5 5m271-5h10m-5-5 5 5-5 5" fill="none" stroke="#579e88" stroke-width="2"/>
+<text x="48" y="488" class="minor">Continuity hub: ownership · linked context · risks · actions</text>
+<path d="M450 528v25" fill="none" stroke="#cbded4" stroke-width="3"/>
+<rect x="36" y="553" width="828" height="106" rx="15" fill="#fff" stroke="#d9e6df" stroke-width="2"/>
+<text x="55" y="581" class="kicker">EXISTING WORK SYSTEMS</text>
+<text x="55" y="612" class="role">SharePoint · Outlook · Jira · Confluence · more</text>
+<text x="55" y="639" class="sub">Work stays in its original tools; source access stays separate.</text>
+<text x="36" y="690" class="sub">People make the decisions. HR sees progress across transitions.</text>
 </svg>

@@ -37,7 +37,7 @@ export function ContinuityHome() {
      <p className={s.heroNote}>A working product for HR, Operations and IT teams.</p>
     </div>
     <figure className={s.heroDiagram}>
-     <Image src="/relay-operating-model.svg" alt="Relay operating model: a manager or HR signal starts a handoff; a manager reviews and assigns the work; Relay holds the continuity record, connects to existing systems and gives HR oversight." width={900} height={720} priority />
+     <Image src="/relay-operating-model.svg" alt="Relay links HR, the manager and the next owner through three steps: Discover, Review and assign, Preview and publish. Its continuity hub links to existing work systems while source access stays separate." width={900} height={720} priority />
     </figure>
    </section>
 
