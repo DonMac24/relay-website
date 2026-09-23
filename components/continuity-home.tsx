@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { ArrowRight, ArrowUpRight, ShieldCheck, Link2, Users, ListChecks, CalendarClock, Plus } from 'lucide-react'
+import { ArrowRight, ArrowUpRight, ShieldCheck, Users, CalendarClock, Plus } from 'lucide-react'
 import { AskRelay } from './ask-relay'
 import { DemoCta } from './demo-cta'
 import { BusinessCase } from './business-case'
@@ -64,10 +64,6 @@ export function ContinuityHome() {
      <li><span>3</span><div><strong>The manager takes it forward</strong><p>Confirm the transition, invite employee input, then review and assign the work.</p></div></li>
     </ol>
    </article></div></section>
-   <section className={`${s.wrap} ${s.section} ${s.controlSection}`}>
-    <div className={s.sectionIntro}><p className={s.eyebrow}>People stay in control</p><h2>AI finds the context.<br/>Your team makes the decisions.</h2></div>
-    <div className={s.controlGrid}><article><ListChecks/><h3>Review before assignment</h3><p>Confirm proposed work and decide what belongs in the handoff.</p></article><article><Users/><h3>Oversight for HR and managers</h3><p>Managers follow their own transitions and handoffs. HR monitors workspace-wide progress and outstanding action.</p></article><article><Link2/><h3>Source permissions stay put</h3><p>Relay does not grant source access simply because someone receives an assignment.</p></article></div>
-   </section>
    <section id="faq" className={`${s.wrap} ${s.section} ${s.faq}`}><div><p className={s.eyebrow}>A few useful answers</p><h2>Before you<br/>hand it over.</h2></div><div>{questions.map(([q,a])=><details key={q}><summary>{q}<Plus size={20}/></summary><p>{a}</p></details>)}</div></section>
    <div className={s.demo}><DemoCta/></div>
   </main>

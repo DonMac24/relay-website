@@ -4,30 +4,11 @@ import { useEffect, useRef, useState } from 'react'
 import s from './business-case.module.css'
 
 const facts = [
-  {
-    value: 47,
-    prefix: '$',
-    suffix: 'M',
-    label: 'annual productivity loss',
-    description: 'Estimated cost of inefficient knowledge sharing for an average large U.S. business.',
-    scope: '17,700 employees · Panopto/YouGov, 2018',
-  },
-  {
-    value: 42,
-    prefix: '',
-    suffix: '%',
-    label: 'of role knowledge is unique',
-    description: 'Workers estimated this share of their institutional knowledge was held only by them.',
-    scope: 'U.S. employee survey · Panopto/YouGov, 2018',
-  },
-  {
-    value: 5.3,
-    prefix: '',
-    suffix: ' hrs',
-    label: 'lost each week',
-    description: 'Average time waiting for information or recreating existing knowledge.',
-    scope: 'U.S. knowledge workers · Panopto/YouGov, 2018',
-  },
+  { value: 8, prefix: '', suffix: '%', label: 'consistently capture knowledge from departing retirees', source: 'APQC · 2025', url: 'https://www.apqc.org/resource-library/resource/navigating-great-retirement-km-ai/html' },
+  { value: 22.5, prefix: '', suffix: '%', label: 'of Canadian firms with 100+ employees report all staff fully proficient', source: 'Statistics Canada · 2026', url: 'https://www150.statcan.gc.ca/n1/pub/11-621-m/11-621-m2026006-eng.htm' },
+  { value: 5475, prefix: '$', suffix: '', label: 'average U.S. nonexecutive hiring cost', source: 'SHRM · 2025', url: 'https://www.shrm.org/about/press-room/shrm-releases-2025-benchmarking-reports--how-does-your-organizat' },
+  { value: 35879, prefix: '$', suffix: '', label: 'average U.S. executive hiring cost', source: 'SHRM · 2025', url: 'https://www.shrm.org/about/press-room/shrm-releases-2025-benchmarking-reports--how-does-your-organizat' },
+  { value: 49, prefix: '', suffix: '%', label: 'of U.S. employees strongly know what is expected at work', source: 'Gallup · 2026', url: 'https://www.gallup.com/workplace/712433/employee-engagement-remains-flat-adoption-accelerates.aspx' },
 ]
 
 function AnimatedNumber({ value, prefix, suffix }: { value: number; prefix: string; suffix: string }) {
@@ -46,7 +27,7 @@ function AnimatedNumber({ value, prefix, suffix }: { value: number; prefix: stri
       const animate = (now: number) => {
         const progress = Math.min((now - start) / 1250, 1)
         const eased = 1 - Math.pow(1 - progress, 3)
-        setCurrent(value < 10 ? Math.round(value * eased * 10) / 10 : Math.round(value * eased))
+        setCurrent(Number.isInteger(value) ? Math.round(value * eased) : Math.round(value * eased * 10) / 10)
         if (progress < 1) frame = requestAnimationFrame(animate)
       }
       frame = requestAnimationFrame(animate)
@@ -55,25 +36,22 @@ function AnimatedNumber({ value, prefix, suffix }: { value: number; prefix: stri
     return () => { observer.disconnect(); cancelAnimationFrame(frame) }
   }, [value])
 
-  return <span ref={element} aria-label={`${prefix}${value}${suffix}`} aria-live="off">{prefix}{current}{suffix}</span>
+  return <span ref={element} aria-label={`${prefix}${value.toLocaleString('en-US')}${suffix}`} aria-live="off">{prefix}{current.toLocaleString('en-US')}{suffix}</span>
 }
 
 export function BusinessCase() {
   return <section id="business-case" className={s.section} aria-labelledby="business-case-heading">
     <div className={s.wrap}>
       <p className={s.eyebrow}>The business case</p>
-      <h2 id="business-case-heading">The cost of losing<br />the thread.</h2>
-      <p className={s.intro}>When a person leaves, the files may stay. The ownership, decisions and context behind the work are much harder to recover.</p>
+      <h2 id="business-case-heading">Why handoffs matter.</h2>
       <div className={s.grid}>
         {facts.map((fact) => <article className={s.fact} key={fact.label}>
           <p className={s.number}><AnimatedNumber value={fact.value} prefix={fact.prefix} suffix={fact.suffix} /></p>
           <h3>{fact.label}</h3>
-          <p className={s.description}>{fact.description}</p>
-          <p className={s.source}>{fact.scope}</p>
+          <a className={s.source} href={fact.url} target="_blank" rel="noopener noreferrer">{fact.source} ↗</a>
         </article>)}
       </div>
-      <div className={s.takeaway}><strong>Relay makes the next owner, the context and the gaps visible.</strong><span>A structured handoff gives managers a way to act and HR a way to see progress.</span></div>
-      <p className={s.disclaimer}>Figures describe broader knowledge-sharing costs, not measured savings from Relay. Source: <a href="https://www.panopto.com/ebooks/valuing-workplace-knowledge/" target="_blank" rel="noopener noreferrer">Panopto and YouGov’s Workplace Knowledge and Productivity Report</a> (2018).</p>
+      <p className={s.note}>Survey measures and hiring costs; these are not measured losses or savings from Relay.</p>
     </div>
   </section>
 }
