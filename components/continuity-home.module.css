@@ -56,3 +56,8 @@
 .workflow .publishedNote{padding:8px 16px;line-height:1.4}
 .workflow .darkNote{margin-top:12px!important}
 @media(max-width:700px){.workflow{padding-block:32px 20px}.workflow .walkPanel{gap:18px;padding-top:18px}.workflow .stepTabs button{padding:10px 7px}.workflow .people{gap:10px}.workflow .workItem h4{font-size:13px}.workflow .workItem p{font-size:11px}}
+
+/* Larger header wordmark, with a compact mobile size. */
+.header .logo{width:180px}
+.nav>a:first-child{flex-shrink:0}
+@media(max-width:700px){.header .logo{width:135px}}
