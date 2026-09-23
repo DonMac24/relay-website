@@ -5,10 +5,12 @@ import s from './business-case.module.css'
 
 const facts = [
   { value: 8, prefix: '', suffix: '%', label: 'of surveyed organizations consistently capture retiring employees’ knowledge', source: 'APQC · 2025', url: 'https://www.apqc.org/resource-library/resource/navigating-great-retirement-km-ai/html' },
-  { value: 22.5, prefix: '', suffix: '%', label: 'of Canadian firms with 100+ employees report all staff fully proficient', source: 'Statistics Canada · 2026', url: 'https://www150.statcan.gc.ca/n1/pub/11-621-m/11-621-m2026006-eng.htm' },
   { value: 41, prefix: '', suffix: '%', label: 'of Canadian workers had to learn a job from scratch after a retirement without knowledge transfer', source: 'Express / Harris Poll · 2022', url: 'https://www.expresspros.ca/newsroom/news-releases/news-releases/2022/05/41-of-employees-have-been-forced-to-start-job-from-scratch-due-to-lack-of-knowledge-transfer-from-retiring-employees' },
-  { value: 29234, prefix: 'C$', suffix: '', label: 'average annual Canadian business turnover cost, including lost productivity', source: 'Express / Harris Poll · 2025', url: 'https://www.expresspros.ca/newsroom/news-releases/news-releases/2025/06/employee-turnover-is-costing-canadian-companies-big-in-2025' },
   { value: 49, prefix: '', suffix: '%', label: 'of U.S. employees strongly know what is expected at work', source: 'Gallup · 2026', url: 'https://www.gallup.com/workplace/712433/employee-engagement-remains-flat-adoption-accelerates.aspx' },
+  { value: 23, prefix: '', suffix: '%', label: 'of employees strongly rate their onboarding as exceptional', source: 'Gallup', url: 'https://www.gallup.com/workplace/323573/employee-experience-and-workplace-culture.aspx' },
+  { value: 25, prefix: '', suffix: '%', label: 'of the workweek spent searching for answers, by workers’ and leaders’ estimates', source: 'Atlassian · 2025', url: 'https://www.atlassian.com/blog/state-of-teams-2025' },
+  { value: 56, prefix: '', suffix: '%', label: 'of workers must ask someone or set a meeting to get the information they need', source: 'Atlassian · 2025', url: 'https://www.atlassian.com/blog/work-management/stop-mistaking-storage-for-strategy' },
+  { value: 20, prefix: '', suffix: '%', label: 'of knowledge workers feel confident their team shares decisions that affect others’ work', source: 'Atlassian · 2025', url: 'https://www.atlassian.com/blog/teamwork/atlassians-guide-to-out-of-office-for-async-teams' },
 ]
 
 function AnimatedNumber({ value, prefix, suffix }: { value: number; prefix: string; suffix: string }) {
