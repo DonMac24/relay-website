@@ -6,11 +6,10 @@ import s from './business-case.module.css'
 const facts = [
   { value: 8, prefix: '', suffix: '%', label: 'of surveyed organizations consistently capture retiring employees’ knowledge', source: 'APQC · 2025', url: 'https://www.apqc.org/resource-library/resource/navigating-great-retirement-km-ai/html' },
   { value: 41, prefix: '', suffix: '%', label: 'of Canadian workers had to learn a job from scratch after a retirement without knowledge transfer', source: 'Express / Harris Poll · 2022', url: 'https://www.expresspros.ca/newsroom/news-releases/news-releases/2022/05/41-of-employees-have-been-forced-to-start-job-from-scratch-due-to-lack-of-knowledge-transfer-from-retiring-employees' },
-  { value: 49, prefix: '', suffix: '%', label: 'of U.S. employees strongly know what is expected at work', source: 'Gallup · 2026', url: 'https://www.gallup.com/workplace/712433/employee-engagement-remains-flat-adoption-accelerates.aspx' },
   { value: 23, prefix: '', suffix: '%', label: 'of employees strongly rate their onboarding as exceptional', source: 'Gallup', url: 'https://www.gallup.com/workplace/323573/employee-experience-and-workplace-culture.aspx' },
-  { value: 25, prefix: '', suffix: '%', label: 'of the workweek spent searching for answers, by workers’ and leaders’ estimates', source: 'Atlassian · 2025', url: 'https://www.atlassian.com/blog/state-of-teams-2025' },
   { value: 56, prefix: '', suffix: '%', label: 'of workers must ask someone or set a meeting to get the information they need', source: 'Atlassian · 2025', url: 'https://www.atlassian.com/blog/work-management/stop-mistaking-storage-for-strategy' },
-  { value: 20, prefix: '', suffix: '%', label: 'of knowledge workers feel confident their team shares decisions that affect others’ work', source: 'Atlassian · 2025', url: 'https://www.atlassian.com/blog/teamwork/atlassians-guide-to-out-of-office-for-async-teams' },
+  { value: 610, prefix: '≈C$', suffix: '', label: 'SME investment in informal training for one inexperienced new hire', source: 'CFIB · 2025', url: 'https://www.cfib-fcei.ca/en/research-economic-analysis/canadas-training-ground-how-small-businesses-are-building-tomorrows-workforce' },
+  { value: 30680, prefix: 'C$', suffix: '', label: 'average employee turnover cost reported by Canadian hiring managers across business sizes', source: 'Express / Harris Poll · 2026', url: 'https://www.expresspros.ca/newsroom/news-releases/news-releases/2026/01/employee-turnover-is-getting-more-expensive-for-canadian-companies' },
 ]
 
 function AnimatedNumber({ value, prefix, suffix }: { value: number; prefix: string; suffix: string }) {
