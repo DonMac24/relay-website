@@ -28,11 +28,16 @@ export function ContinuityHome() {
   </div></header>
   <main id="main">
    <section className={`${s.wrap} ${s.hero}`}>
-    <p className={s.eyebrow}><span className={s.dot}/> The system of record for work continuity.</p>
-    <h1>When people leave,<br/>the knowledge <span>shouldn’t.</span></h1>
-    <p className={s.heroLead}>Give the next person more than a folder of links.<br className={s.desktopBreak}/> Use AI to discover the work, then review it, assign ownership and preserve the context.</p>
-    <div className={s.actions}><a href="#how-it-works" className={s.primary}>Explore a handoff <ArrowRight size={18}/></a></div>
-    <p className={s.heroNote}>A working product for HR, Operations and IT teams.</p>
+    <div className={s.heroCopy}>
+     <p className={s.eyebrow}><span className={s.dot}/> The system of record for work continuity.</p>
+     <h1>When people leave,<br/>the knowledge <span>shouldn’t.</span></h1>
+     <p className={s.heroLead}>Give the next person more than a folder of links. Use AI to discover the work, then review it, assign ownership and preserve the context.</p>
+     <div className={s.actions}><a href="#how-it-works" className={s.primary}>Explore a handoff <ArrowRight size={18}/></a></div>
+     <p className={s.heroNote}>A working product for HR, Operations and IT teams.</p>
+    </div>
+    <figure className={s.heroDiagram}>
+     <Image src="/relay-operating-model.svg" alt="Relay operating model: a manager or HR signal starts a handoff; a manager reviews and assigns the work; Relay holds the continuity record, connects to existing systems and gives HR oversight." width={900} height={720} priority />
+    </figure>
    </section>
 
    <section id="difference" className={`${s.wrap} ${s.section}`}>

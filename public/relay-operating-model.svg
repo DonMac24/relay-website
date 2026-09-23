@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="720" viewBox="0 0 900 720" role="img" aria-labelledby="title desc">
+<title id="title">Relay in the employee transition operating model</title>
+<desc id="desc">A signal from a manager or HR leads to manager decisions. Relay maintains a continuity hub linked to work systems, with HR oversight.</desc>
+<style>text{font-family:Arial,Helvetica,sans-serif} .label{fill:#4d5652;font-size:19px;font-weight:700;letter-spacing:1.4px} .detail{fill:#171a18;font-size:24px;font-weight:600} .small{fill:#65706b;font-size:18px} .mint{fill:#255a4c}</style>
+<rect x="1" y="1" width="898" height="718" rx="28" fill="#f7faf8" stroke="#d9e5df" stroke-width="2"/>
+<text x="39" y="62" fill="#255a4c" font-size="20" font-weight="700" letter-spacing="1.5">WHERE RELAY FITS</text>
+<text x="39" y="104" fill="#171a18" font-size="30" font-weight="700">Employee transition operating model</text>
+<path d="M450 192V608" fill="none" stroke="#d1dcd6" stroke-width="4"/>
+<rect x="38" y="136" width="824" height="92" rx="15" fill="#fff" stroke="#d7e2dc" stroke-width="2"/>
+<text class="label" x="62" y="171">SIGNAL</text><text class="detail" x="62" y="203">Manager starts a handoff · HR can prepare a draft</text>
+<rect x="38" y="241" width="824" height="92" rx="15" fill="#fff" stroke="#d7e2dc" stroke-width="2"/>
+<text class="label" x="62" y="276">DECISION</text><text class="detail" x="62" y="308">Manager reviews, assigns and approves</text>
+<rect x="30" y="346" width="840" height="108" rx="18" fill="#e5f8f1" stroke="#5CCBAE" stroke-width="3"/>
+<rect x="52" y="366" width="124" height="39" rx="9" fill="#171a18"/><text x="74" y="393" fill="#fff" font-size="22" font-weight="700">RELAY</text>
+<text x="194" y="393" fill="#171a18" font-size="25" font-weight="700">Continuity hub</text><text x="52" y="430" class="small">Ownership · linked context · risks · actions</text>
+<rect x="38" y="467" width="824" height="92" rx="15" fill="#fff" stroke="#d7e2dc" stroke-width="2"/>
+<text class="label" x="62" y="502">SOURCE SYSTEMS</text><text class="detail" x="62" y="534">Work remains in existing tools · read-only links</text>
+<rect x="38" y="572" width="824" height="92" rx="15" fill="#fff" stroke="#d7e2dc" stroke-width="2"/>
+<text class="label" x="62" y="607">OVERSIGHT</text><text class="detail" x="62" y="639">HR sees progress and outstanding action</text>
+<text x="40" y="696" class="small">People confirm the handoff. Source permissions stay in place.</text>
+</svg>
