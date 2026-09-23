@@ -85,14 +85,14 @@
   --muted: #f3f4f1;
   --muted-foreground: #586660;
 
-  /* Relay orange and deeper coral. */
-  --relay: #FF5838;
-  --relay-dark: #FF5838;
-  --relay-hover: #FF5838;
-  --relay-light: #fff0eb;
-  --relay-border: #edc6be;
+  /* Relay mint turquoise. */
+  --relay: #7CE0C4;
+  --relay-dark: #7CE0C4;
+  --relay-hover: #7CE0C4;
+  --relay-light: #EFFBF6;
+  --relay-border: #BCECDD;
 
-  /* Retain gradient variables with a flat coral finish. */
+  /* Retain gradient variables with a flat mint finish. */
   --relay-gradient-start: var(--relay-dark);
   --relay-gradient-end: var(--relay-dark);
 
@@ -123,16 +123,16 @@
 
   ::selection {
     background: var(--relay-dark);
-    color: #ffffff;
+    color: #171a18;
   }
 }
 
 @layer utilities {
-  /* Existing gradient buttons now use solid coral. */
+  /* Existing gradient buttons now use solid mint. */
   .bg-relay-gradient {
     background-color: var(--relay-dark);
     background-image: none;
-    color: #ffffff;
+    color: #171a18;
   }
 
   .bg-relay-gradient:hover {
