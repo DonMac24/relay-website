@@ -41,15 +41,15 @@ export function ContinuityHome() {
     </figure>
    </section>
 
-   <BusinessCase />
    <section id="difference" className={`${s.wrap} ${s.section}`}>
     <div className={s.sectionIntro}><p className={s.eyebrow}>The work doesn’t leave with them</p><h2>The person changes.<br/>The responsibility remains.</h2><p>A departure, extended leave or internal move can leave important work between owners. Relay helps managers follow each transition from the initial request through active preparation to a published handoff.</p></div>
     <div className={s.problemGrid}>
      <article><Users/><h3>“Who’s taking this over?”</h3><p>Give each responsibility a named recipient and the context they need to continue.</p><span>Clear ownership <ArrowRight size={16}/></span></article>
      <article><ShieldCheck/><h3>“Can they access it?”</h3><p>Keep source-access issues visible alongside the handoff, with follow-up for unresolved gaps.</p><span>Visible access gaps <ArrowRight size={16}/></span></article>
      <article><CalendarClock/><h3>“Where does it stand?”</h3><p>Track transition requests, manage active handoffs and view published records.</p><span>From request to publication <ArrowRight size={16}/></span></article>
-    </div>
+   </div>
    </section>
+   <BusinessCase />
    <AskRelay/>
    <section id="integrations" className={`${s.section} ${s.integrationSection}`}><div className={`${s.wrap} ${s.integrationLayout}`}>
     <div><p className={s.eyebrow}>Connected by design</p><h2>Your tools.<br/>Your context.<br/><span>One handoff.</span></h2><p className={s.sectionText}>Read-only API integrations bring relevant work into review, with links back to its original sources.</p><a className={s.textLink} href="#demo">Explore your setup <ArrowRight size={18}/></a></div>
