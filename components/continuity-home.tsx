@@ -7,7 +7,7 @@ import { HandoffWalkthrough, MobileNavigation } from './relay-experience'
 import s from './continuity-home.module.css'
 
 const systems = [['SharePoint','sharepoint'],['Outlook','outlook'],['Jira','jira'],['Confluence','confluence'],['Azure DevOps','azure-devops'],['GitLab','gitlab'],['Google Drive','google-drive'],['Asana','asana'],['Monday.com','monday']]
-const links = [['Why Relay','#difference'],['How it works','#how-it-works'],['The cost','#business-case'],['Ask Relay','#ask-relay'],['Integrations','#integrations'],['FAQ','#faq']]
+const links = [['Why Relay','#difference'],['The cost','#business-case'],['How it works','#how-it-works'],['Ask Relay','#ask-relay'],['Integrations','#integrations'],['FAQ','#faq']]
 const questions = [
  ['Is Relay a chatbot?', 'No. Relay is a handoff workflow and a record of who owns what. Ask Relay is one part of it, for finding answers within that record.'],
  ['Does it replace our existing tools?', 'No. Your tools stay the source of truth for documents, tasks and meetings. Relay records what needs to continue, who owns it and why.'],
@@ -50,8 +50,8 @@ export function ContinuityHome() {
      <article><ArrowRight/><h3>Works when the timing is bad</h3><p>Sudden departures, medical leave and internal moves rarely come with a tidy two weeks. Relay can build the handoff from system evidence, with or without the departing person’s input.</p></article>
    </div>
    </section>
-   <HandoffWalkthrough/>
    <BusinessCase />
+   <HandoffWalkthrough/>
    <AskRelay/>
    <section id="integrations" className={`${s.section} ${s.integrationSection}`}><div className={`${s.wrap} ${s.integrationLayout}`}>
     <div><p className={s.eyebrow}>Integrations</p><h2>Works with the tools you already have.</h2><p className={s.sectionText}>Relay connects read-only and links back to the original source. Your documents, tickets and meetings stay where they are.</p><a className={s.textLink} href="#demo">Explore your setup <ArrowRight size={18}/></a></div>
