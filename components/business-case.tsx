@@ -5,8 +5,10 @@ import s from './business-case.module.css'
 
 const facts = [
   { value: 8, prefix: '', suffix: '%', label: 'of surveyed organizations consistently capture retiring employees’ knowledge', source: 'APQC · 2025', url: 'https://www.apqc.org/resource-library/resource/navigating-great-retirement-km-ai/html' },
+  { value: 5.3, prefix: '', suffix: ' hours', label: 'a week U.S. knowledge workers spend waiting for colleagues’ information or recreating existing knowledge', source: 'Panopto / YouGov · 2018', url: 'https://www.prnewswire.com/news-releases/inefficient-knowledge-sharing-costs-large-businesses-47-million-per-year-300681971.html' },
   { value: 41, prefix: '', suffix: '%', label: 'of Canadian workers have had to learn a job from scratch after a retirement with no knowledge transfer', source: 'Express / Harris Poll · 2022', url: 'https://www.expresspros.ca/newsroom/news-releases/news-releases/2022/05/41-of-employees-have-been-forced-to-start-job-from-scratch-due-to-lack-of-knowledge-transfer-from-retiring-employees' },
   { value: 56, prefix: '', suffix: '%', label: 'of workers must ask someone or set a meeting to get the information they need', source: 'Atlassian · 2025', url: 'https://www.atlassian.com/blog/work-management/stop-mistaking-storage-for-strategy' },
+  { value: 6.5, prefix: '', suffix: ' months', label: 'for the average new hire to get fully up to speed—about four months after typical onboarding ends', source: 'Panopto / YouGov · 2018', url: 'https://www.panopto.com/ebooks/valuing-workplace-knowledge/' },
   { value: 23, prefix: '', suffix: '%', label: 'of employees strongly agree their onboarding was exceptional', source: 'Gallup', url: 'https://www.gallup.com/workplace/323573/employee-experience-and-workplace-culture.aspx' },
 ]
 
