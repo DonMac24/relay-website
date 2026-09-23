@@ -1,6 +1,6 @@
 'use client'
 import Image from 'next/image'
-import { useRef, useState, type KeyboardEvent } from 'react'
+import { useEffect, useRef, useState, type KeyboardEvent } from 'react'
 import { ArrowRight, Check, FileText, ShieldCheck, Sparkles, X, Maximize2, CircleCheck, Menu } from 'lucide-react'
 import s from './continuity-home.module.css'
 
@@ -21,16 +21,37 @@ const steps=[
 ]
 export function HandoffWalkthrough(){
  const [active,setActive]=useState(0)
+ const sectionRef=useRef<HTMLElement>(null)
+ const [visible,setVisible]=useState(false)
+ const [paused,setPaused]=useState(false)
+ const [pageVisible,setPageVisible]=useState(true)
+ const [reducedMotion,setReducedMotion]=useState(false)
+ useEffect(()=>{
+  const media=window.matchMedia('(prefers-reduced-motion: reduce)')
+  const updateMotion=()=>setReducedMotion(media.matches)
+  const updatePage=()=>setPageVisible(!document.hidden)
+  updateMotion();updatePage()
+  media.addEventListener('change',updateMotion)
+  document.addEventListener('visibilitychange',updatePage)
+  const observer=new IntersectionObserver(([entry])=>setVisible(entry.isIntersecting),{threshold:.2})
+  if(sectionRef.current)observer.observe(sectionRef.current)
+  return ()=>{observer.disconnect();media.removeEventListener('change',updateMotion);document.removeEventListener('visibilitychange',updatePage)}
+ },[])
+ useEffect(()=>{
+  if(!visible||paused||!pageVisible||reducedMotion)return
+  const timer=window.setTimeout(()=>setActive(current=>(current+1)%steps.length),6500)
+  return ()=>window.clearTimeout(timer)
+ },[active,visible,paused,pageVisible,reducedMotion])
  function navigate(e:KeyboardEvent<HTMLButtonElement>,index:number){
   let next=index
   if(e.key==='ArrowRight')next=(index+1)%3;else if(e.key==='ArrowLeft')next=(index+2)%3;else if(e.key==='Home')next=0;else if(e.key==='End')next=2;else return
   e.preventDefault();setActive(next);document.getElementById(`step-${next}`)?.focus()
  }
  const step=steps[active]
- return <section id="how-it-works" className={s.workflow}><div className={s.wrap}>
+ return <section ref={sectionRef} id="how-it-works" className={s.workflow} onMouseEnter={()=>setPaused(true)} onMouseLeave={()=>setPaused(false)} onFocusCapture={()=>setPaused(true)} onBlurCapture={e=>{if(!e.currentTarget.contains(e.relatedTarget as Node))setPaused(false)}}><div className={s.wrap}>
   <div className={s.workflowHeading}><div><p className={s.eyebrow}>How it works</p><h2>Three steps from notice to handoff.</h2></div><p>Follow an example from Alex to Sarah.</p></div>
-  <div className={s.stepTabs} role="tablist" aria-label="Handoff walkthrough">{steps.map((st,i)=><button key={st.title} role="tab" id={`step-${i}`} aria-selected={active===i} aria-controls={`panel-${i}`} tabIndex={active===i?0:-1} onClick={()=>setActive(i)} onKeyDown={e=>navigate(e,i)}><span>0{i+1}</span>{st.title}<ArrowRight size={17}/></button>)}</div>
-  <div id={`panel-${active}`} role="tabpanel" aria-labelledby={`step-${active}`} className={s.walkPanel}>
+  <div className={s.stepTabs} role="tablist" aria-label="Handoff walkthrough">{steps.map((st,i)=><button key={st.title} role="tab" id={`step-${i}`} aria-selected={active===i} aria-controls={`panel-${i}`} tabIndex={active===i?0:-1} onClick={()=>setActive(i)} onKeyDown={e=>navigate(e,i)}><span>0{i+1}</span>{st.title}<ArrowRight size={17}/></button>)}<span className={s.stepIndicator} style={{transform:`translateX(${active*100}%)`}} aria-hidden="true"/></div>
+  <div key={active} id={`panel-${active}`} role="tabpanel" aria-labelledby={`step-${active}`} className={s.walkPanel}>
    <div className={s.walkCopy}><h3>{step.headline}</h3><p>{step.body}</p><button className={s.walkNext} onClick={()=>setActive((active+1)%3)}>{step.action}<ArrowRight size={18}/></button></div>
    <div className={s.handoffCard}><div className={s.cardTop}><span><FileText size={16}/>{step.label}</span><span className={active===0?s.neutralPill:s.successPill}>{step.status}</span></div>
     <div className={s.people}><div><span className={`${s.personPhoto} ${s.alexPhoto}`}><Image src="/alex-morgan-profile.png" alt="" width={198} height={210}/></span><span><small>From</small><strong>Alex Morgan</strong></span></div><ArrowRight size={20}/><div><span className={s.personPhoto}><Image src="/sarah-chen-profile.png" alt="Sample recipient" width={46} height={46}/></span><span><small>Prepared for</small><strong>Sarah Chen</strong></span></div></div>

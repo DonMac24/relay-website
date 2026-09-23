@@ -42,6 +42,11 @@
 /* Compact walkthrough across Discover, Review and Publish. */
 .workflow{padding-block:48px 24px}
 .workflow .stepTabs{margin-top:24px}
+.workflow .stepTabs{position:relative}
+.workflow .stepTabs button[aria-selected=true]{border-bottom-color:transparent}
+.stepIndicator{position:absolute;bottom:-1px;left:0;width:33.3333%;height:4px;background:#5CCBAE;pointer-events:none;transition:transform .45s ease}
+.workflow .walkPanel{animation:walkSlide .4s ease both}
+@keyframes walkSlide{from{opacity:.35;transform:translateX(16px)}to{opacity:1;transform:translateX(0)}}
 .workflow .stepTabs button{padding-block:13px;min-height:44px}
 .workflow .walkPanel{min-height:0;padding-top:24px;gap:36px}
 .workflow .walkCopy>p{line-height:1.55;margin-top:14px;min-height:0}
