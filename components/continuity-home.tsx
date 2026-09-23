@@ -3,19 +3,19 @@ import { ArrowRight, ArrowUpRight, ShieldCheck, Users, CalendarClock, Plus } fro
 import { AskRelay } from './ask-relay'
 import { DemoCta } from './demo-cta'
 import { BusinessCase } from './business-case'
-import { MobileNavigation } from './relay-experience'
+import { HandoffWalkthrough, MobileNavigation } from './relay-experience'
 import s from './continuity-home.module.css'
 
 const systems = [['SharePoint','sharepoint'],['Outlook','outlook'],['Jira','jira'],['Confluence','confluence'],['Azure DevOps','azure-devops'],['GitLab','gitlab'],['Google Drive','google-drive'],['Asana','asana'],['Monday.com','monday']]
-const links = [['Why Relay','#difference'],['Business case','#business-case'],['Ask Relay AI','#ask-relay'],['Integrations','#integrations'],['FAQs','#faq']]
+const links = [['Why Relay','#difference'],['How it works','#how-it-works'],['The cost','#business-case'],['Ask Relay','#ask-relay'],['Integrations','#integrations'],['FAQ','#faq']]
 const questions = [
- ['Is Relay a chatbot or a handoff platform?', 'Relay is a continuity workflow and hub for work. Managers discover evidence, review and assign responsibilities, then prepare and publish a handoff. Ask Relay AI helps people find answers within that process.'],
- ['Does Relay replace our existing tools?', 'Your existing tools remain the source for documents, tasks and meetings. Relay becomes the system of record for work continuity—capturing what needs to continue, who owns it and the context they need.'],
- ['Does assigning work grant someone access?', 'No. Relay tracks source access separately from handoff preparation. A published link does not grant permission, and unresolved access issues remain visible for follow-up.'],
- ['What does the AI do?', 'AI discovery proposes relevant work from connected systems. Ask Relay AI answers questions using authorized context, while natural-language reporting turns continuity data into reports you can save and pin. People confirm assignments and publication.'],
- ['How do HR and managers track progress?', 'Managers can confirm assigned transition requests, manage their active handoffs and refer back to published records. HR has a workspace-wide oversight view of transitions, active handoffs and published handoffs, with reports it can pin to its dashboard. Both views follow the same linked records. Publication does not mean recipients have completed their assigned work.'],
- ['Can BambooHR start a handoff?', 'The BambooHR departure connector is in early pilot. After connection setup and validation, scheduled checks can detect eligible recorded departures, prepare a confidential draft and notify the responsible manager. The manager confirms the transition and controls employee participation, work assignment and publication. Manual handoffs remain available.'],
- ['Can we try it with our team?', 'Relay is an early-stage working product. Request a demo to explore the workflow and discuss whether a structured pilot fits your organization. Integration availability and setup can be reviewed during the walkthrough.'],
+ ['Is Relay a chatbot?', 'No. Relay is a handoff workflow and a record of who owns what. Ask Relay is one part of it, for finding answers within that record.'],
+ ['Does it replace our existing tools?', 'No. Your tools stay the source of truth for documents, tasks and meetings. Relay records what needs to continue, who owns it and why.'],
+ ['Does assigning work give someone access?', 'No. Access is tracked separately. Publishing a handoff doesn’t grant permissions, and unresolved access issues stay visible until they’re fixed.'],
+ ['What does the AI actually do?', 'It proposes relevant work from connected systems, answers questions using authorized context, and turns handoff data into reports. People confirm every assignment and publication.'],
+ ['How do HR and managers see progress?', 'Managers handle their own transitions and handoffs. HR gets an organization-wide view of requests, active handoffs and published records, with reports it can pin. A published handoff means work was assigned, not that it’s done.'],
+ ['Can BambooHR start a handoff automatically?', 'In our early pilot, yes, once connected and validated. The manager still confirms the transition and controls employee input, assignments and publication.'],
+ ['Can we try it?', 'Relay is an early-stage working product. Book a demo and we’ll talk about whether a structured pilot fits your team.'],
 ]
 
 export function ContinuityHome() {
@@ -30,43 +30,45 @@ export function ContinuityHome() {
   <main id="main">
    <section className={`${s.wrap} ${s.hero}`}>
     <div className={s.heroCopy}>
-     <p className={s.eyebrow}><span className={s.dot}/> The system of record for work continuity.</p>
-     <h1>When people leave,<br/>the knowledge <span>shouldn’t.</span></h1>
-     <p className={s.heroLead}>Give the next person more than a folder of links. Use AI to discover the work, then review it, assign ownership and preserve the context.</p>
-     <div className={s.actions}><a href="#difference" className={s.primary}>See why Relay <ArrowRight size={18}/></a></div>
-     <p className={s.heroNote}>A working product for HR, Operations and IT teams.</p>
+     <p className={s.eyebrow}><span className={s.dot}/> Work continuity for HR, Operations and IT</p>
+     <h1>Someone’s leaving.<br/>Their work <span>isn’t.</span></h1>
+     <p className={s.heroLead}>Relay finds the work a person actually owns across your connected systems, then helps managers hand every piece to a named owner, with the context to carry it forward.</p>
+     <div className={s.actions}><a href="#demo" className={s.primary}>Request a demo <ArrowRight size={18}/></a><a href="#how-it-works" className={s.secondary}>See how it works</a></div>
     </div>
     <figure className={s.heroDiagram}>
      <Image src="/relay-operating-model.svg" alt="Relay links HR, the manager and the next owner through three steps: Discover, Review and assign, Preview and publish. Its continuity hub links to existing work systems while source access stays separate." width={900} height={720} priority />
+     <figcaption className={s.heroNote}>A working product, built for departures, leave and role changes.</figcaption>
     </figure>
    </section>
 
    <section id="difference" className={`${s.wrap} ${s.section}`}>
-    <div className={s.sectionIntro}><p className={s.eyebrow}>The work doesn’t leave with them</p><h2>The person changes.<br/>The responsibility remains.</h2><p>A departure, extended leave or internal move can leave important work between owners. Relay helps managers follow each transition from the initial request through active preparation to a published handoff.</p></div>
+    <div className={s.sectionIntro}><p className={s.eyebrow}>Why Relay</p><h2>A memo and a goodbye isn’t a handoff.</h2><p>Most handoffs are a document written in someone’s last busy week. It holds what they remembered, not everything they owned. Relay starts from the work itself.</p></div>
     <div className={s.problemGrid}>
-     <article><Users/><h3>“Who’s taking this over?”</h3><p>Give each responsibility a named recipient and the context they need to continue.</p><span>Clear ownership <ArrowRight size={16}/></span></article>
-     <article><ShieldCheck/><h3>“Can they access it?”</h3><p>Keep source-access issues visible alongside the handoff, with follow-up for unresolved gaps.</p><span>Visible access gaps <ArrowRight size={16}/></span></article>
-     <article><CalendarClock/><h3>“Where does it stand?”</h3><p>Track transition requests, manage active handoffs and view published records.</p><span>From request to publication <ArrowRight size={16}/></span></article>
+     <article><Users/><h3>Found, not remembered</h3><p>Relay’s AI looks across connected systems for the recurring meetings, open tickets and documents a person owned, so the weekly forecast call makes the handoff even if nobody wrote it down.</p></article>
+     <article><ShieldCheck/><h3>Every responsibility has a name</h3><p>Each piece of work goes to a specific person, with the decisions, files and history they need to keep it moving.</p></article>
+     <article><CalendarClock/><h3>Access problems show up early</h3><p>If the new owner can’t open the workbook, you find out during the handoff, not the morning of the call. Unresolved gaps stay flagged until someone closes them.</p></article>
+     <article><ArrowRight/><h3>Works when the timing is bad</h3><p>Sudden departures, medical leave and internal moves rarely come with a tidy two weeks. Relay can build the handoff from system evidence, with or without the departing person’s input.</p></article>
    </div>
    </section>
+   <HandoffWalkthrough/>
    <BusinessCase />
    <AskRelay/>
    <section id="integrations" className={`${s.section} ${s.integrationSection}`}><div className={`${s.wrap} ${s.integrationLayout}`}>
-    <div><p className={s.eyebrow}>Connected by design</p><h2>Your tools.<br/>Your context.<br/><span>One handoff.</span></h2><p className={s.sectionText}>Read-only API integrations bring relevant work into review, with links back to its original sources.</p><a className={s.textLink} href="#demo">Explore your setup <ArrowRight size={18}/></a></div>
-    <div><div className={s.systemGrid}>{systems.map(([name,file])=><div key={file}><Image src={`/logos/${file}.svg`} alt="" width={32} height={32}/><span>{name}</span></div>)}</div><p className={s.note}>Discovery uses the systems connected to your workspace. We’ll review integration availability and setup in your demo.</p></div>
+    <div><p className={s.eyebrow}>Integrations</p><h2>Works with the tools you already have.</h2><p className={s.sectionText}>Relay connects read-only and links back to the original source. Your documents, tickets and meetings stay where they are.</p><a className={s.textLink} href="#demo">Explore your setup <ArrowRight size={18}/></a></div>
+    <div><div className={s.systemGrid}>{systems.map(([name,file])=><div key={file}><Image src={`/logos/${file}.svg`} alt="" width={32} height={32}/><span>{name}</span></div>)}</div><p className={s.note}>We’ll confirm which integrations fit your setup during the demo.</p></div>
    </div><div className={s.wrap}><article className={s.hrIntegration} aria-labelledby="hr-trigger-title">
     <div className={s.hrIntegrationTop}><Image src="/logos/bamboohr.svg" alt="BambooHR" width={150} height={30} className={s.hrLogo}/></div>
-    <h3 id="hr-trigger-title">An HR update can start the handoff.</h3>
-    <p className={s.hrLead}>HR records the departure in BambooHR. Once configured, Relay can pick it up on a scheduled check and prepare a confidential draft for the responsible manager.</p>
+    <h3 id="hr-trigger-title">Start from the HR record. <small>(BambooHR, early pilot)</small></h3>
+    <p className={s.hrLead}>When HR records a departure in BambooHR, Relay can detect it on a scheduled check, prepare a confidential draft and notify the manager. The manager decides what happens next. Manual handoffs are always available.</p>
     <ol className={s.hrSteps}>
      <li><span>1</span><div><strong>HR records the departure</strong><p>Use the employee record already maintained in BambooHR.</p></div></li>
      <li><span>2</span><div><strong>Relay prepares a draft</strong><p>Eligible departures trigger a draft and manager notification.</p></div></li>
      <li><span>3</span><div><strong>The manager takes it forward</strong><p>Confirm the transition, invite employee input, then review and assign the work.</p></div></li>
     </ol>
    </article></div></section>
-   <section id="faq" className={`${s.wrap} ${s.section} ${s.faq}`}><div><p className={s.eyebrow}>A few useful answers</p><h2>Before you<br/>hand it over.</h2></div><div>{questions.map(([q,a])=><details key={q}><summary>{q}<Plus size={20}/></summary><p>{a}</p></details>)}</div></section>
+   <section id="faq" className={`${s.wrap} ${s.section} ${s.faq}`}><div><p className={s.eyebrow}>FAQ</p><h2>Questions we usually get.</h2></div><div>{questions.map(([q,a])=><details key={q}><summary>{q}<Plus size={20}/></summary><p>{a}</p></details>)}</div></section>
    <div className={s.demo}><DemoCta/></div>
   </main>
-  <footer className={`${s.wrap} ${s.footer}`}><div><a href="#top" aria-label="Relay ECI home"><Image src="/relay-eci-logo-coral.png" alt="Relay ECI" width={2048} height={684} className={s.logo}/></a><p>The system of record<br/>for work continuity.</p></div><nav aria-label="Footer">{links.map(([label,url])=><a key={url} href={url}>{label}</a>)}</nav><div><a className={s.textLink} href="#demo">Let’s talk <ArrowUpRight size={17}/></a><small>© {new Date().getFullYear()} Relay ECI</small></div></footer>
+  <footer className={`${s.wrap} ${s.footer}`}><div><a href="#top" aria-label="Relay ECI home"><Image src="/relay-eci-logo-coral.png" alt="Relay ECI" width={2048} height={684} className={s.logo}/></a><p>Keep the work when people move on.</p></div><nav aria-label="Footer">{links.map(([label,url])=><a key={url} href={url}>{label}</a>)}</nav><div><a className={s.textLink} href="#demo">Let’s talk <ArrowUpRight size={17}/></a><small>© {new Date().getFullYear()} Relay ECI</small></div></footer>
  </div>
 }

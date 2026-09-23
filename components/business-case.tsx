@@ -5,11 +5,9 @@ import s from './business-case.module.css'
 
 const facts = [
   { value: 8, prefix: '', suffix: '%', label: 'of surveyed organizations consistently capture retiring employees’ knowledge', source: 'APQC · 2025', url: 'https://www.apqc.org/resource-library/resource/navigating-great-retirement-km-ai/html' },
-  { value: 2.7, prefix: '$', suffix: 'M', label: 'a year in estimated lost productivity for a 1,000-person U.S. company from inefficient knowledge sharing', source: 'Derived from Panopto · 2018', url: 'https://www.prnewswire.com/news-releases/inefficient-knowledge-sharing-costs-large-businesses-47-million-per-year-300681971.html' },
-  { value: 41, prefix: '', suffix: '%', label: 'of Canadian workers had to learn a job from scratch after a retirement without knowledge transfer', source: 'Express / Harris Poll · 2022', url: 'https://www.expresspros.ca/newsroom/news-releases/news-releases/2022/05/41-of-employees-have-been-forced-to-start-job-from-scratch-due-to-lack-of-knowledge-transfer-from-retiring-employees' },
-  { value: 23, prefix: '', suffix: '%', label: 'of employees strongly rate their onboarding as exceptional', source: 'Gallup', url: 'https://www.gallup.com/workplace/323573/employee-experience-and-workplace-culture.aspx' },
-  { value: 47, prefix: '$', suffix: 'M', label: 'a year in estimated lost productivity at the average large U.S. business; workers spend 5.3 hours a week waiting or recreating information', source: 'Panopto / YouGov · 2018', url: 'https://www.prnewswire.com/news-releases/inefficient-knowledge-sharing-costs-large-businesses-47-million-per-year-300681971.html' },
+  { value: 41, prefix: '', suffix: '%', label: 'of Canadian workers have had to learn a job from scratch after a retirement with no knowledge transfer', source: 'Express / Harris Poll · 2022', url: 'https://www.expresspros.ca/newsroom/news-releases/news-releases/2022/05/41-of-employees-have-been-forced-to-start-job-from-scratch-due-to-lack-of-knowledge-transfer-from-retiring-employees' },
   { value: 56, prefix: '', suffix: '%', label: 'of workers must ask someone or set a meeting to get the information they need', source: 'Atlassian · 2025', url: 'https://www.atlassian.com/blog/work-management/stop-mistaking-storage-for-strategy' },
+  { value: 23, prefix: '', suffix: '%', label: 'of employees strongly agree their onboarding was exceptional', source: 'Gallup', url: 'https://www.gallup.com/workplace/323573/employee-experience-and-workplace-culture.aspx' },
 ]
 
 function AnimatedNumber({ value, prefix, suffix }: { value: number; prefix: string; suffix: string }) {
@@ -43,8 +41,8 @@ function AnimatedNumber({ value, prefix, suffix }: { value: number; prefix: stri
 export function BusinessCase() {
   return <section id="business-case" className={s.section} aria-labelledby="business-case-heading">
     <div className={s.wrap}>
-      <p className={s.eyebrow}>The business case</p>
-      <h2 id="business-case-heading">The cost of losing the thread of work.</h2>
+      <p className={s.eyebrow}>The cost</p>
+      <h2 id="business-case-heading">Every unplanned handoff costs something.</h2>
       <div className={s.grid}>
         {facts.map((fact) => <article className={s.fact} key={fact.label}>
           <p className={s.number}><AnimatedNumber value={fact.value} prefix={fact.prefix} suffix={fact.suffix} /></p>
@@ -52,6 +50,7 @@ export function BusinessCase() {
           <a className={s.source} href={fact.url} target="_blank" rel="noopener noreferrer">{fact.source} ↗</a>
         </article>)}
       </div>
+      <p className={s.closing}>The work doesn’t stop when someone leaves. The question is whether the next person starts with context or from scratch.</p>
     </div>
   </section>
 }

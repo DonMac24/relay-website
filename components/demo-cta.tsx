@@ -54,10 +54,10 @@ export function DemoCta() {
             className="mt-3 font-semibold tracking-tight text-balance"
             style={{ fontSize: 'clamp(1.5rem, 2.4vw, 2rem)', lineHeight: 1.15 }}
           >
-            Bring one transition.<br />See the whole handoff.
+            Bring a real departure. We&apos;ll walk through the handoff.
           </h2>
           <p className="mt-3 max-w-md text-sm leading-relaxed text-background/75">
-            See how Relay connects named owners, access gaps, and the Continuity Hub in one walkthrough.
+            Pick a role your team has lost or is about to. We&apos;ll show you what Relay finds, who it would go to, and where the gaps are.
           </p>
         </div>
 

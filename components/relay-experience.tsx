@@ -15,9 +15,9 @@ export function ProductPreview() {
 }
 function UsersIcon(){return <CircleCheck size={15}/>}
 const steps=[
- {title:'Discover',headline:'Find the work behind the handoff.',body:'AI discovers relevant work across connected systems and proposes what belongs in the handoff, with supporting sources for your review.',action:'Review proposed work',label:'Discovery proposal',status:'For review'},
- {title:'Review & assign',headline:'Make the next owner explicit.',body:'Review what matters, add missing context and assign responsibilities. Keep recipient access issues visible as you prepare the handoff.',action:'Preview the handoff',label:'Reviewed responsibility',status:'Assigned'},
- {title:'Preview & publish',headline:'Give the recipient a place to start.',body:'Review the recipient’s handoff and outstanding gaps, then publish a usable record to the Continuity Hub. Source permissions still apply.',action:'Start again',label:'Published continuity record',status:'Published'},
+ {title:'Discover',headline:'Find the work behind the handoff.',body:'Start from an HR record or a manager’s request. Relay proposes the work, meetings and documents tied to the person, pulled read-only from your connected tools.',action:'Review proposed work',label:'Discovery proposal',status:'For review'},
+ {title:'Review and assign',headline:'Make the next owner explicit.',body:'The manager confirms what matters, invites the employee to add context if appropriate, and assigns each responsibility to a named owner.',action:'Preview the handoff',label:'Reviewed responsibility',status:'Assigned'},
+ {title:'Publish and follow up',headline:'Give the recipient a place to start.',body:'Publish the handoff to the Continuity Hub. Recipients get linked sources and context; HR and managers see what’s still open, including access gaps.',action:'Start again',label:'Published continuity record',status:'Published'},
 ]
 export function HandoffWalkthrough(){
  const [active,setActive]=useState(0)
@@ -28,8 +28,7 @@ export function HandoffWalkthrough(){
  }
  const step=steps[active]
  return <section id="how-it-works" className={s.workflow}><div className={s.wrap}>
-  <div className={s.workflowHeading}><div><p className={s.eyebrow}>AI-assisted discovery. Manager-led handoffs.</p><h2>Keep the work moving.<br/><span>One step at a time.</span></h2></div><p>Follow an example from Alex to Sarah.<br/>You decide what moves forward.</p></div>
-  <p style={{ margin: '16px 0 0', fontSize: '16px', lineHeight: 1.6, color: '#bfc6bf' }}>Managers lead the handoff. Employees contribute and receive the work. HR oversees transition progress.</p>
+  <div className={s.workflowHeading}><div><p className={s.eyebrow}>How it works</p><h2>Three steps from notice to handoff.</h2></div><p>Follow an example from Alex to Sarah.</p></div>
   <div className={s.stepTabs} role="tablist" aria-label="Handoff walkthrough">{steps.map((st,i)=><button key={st.title} role="tab" id={`step-${i}`} aria-selected={active===i} aria-controls={`panel-${i}`} tabIndex={active===i?0:-1} onClick={()=>setActive(i)} onKeyDown={e=>navigate(e,i)}><span>0{i+1}</span>{st.title}<ArrowRight size={17}/></button>)}</div>
   <div id={`panel-${active}`} role="tabpanel" aria-labelledby={`step-${active}`} className={s.walkPanel}>
    <div className={s.walkCopy}><h3>{step.headline}</h3><p>{step.body}</p><button className={s.walkNext} onClick={()=>setActive((active+1)%3)}>{step.action}<ArrowRight size={18}/></button></div>
@@ -41,7 +40,7 @@ export function HandoffWalkthrough(){
     {active===2&&<p className={s.publishedNote}><Check size={16}/>Published in the Continuity Hub. Access issue remains visible.</p>}
    </div>
   </div>
-  <p className={s.darkNote}>Interactive illustration with example records. Publishing does not grant access to source systems.</p>
+  <p className={s.darkNote}>People make the decisions. The AI proposes; managers confirm assignments and publication. Example records shown. Publishing does not grant source access.</p>
  </div></section>
 }
 

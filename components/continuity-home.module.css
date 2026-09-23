@@ -79,3 +79,14 @@
 .nav{max-width:1450px}
 .nav>a:first-child{margin-left:-16px}
 @media(max-width:760px){.nav>a:first-child{margin-left:-9px}}
+
+/* Updated site copy and four benefit cards. */
+.desktopNav{gap:clamp(12px,1.5vw,24px)}
+.hero .actions{flex-wrap:wrap}
+.heroDiagram .heroNote{text-align:center;margin-top:12px!important}
+.problemGrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.problemGrid article{grid-template-rows:auto 1fr}
+.site .hrIntegration h3 small{font-size:.58em;color:#59605a;font-weight:500;letter-spacing:normal}
+@media(max-width:1120px){.desktopNav{display:none}.mobileMenu{display:block}.mobileMenu summary{list-style:none;display:flex;padding:7px;cursor:pointer}.mobileMenu summary::-webkit-details-marker{display:none}.mobileMenu nav{position:absolute;left:0;right:0;top:100%;background:#fff;border-bottom:1px solid var(--line);padding:10px 22px 18px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.mobileMenu nav a{padding:10px;font-size:14px}.nav>.smallButton{margin-left:auto}}
+@media(max-width:760px){.problemGrid{grid-template-columns:1fr}.problemGrid article{grid-template-rows:auto auto}}
+@media(max-width:760px){.mobileMenu nav{grid-template-columns:repeat(2,minmax(0,1fr))}}
