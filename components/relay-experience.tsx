@@ -39,7 +39,7 @@ export function HandoffWalkthrough(){
  },[])
  useEffect(()=>{
   if(!visible||paused||!pageVisible||reducedMotion)return
-  const timer=window.setTimeout(()=>setActive(current=>(current+1)%steps.length),6500)
+  const timer=window.setTimeout(()=>setActive(current=>(current+1)%steps.length),2000)
   return ()=>window.clearTimeout(timer)
  },[active,visible,paused,pageVisible,reducedMotion])
  function navigate(e:KeyboardEvent<HTMLButtonElement>,index:number){
