@@ -36,8 +36,7 @@ export function ContinuityHome() {
      <div className={s.actions}><a href="#demo" className={s.primary}>Request a demo <ArrowRight size={18}/></a><a href="#how-it-works" className={s.secondary}>See how it works</a></div>
     </div>
     <figure className={s.heroDiagram}>
-     <Image src="/relay-operating-model.svg" alt="Relay links HR, the manager and the next owner through three steps: Discover, Review and assign, Preview and publish. Its continuity hub links to existing work systems while source access stays separate." width={900} height={720} priority />
-     <figcaption className={s.heroNote}>A working product, built for departures, leave and role changes.</figcaption>
+     <Image src="/relay-operating-model.svg" alt="Relay links HR, the manager and the next owner through three steps: Discover, Review and assign, Preview and publish. Its continuity hub links to SharePoint, Outlook, Jira, Confluence, GitLab, Asana and other existing systems while source access stays separate." width={900} height={675} priority />
     </figure>
    </section>
 
