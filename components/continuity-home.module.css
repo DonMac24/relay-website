@@ -73,3 +73,8 @@
 .heroDiagram img{display:block;width:100%;height:auto}
 @media(max-width:980px){.hero{gap:28px}.hero h1{font-size:clamp(37px,4.7vw,54px)}.heroLead{font-size:16px}}
 @media(max-width:760px){.hero{grid-template-columns:1fr;gap:30px;padding-top:46px;padding-bottom:45px}.hero h1{font-size:clamp(38px,8vw,57px)}.heroDiagram{max-width:600px;width:100%;margin-inline:auto}.heroLead{margin-top:20px!important}.hero .eyebrow{justify-content:flex-start}}
+
+/* Keep header edges on the same grid as the hero. The wordmark PNG has blank space on its left. */
+.nav{max-width:1450px}
+.nav>a:first-child{margin-left:-16px}
+@media(max-width:760px){.nav>a:first-child{margin-left:-9px}}
