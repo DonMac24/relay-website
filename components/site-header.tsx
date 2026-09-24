@@ -27,10 +27,10 @@ export function SiteHeader() {
           className="flex shrink-0 items-center"
         >
           <Image
-            src="/relay-eci-logo-coral.png"
+            src="/relay-eci-green-logo.png"
             alt="Relay ECI"
             width={2048}
-            height={684}
+            height={756}
             priority
             className="h-auto w-[150px] object-contain sm:w-[180px]"
           />

@@ -85,14 +85,14 @@
   --muted: #f3f4f1;
   --muted-foreground: #586660;
 
-  /* Relay mint turquoise. */
-  --relay: #2455D6;
-  --relay-dark: #2455D6;
-  --relay-hover: #2455D6;
-  --relay-light: #EEF3FF;
-  --relay-border: #CBD8FF;
+  /* Leaf green sampled from the approved Relay logo. */
+  --relay: #7BD35C;
+  --relay-dark: #7BD35C;
+  --relay-hover: #7BD35C;
+  --relay-light: #F1FAEB;
+  --relay-border: #D0EFC2;
 
-  /* Retain gradient variables with a flat mint finish. */
+  /* Solid brand accent. */
   --relay-gradient-start: var(--relay-dark);
   --relay-gradient-end: var(--relay-dark);
 
