@@ -115,3 +115,10 @@
 .integrationMore img{object-fit:contain}
 .integrationShowcase .note{margin-top:11px!important}
 @media(max-width:760px){.integrationLayout{grid-template-columns:1fr;gap:25px}.integrationSection{padding-block:45px}.integrationCard{min-height:57px}.integrationCards::before{inset:20px 0}.integrationCard:nth-child(even){margin-left:15px}}
+
+/* Crop the source image's generous white canvas while retaining the full bordered mark. */
+.logoFrame{display:block;position:relative;width:234px;aspect-ratio:3.5;overflow:hidden}
+.logoFrame .logo{display:block;position:absolute;max-width:none;width:133%;height:auto;left:-16.5%;top:-27.5%;mix-blend-mode:normal}
+.nav>a:first-child{margin-left:0}
+.footer .logoFrame{width:180px}
+@media(max-width:700px){.header .logoFrame{width:135px}}
