@@ -86,11 +86,11 @@
   --muted-foreground: #586660;
 
   /* Relay mint turquoise. */
-  --relay: #5CCBAE;
-  --relay-dark: #5CCBAE;
-  --relay-hover: #5CCBAE;
-  --relay-light: #EFFBF6;
-  --relay-border: #BCECDD;
+  --relay: #2455D6;
+  --relay-dark: #2455D6;
+  --relay-hover: #2455D6;
+  --relay-light: #EEF3FF;
+  --relay-border: #CBD8FF;
 
   /* Retain gradient variables with a flat mint finish. */
   --relay-gradient-start: var(--relay-dark);
