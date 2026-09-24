@@ -117,8 +117,8 @@
 @media(max-width:760px){.integrationLayout{grid-template-columns:1fr;gap:25px}.integrationSection{padding-block:45px}.integrationCard{min-height:57px}.integrationCards::before{inset:20px 0}.integrationCard:nth-child(even){margin-left:15px}}
 
 /* Crop the source image's generous white canvas while retaining the full bordered mark. */
-.logoFrame{display:block;position:relative;width:222px;aspect-ratio:2.9;overflow:hidden}
-.logoFrame .logo{display:block;position:absolute;max-width:none;width:110%;height:auto;left:-3%;top:-7%;mix-blend-mode:normal}
+.logoFrame{display:block;position:relative;width:230px;aspect-ratio:2.9;overflow:hidden}
+.logoFrame .logo{display:block;position:absolute;max-width:none;width:106%;height:auto;left:-2%;top:-7%;mix-blend-mode:normal}
 .nav>a:first-child{margin-left:0}
-.footer .logoFrame{width:171px}
-@media(max-width:700px){.header .logoFrame{width:128px}}
+.footer .logoFrame{width:179px}
+@media(max-width:700px){.header .logoFrame{width:134px}}
