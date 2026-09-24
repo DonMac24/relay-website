@@ -95,3 +95,24 @@
 @media(max-width:1120px){.desktopNav{display:none}.mobileMenu{display:block}.mobileMenu summary{list-style:none;display:flex;padding:7px;cursor:pointer}.mobileMenu summary::-webkit-details-marker{display:none}.mobileMenu nav{position:absolute;left:0;right:0;top:100%;background:#fff;border-bottom:1px solid var(--line);padding:10px 22px 18px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.mobileMenu nav a{padding:10px;font-size:14px}.nav>.smallButton{margin-left:auto}}
 @media(max-width:760px){.problemGrid{grid-template-columns:1fr}.problemGrid article{grid-template-rows:auto auto}}
 @media(max-width:760px){.mobileMenu nav{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* Compact, interactive integration illustration. Switches only change this preview. */
+.integrationSection{padding-block:58px}
+.integrationLayout{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(35px,7vw,100px)}
+.integrationShowcase{min-width:0}
+.integrationCards{position:relative;display:grid;gap:9px;padding:10px 0}
+.integrationCards::before{content:"";position:absolute;inset:20px -17px;border:2px dashed #5CCBAE70;border-radius:50%;pointer-events:none}
+.integrationCard{position:relative;display:flex;align-items:center;gap:16px;min-height:62px;padding:10px 17px;background:#fff;border:1px solid #dfe8e3;border-radius:12px;box-shadow:0 2px 5px #14251c0d;font-size:15px;font-weight:600}
+.integrationCard:nth-child(even){margin-left:25px}
+.integrationCard>img{object-fit:contain;flex-shrink:0}
+.integrationCard>span{flex:1}
+.integrationSwitch{width:42px;height:24px;flex:0 0 42px;border:0;border-radius:30px;padding:3px;background:#dfe2e1;transition:background .18s}
+.integrationSwitch[aria-checked=true]{background:#5CCBAE}
+.integrationSwitch>span{display:block;width:18px;height:18px;background:#fff;border-radius:50%;box-shadow:0 1px 3px #0003;transition:transform .18s}
+.integrationSwitch[aria-checked=true]>span{transform:translateX(18px)}
+.integrationDemoNote{margin:7px 0 14px!important;color:#666e68;font-size:11px}
+.integrationMore{display:flex;flex-wrap:wrap;gap:7px}
+.integrationMore>span{display:inline-flex;align-items:center;gap:6px;padding:7px 9px;background:#fff;border:1px solid #dfe8e3;border-radius:7px;font-size:11px;white-space:nowrap}
+.integrationMore img{object-fit:contain}
+.integrationShowcase .note{margin-top:11px!important}
+@media(max-width:760px){.integrationLayout{grid-template-columns:1fr;gap:25px}.integrationSection{padding-block:45px}.integrationCard{min-height:57px}.integrationCards::before{inset:20px 0}.integrationCard:nth-child(even){margin-left:15px}}

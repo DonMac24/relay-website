@@ -4,9 +4,9 @@ import { AskRelay } from './ask-relay'
 import { DemoCta } from './demo-cta'
 import { BusinessCase } from './business-case'
 import { HandoffWalkthrough, MobileNavigation } from './relay-experience'
+import { IntegrationShowcase } from './integration-showcase'
 import s from './continuity-home.module.css'
 
-const systems = [['SharePoint','sharepoint'],['Outlook','outlook'],['Jira','jira'],['Confluence','confluence'],['Azure DevOps','azure-devops'],['GitLab','gitlab'],['Google Drive','google-drive'],['Asana','asana'],['Monday.com','monday']]
 const links = [['Why Relay','#difference'],['The cost','#business-case'],['How it works','#how-it-works'],['Ask Relay','#ask-relay'],['Integrations','#integrations'],['FAQ','#faq']]
 const questions = [
  ['Is Relay a chatbot?', 'No. Relay is a handoff workflow and a record of who owns what. Ask Relay is one part of it, for finding answers within that record.'],
@@ -54,7 +54,7 @@ export function ContinuityHome() {
    <AskRelay/>
    <section id="integrations" className={`${s.section} ${s.integrationSection}`}><div className={`${s.wrap} ${s.integrationLayout}`}>
     <div><p className={s.eyebrow}>Integrations</p><h2>Works with the tools you already have.</h2><p className={s.sectionText}>Relay connects read-only and links back to the original source. Your documents, tickets and meetings stay where they are.</p><a className={s.textLink} href="#demo">Explore your setup <ArrowRight size={18}/></a></div>
-    <div><div className={s.systemGrid}>{systems.map(([name,file])=><div key={file}><Image src={`/logos/${file}.svg`} alt="" width={32} height={32}/><span>{name}</span></div>)}</div><p className={s.note}>We’ll confirm which integrations fit your setup during the demo.</p></div>
+    <IntegrationShowcase/>
    </div><div className={s.wrap}><article className={s.hrIntegration} aria-labelledby="hr-trigger-title">
     <div className={s.hrIntegrationTop}><Image src="/logos/bamboohr.svg" alt="BambooHR" width={150} height={30} className={s.hrLogo}/></div>
     <h3 id="hr-trigger-title">Start from the HR record. <small>(BambooHR, early pilot)</small></h3>
