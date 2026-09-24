@@ -34,7 +34,6 @@ export function IntegrationShowcase() {
         <button type="button" role="switch" aria-label={`${name} in illustration`} aria-checked={enabled.includes(file)} onClick={() => toggle(file)} className={s.integrationSwitch}><span/></button>
       </div>)}
     </div>
-    <p className={s.integrationDemoNote}>Try the switches · Visual example only; no connection is changed.</p>
     <div className={s.integrationMore} aria-label="More tools">
       {more.map(([name, file]) => <span key={file}><Image src={`/logos/${file}.svg`} alt="" width={17} height={17}/>{name}</span>)}
     </div>
