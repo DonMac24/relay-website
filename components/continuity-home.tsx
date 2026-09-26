@@ -32,7 +32,7 @@ export function ContinuityHome() {
     <div className={s.heroCopy}>
      <p className={s.eyebrow}><span className={s.dot}/> Work continuity for HR, Operations and IT</p>
      <h1>Someone’s leaving.<br/>Their work <span>isn’t.</span></h1>
-     <p className={s.heroLead}>Relay finds the work a person actually owns across your connected systems, then helps managers hand every piece to a named owner, with the context to carry it forward.</p>
+     <p className={s.heroLead}>When roles change, the work shouldn’t start over. Relay helps managers find existing work across connected systems, assign its next owner, and provide the context to keep it moving.</p>
      <div className={s.actions}><a href="#demo" className={s.primary}>Request a demo <ArrowRight size={18}/></a><a href="#how-it-works" className={s.secondary}>See how it works</a></div>
     </div>
     <figure className={s.heroDiagram}>
