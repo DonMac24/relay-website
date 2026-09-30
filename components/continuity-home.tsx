@@ -22,7 +22,7 @@ export function ContinuityHome() {
  return <div className={s.site} id="top">
   <a href="#main" className={s.skip}>Skip to content</a>
   <header className={s.header}><div className={s.nav}>
-   <a href="#top" aria-label="Relay ECI home"><span className={s.logoFrame}><Image src="/relay-logo-deep-lavender.png" alt="Relay ECI" width={2048} height={757} priority className={s.logo}/></span></a>
+   <a href="#top" aria-label="Relay ECI home"><span className={s.logoFrame}><Image src="/logos/relay-logo-deep-lavender.png" alt="Relay ECI" width={2048} height={757} priority className={s.logo}/></span></a>
    <nav className={s.desktopNav} aria-label="Main navigation">{links.map(([label,url])=><a key={url} href={url}>{label}</a>)}</nav>
    <a className={s.smallButton} href="#demo">Request a demo <ArrowUpRight size={16}/></a>
    <MobileNavigation links={links}/>
@@ -36,7 +36,7 @@ export function ContinuityHome() {
      <div className={s.actions}><a href="#demo" className={s.primary}>Request a demo <ArrowRight size={18}/></a><a href="#how-it-works" className={s.secondary}>See how it works</a></div>
     </div>
     <figure className={s.heroDiagram}>
-     <Image src="/relay-operating-model.svg" alt="Relay links HR, the manager and the next owner through three steps: Discover, Review and assign, Preview and publish. Its continuity hub links to SharePoint, Outlook, Jira, Confluence, GitLab, Asana and other existing systems while source access stays separate." width={900} height={675} priority />
+     <Image src="/logos/relay-operating-model.svg" alt="Relay links HR, the manager and the next owner through three steps: Discover, Review and assign, Preview and publish. Its continuity hub links to SharePoint, Outlook, Jira, Confluence, GitLab, Asana and other existing systems while source access stays separate." width={900} height={675} priority />
     </figure>
    </section>
 
@@ -68,6 +68,6 @@ export function ContinuityHome() {
    <section id="faq" className={`${s.wrap} ${s.section} ${s.faq}`}><div><p className={s.eyebrow}>FAQ</p><h2>Questions we usually get.</h2></div><div>{questions.map(([q,a])=><details key={q}><summary>{q}<Plus size={20}/></summary><p>{a}</p></details>)}</div></section>
    <div className={s.demo}><DemoCta/></div>
   </main>
-  <footer className={`${s.wrap} ${s.footer}`}><div><a href="#top" aria-label="Relay ECI home"><span className={s.logoFrame}><Image src="/relay-logo-deep-lavender.png" alt="Relay ECI" width={2048} height={757} className={s.logo}/></span></a><p>Keep the work when people move on.</p></div><nav aria-label="Footer">{links.map(([label,url])=><a key={url} href={url}>{label}</a>)}</nav><div><a className={s.textLink} href="#demo">Let’s talk <ArrowUpRight size={17}/></a><small>© {new Date().getFullYear()} Relay ECI</small></div></footer>
+  <footer className={`${s.wrap} ${s.footer}`}><div><a href="#top" aria-label="Relay ECI home"><span className={s.logoFrame}><Image src="/logos/relay-logo-deep-lavender.png" alt="Relay ECI" width={2048} height={757} className={s.logo}/></span></a><p>Keep the work when people move on.</p></div><nav aria-label="Footer">{links.map(([label,url])=><a key={url} href={url}>{label}</a>)}</nav><div><a className={s.textLink} href="#demo">Let’s talk <ArrowUpRight size={17}/></a><small>© {new Date().getFullYear()} Relay ECI</small></div></footer>
  </div>
 }
