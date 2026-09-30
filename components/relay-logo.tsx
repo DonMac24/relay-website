@@ -8,7 +8,7 @@ type RelayLogoProps = {
 export function RelayLogo({ className = '' }: RelayLogoProps) {
   return (
     <Image
-      src="/logos/relay-logo-deep-lavender.png"
+      src="/logos/relay-logo-lavender.png"
       alt="Relay ECI"
       width={2048}
       height={757}

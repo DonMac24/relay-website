@@ -47,7 +47,7 @@ export function DemoCta() {
     <section id="demo" className="bg-foreground text-background">
       <div className="mx-auto grid w-full max-w-6xl items-center gap-6 px-5 py-8 sm:px-8 md:grid-cols-[0.9fr_1.1fr] md:gap-10 md:py-9">
         <div>
-          <p className="font-mono text-xs uppercase tracking-[0.16em] text-[#9688C8]">
+          <p className="font-mono text-xs uppercase tracking-[0.16em] text-[#71609E]">
             Request a demo
           </p>
           <h2
