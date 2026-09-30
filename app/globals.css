@@ -85,12 +85,12 @@
   --muted: #f3f4f1;
   --muted-foreground: #586660;
 
-  /* Leaf green sampled from the approved Relay logo. */
-  --relay: #7BD35C;
-  --relay-dark: #7BD35C;
-  --relay-hover: #7BD35C;
-  --relay-light: #F1FAEB;
-  --relay-border: #D0EFC2;
+  /* Lavender brand palette. */
+  --relay: #9688C8;
+  --relay-dark: #71609E;
+  --relay-hover: #8879BA;
+  --relay-light: #F3F0FA;
+  --relay-border: #DDD5EE;
 
   /* Solid brand accent. */
   --relay-gradient-start: var(--relay-dark);
@@ -128,9 +128,9 @@
 }
 
 @layer utilities {
-  /* Existing gradient buttons now use solid mint. */
+  /* Existing gradient buttons now use solid lavender. */
   .bg-relay-gradient {
-    background-color: var(--relay-dark);
+    background-color: var(--relay);
     background-image: none;
     color: #171a18;
   }
