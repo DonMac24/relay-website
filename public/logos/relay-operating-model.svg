@@ -15,7 +15,7 @@
 <text x="985" y="324" font-size="32" font-weight="700" fill="#202020">Next owner</text>
 <text x="985" y="371" font-size="24" font-weight="400" fill="#555">Receives the handoff</text>
 <path d="M1150 413 L1150 456" fill="none" stroke="#d4d4d4" stroke-width="4"/>
-<rect x="101" y="456" width="1256" height="384" rx="32" fill="white" stroke="#d4d4d4" stroke-width="4"/>
+<rect x="101" y="456" width="1256" height="384" rx="32" fill="#D4CCEC" stroke="#bfb3dd" stroke-width="4"/>
 <rect x="129" y="481" width="152" height="53" rx="11" fill="#202020" stroke="#202020" stroke-width="1"/>
 <text x="153" y="519" font-size="29" font-weight="700" fill="white">RELAY</text>
 <text x="302" y="518" font-size="28" font-weight="700" fill="#202020" letter-spacing="1">CONTINUITY WORKFLOW</text>
