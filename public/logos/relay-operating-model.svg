@@ -1,33 +1,42 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="675" viewBox="0 0 900 675" role="img" aria-labelledby="title desc">
-<title id="title">Where Relay fits in the employee transition</title>
-<desc id="desc">People and governance: HR monitors progress, managers review and assign work, and the next owner receives a handoff. Relay connects three workflow steps: Discover, Review and assign, Preview and publish. A continuity record links to existing work systems without granting access to them.</desc>
-<style>text{font-family:Arial,Helvetica,sans-serif}.kicker{fill:#71609E;font-size:18px;font-weight:700;letter-spacing:1.3px}.head{fill:#1b211e;font-size:27px;font-weight:700}.role{fill:#1b211e;font-size:20px;font-weight:700}.sub{fill:#586761;font-size:16px}.step{fill:#1b211e;font-size:21px;font-weight:700}.minor{fill:#71609E;font-size:17px;font-weight:600}.num{fill:#71609E;font-size:15px;font-weight:700}</style>
-<rect x="1" y="1" width="898" height="673" rx="26" fill="#FCFBFE" stroke="#DDD5EE" stroke-width="2"/>
-<text x="36" y="52" class="kicker">WHERE RELAY FITS</text>
-<text x="36" y="89" class="head">A continuity layer for work in transition</text>
-<text x="36" y="126" class="kicker">PEOPLE &amp; GOVERNANCE</text>
-<rect x="36" y="146" width="260" height="94" rx="15" fill="#fff" stroke="#DDD5EE" stroke-width="2"/>
-<rect x="320" y="146" width="260" height="94" rx="15" fill="#fff" stroke="#DDD5EE" stroke-width="2"/>
-<rect x="604" y="146" width="260" height="94" rx="15" fill="#fff" stroke="#DDD5EE" stroke-width="2"/>
-<text x="55" y="180" class="role">HR</text><text x="55" y="211" class="sub">Monitors progress</text>
-<text x="339" y="180" class="role">Manager</text><text x="339" y="211" class="sub">Reviews and assigns</text>
-<text x="623" y="180" class="role">Next owner</text><text x="623" y="211" class="sub">Receives the handoff</text>
-<path d="M166 240v31M450 240v31M734 240v31" fill="none" stroke="#DDD5EE" stroke-width="3"/>
-<rect x="28" y="269" width="844" height="258" rx="20" fill="#F3F0FA" stroke="#D4CCEC" stroke-width="3"/>
-<rect x="46" y="285" width="103" height="36" rx="8" fill="#1b211e"/>
-<text x="63" y="311" fill="#fff" font-size="19" font-family="Arial,Helvetica,sans-serif" font-weight="700">RELAY</text>
-<text x="163" y="310" class="kicker">CONTINUITY WORKFLOW</text>
-<rect x="46" y="341" width="256" height="105" rx="13" fill="#fff" stroke="#DDD5EE" stroke-width="2"/>
-<rect x="322" y="341" width="256" height="105" rx="13" fill="#fff" stroke="#DDD5EE" stroke-width="2"/>
-<rect x="598" y="341" width="256" height="105" rx="13" fill="#fff" stroke="#DDD5EE" stroke-width="2"/>
-<text x="64" y="369" class="num">01</text><text x="64" y="399" class="step">Discover</text><text x="64" y="426" class="sub">Find work and context</text>
-<text x="340" y="369" class="num">02</text><text x="340" y="399" class="step">Review &amp; assign</text><text x="340" y="426" class="sub">Confirm the next owner</text>
-<text x="616" y="369" class="num">03</text><text x="616" y="399" class="step">Preview &amp; publish</text><text x="616" y="426" class="sub">Share the handoff</text>
-<path d="M307 393h10m-5-5 5 5-5 5m271-5h10m-5-5 5 5-5 5" fill="none" stroke="#D4CCEC" stroke-width="2"/>
-<text x="48" y="488" class="minor">Continuity hub: ownership · linked context · risks · actions</text>
-<path d="M450 528v25" fill="none" stroke="#DDD5EE" stroke-width="3"/>
-<rect x="36" y="553" width="828" height="106" rx="15" fill="#fff" stroke="#DDD5EE" stroke-width="2"/>
-<text x="55" y="581" class="kicker">EXISTING WORK SYSTEMS</text>
-<text x="55" y="612" class="role">SharePoint · Outlook · Jira · Confluence · GitLab · Asana · more</text>
-<text x="55" y="639" class="sub">Work stays in its original tools; source access stays separate.</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1436" height="1160" viewBox="0 0 1436 1160" role="img" aria-labelledby="title"><title id="title">Where Relay fits: a continuity layer for work in transition</title><rect width="1436" height="1160" fill="white"/><g font-family="Arial, Helvetica, sans-serif">
+<rect x="61" y="58" width="1336" height="1001" rx="38" fill="white" stroke="#d4d4d4" stroke-width="3"/>
+<text x="113" y="134" font-size="28" font-weight="700" fill="#202020" letter-spacing="1">WHERE RELAY FITS</text>
+<text x="113" y="189" font-size="42" font-weight="700" fill="#202020">A continuity layer for work in transition</text>
+<text x="113" y="245" font-size="28" font-weight="700" fill="#202020" letter-spacing="1">PEOPLE &amp; GOVERNANCE</text>
+<rect x="113" y="274" width="387" height="139" rx="24" fill="white" stroke="#d4d4d4" stroke-width="3"/>
+<text x="141" y="324" font-size="32" font-weight="700" fill="#202020">HR</text>
+<text x="141" y="371" font-size="24" font-weight="400" fill="#555">Monitors progress</text>
+<path d="M306 413 L306 456" fill="none" stroke="#d4d4d4" stroke-width="4"/>
+<rect x="535" y="274" width="387" height="139" rx="24" fill="white" stroke="#d4d4d4" stroke-width="3"/>
+<text x="563" y="324" font-size="32" font-weight="700" fill="#202020">Manager</text>
+<text x="563" y="371" font-size="24" font-weight="400" fill="#555">Reviews and assigns</text>
+<path d="M728 413 L728 456" fill="none" stroke="#d4d4d4" stroke-width="4"/>
+<rect x="957" y="274" width="387" height="139" rx="24" fill="white" stroke="#d4d4d4" stroke-width="3"/>
+<text x="985" y="324" font-size="32" font-weight="700" fill="#202020">Next owner</text>
+<text x="985" y="371" font-size="24" font-weight="400" fill="#555">Receives the handoff</text>
+<path d="M1150 413 L1150 456" fill="none" stroke="#d4d4d4" stroke-width="4"/>
+<rect x="101" y="456" width="1256" height="384" rx="32" fill="white" stroke="#d4d4d4" stroke-width="4"/>
+<rect x="129" y="481" width="152" height="53" rx="11" fill="#202020" stroke="#202020" stroke-width="1"/>
+<text x="153" y="519" font-size="29" font-weight="700" fill="white">RELAY</text>
+<text x="302" y="518" font-size="28" font-weight="700" fill="#202020" letter-spacing="1">CONTINUITY WORKFLOW</text>
+<rect x="128" y="564" width="381" height="156" rx="20" fill="white" stroke="#d4d4d4" stroke-width="3"/>
+<text x="155" y="605" font-size="23" font-weight="700" fill="#202020">01</text>
+<text x="155" y="650" font-size="32" font-weight="700" fill="#202020">Discover</text>
+<text x="155" y="691" font-size="24" font-weight="400" fill="#555">Find work and context</text>
+<rect x="539" y="564" width="381" height="156" rx="20" fill="white" stroke="#d4d4d4" stroke-width="3"/>
+<text x="566" y="605" font-size="23" font-weight="700" fill="#202020">02</text>
+<text x="566" y="650" font-size="32" font-weight="700" fill="#202020">Review &amp; assign</text>
+<text x="566" y="691" font-size="24" font-weight="400" fill="#555">Confirm the next owner</text>
+<rect x="949" y="564" width="381" height="156" rx="20" fill="white" stroke="#d4d4d4" stroke-width="3"/>
+<text x="976" y="605" font-size="23" font-weight="700" fill="#202020">03</text>
+<text x="976" y="650" font-size="32" font-weight="700" fill="#202020">Preview &amp; publish</text>
+<text x="976" y="691" font-size="24" font-weight="400" fill="#555">Share the handoff</text>
+<path d="M518 641 h13 m-6 -7 7 7 -7 7" stroke="#d4d4d4" stroke-width="3" fill="none"/>
+<path d="M928 641 h13 m-6 -7 7 7 -7 7" stroke="#d4d4d4" stroke-width="3" fill="none"/>
+<text x="131" y="782" font-size="26" font-weight="700" fill="#202020">Continuity hub: ownership · linked context · risks · actions</text>
+<path d="M729 840 L729 879" fill="none" stroke="#d4d4d4" stroke-width="4"/>
+<rect x="113" y="879" width="1232" height="157" rx="24" fill="white" stroke="#d4d4d4" stroke-width="3"/>
+<text x="141" y="921" font-size="28" font-weight="700" fill="#202020" letter-spacing="1">EXISTING WORK SYSTEMS</text>
+<text x="141" y="966" font-size="31" font-weight="700" fill="#202020">SharePoint · Outlook · Jira · Confluence · GitLab · Asana · more</text>
+<text x="141" y="1006" font-size="24" font-weight="400" fill="#555">Work stays in its original tools; source access stays separate.</text>
+</g></svg>
